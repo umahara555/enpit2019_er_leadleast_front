@@ -1,0 +1,51 @@
+.card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background-color: #85C1E9;
+}
+
+.card:hover {
+  background-color: #5DADE2;
+}
+
+.card textarea {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  padding: 0;
+  width: 80%;
+  height: 80%;
+  resize: none;
+  border: none;
+  font-size: 18px;
+  background-color: rgba(0,0,0,0);
+}
+
+.card textarea:focus {
+  outline:0;
+}
+
+.card-add-button {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border: dashed 2px #BEBEBE;
+  border-radius: 16px;
+  background-color: rgba(0,0,0,0);
+  font-size: 42px;
+  color: #BEBEBE;
+}
+
+.card-add-button:hover {
+  border-color: #808080;
+  color: #808080;
+}
+
+.card-add-button:focus {
+  outline:0;
+}

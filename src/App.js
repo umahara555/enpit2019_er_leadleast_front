@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Card, CardAddButton} from './Card.js';
 import './App.css';
 
 const API_URL = 'http://localhost:8000/api/v1/hello';
@@ -8,8 +9,15 @@ class App extends Component {
     super(props);
     this.state = {
       hStatus: '',
-      hMessage: ''
+      hMessage: '',
+      cards: [],
     };
+  }
+
+  handleClick() {
+    const cards = this.state.cards;
+    cards.push(<Card key={cards.length}/>);
+    this.setState({cards: cards});
   }
 
   componentDidMount(){
@@ -28,9 +36,13 @@ class App extends Component {
 
   render() {
     return(
-      <div>
-        <p>Status: {this.state.hStatus}</p>
-        <p>Message: {this.state.hMessage}</p>
+      <div className="App">
+        <div className="board">
+          {this.state.cards.map((value) => {
+            return value;
+          })}
+          <CardAddButton onClick={() => this.handleClick()}/>
+        </div>
       </div>
     );
   }
