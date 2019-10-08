@@ -16,11 +16,6 @@ class App extends Component {
 
   handleClick() {
     const cards = this.state.cards;
-    // cards.push(<Card key={cards.length}/>);
-    if (cards.length == 0) {
-
-    }
-
     cards.unshift(<Card key={cards.length}/>);
     this.setState({cards: cards});
   }
