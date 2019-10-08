@@ -16,7 +16,12 @@ class App extends Component {
 
   handleClick() {
     const cards = this.state.cards;
-    cards.push(<Card key={cards.length}/>);
+    // cards.push(<Card key={cards.length}/>);
+    if (cards.length == 0) {
+
+    }
+
+    cards.unshift(<Card key={cards.length}/>);
     this.setState({cards: cards});
   }
 
@@ -37,11 +42,14 @@ class App extends Component {
   render() {
     return(
       <div className="App">
+        <div className="header">
+          <p>付箋に欲しい機能を書き起こそう！</p>
+        </div>
         <div className="board">
+          <CardAddButton onClick={() => this.handleClick()}/>
           {this.state.cards.map((value) => {
             return value;
           })}
-          <CardAddButton onClick={() => this.handleClick()}/>
         </div>
       </div>
     );

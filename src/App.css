@@ -1,12 +1,28 @@
 .App {
-  width: 100vw;
+  width: 100%;
   height: auto;
   min-height: 100vh;
   background-color: #F4F6F7;
 }
 
+.header {
+  width: 100%;
+  height: 64px;
+  padding: 16px;
+  background-color: #7DCEA0;
+}
+
+.header p {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
 .board {
   display: flex;
   flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  height: 100%;
   padding: 20px;
 }

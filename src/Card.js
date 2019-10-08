@@ -8,7 +8,7 @@ export class CardAddButton extends Component {
         className="card-add-button"
         onClick={() => this.props.onClick()}
       >
-        ＋
+        ＋ 付箋を追加
       </button>
     );
   }
@@ -30,7 +30,7 @@ export class Card extends Component {
   render() {
     return(
       <div className="card">
-        <textarea onChange={this.handleChange}></textarea>
+        <textarea onChange={this.handleChange} placeholder="ここにアイディア"></textarea>
       </div>
     );
   }
