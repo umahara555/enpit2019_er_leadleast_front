@@ -27,6 +27,7 @@ class App extends Component {
     const handCard = handCards.find(card => card.id === id);
     const handCardIndex = handCards.findIndex(card => card.id === id);
     handCards.splice(handCardIndex, 1);
+    this.setState({handCards: handCards});
 
     const boardCards = this.state.boardCards;
     boardCards.unshift(handCard);
@@ -38,10 +39,27 @@ class App extends Component {
     const boardCard = boardCards.find(card => card.id === id);
     const boardCardIndex = boardCards.findIndex(card => card.id === id);
     boardCards.splice(boardCardIndex, 1);
+    this.setState({boardCards: boardCards});
 
     const handCards = this.state.handCards;
     handCards.unshift(boardCard);
     this.setState({handCards: handCards});
+  }
+
+  handleDeleteCard(id) {
+      const handCards = this.state.handCards;
+      const handCardIndex = handCards.findIndex(card => card.id === id);
+
+      const boardCards = this.state.boardCards;
+      const boardCardIndex = boardCards.findIndex(card => card.id === id);
+
+      if(handCardIndex !== -1 ){
+        handCards.splice(handCardIndex, 1);
+        this.setState({handCards: handCards});
+    }else if (boardCardIndex !== -1) {
+        boardCards.splice(boardCardIndex, 1);
+        this.setState({boardCards: boardCards});
+      }
   }
 
   updateState(state){
@@ -70,6 +88,7 @@ class App extends Component {
       <Card key={cardInfo.id}
             value={cardInfo}
             onClick={this.handleUpToBoard.bind(this, cardInfo.id)}
+            onDeleteButtonClick={this.handleDeleteCard.bind(this, cardInfo.id)}
             updateState={this.updateState.bind(this)}
       />
     ));
@@ -78,6 +97,7 @@ class App extends Component {
       <Card key={cardInfo.id}
             value={cardInfo}
             onClick={this.handleDownToHand.bind(this, cardInfo.id)}
+            onDeleteButtonClick={this.handleDeleteCard.bind(this, cardInfo.id)}
             updateState={this.updateState.bind(this)}
       />
     ));
