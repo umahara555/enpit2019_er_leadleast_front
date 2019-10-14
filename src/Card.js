@@ -20,25 +20,28 @@ export class Card extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      value: ""
+      id: this.props.value.id,
+      text: this.props.value.text
     }
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange (e) {
-    this.setState({value: e.target.value});
-    this.props.updateState(this.state);
+  handleChange(e) {
+    const state = this.state;
+    state.text = e.target.value;
+    this.setState(state);
+    this.props.updateState(state);
   }
 
   render() {
     return(
       <div>
         <div className="card">
-          {/*<button
+          <button
             className="upButton"
             onClick={() => this.props.onClick()}
-          >↑</button>*/}
-          <textarea onChange={this.handleChange} placeholder="ここにアイディア" />
+          >↑↓</button>
+          <textarea onChange={this.handleChange} placeholder="ここにアイディア" value={this.state.text}/>
         </div>
       </div>
     );

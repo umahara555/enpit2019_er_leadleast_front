@@ -17,29 +17,39 @@ class App extends Component {
 
   handleClick() {
     const cards = this.state.handCards;
-    const key = Math.round( Math.random () * 10000000 );
-    cards.unshift(<Card key={key}/>);
-    // cards.unshift(<Card key={key} onClick={this.handleUpToBoard.bind(this, key)} updateState={this.updateState.bind(this)}/>);
+    const id = Math.round( Math.random () * 10000000 );
+    cards.unshift({id: id, text: ""});
     this.setState({handCards: cards});
   }
 
-  // handleUpToBoard(key) {
-  //   const handCards = this.state.handCards;
-  //   const handCard = handCards.find(card => card.key == key);
-  //   const handCardIndex = handCards.findIndex(card => card.key == key);
-  //   handCards.splice(handCardIndex, 1);
-  //
-  //   console.log(handCard);
-  //
-  //   const boardCards = this.state.boardCards;
-  //   boardCards.push(handCard);
-  //   this.setState({boardCards: boardCards});
-  //
-  // }
-  //
-  // updateState(state){
-  //     console.log(state);
-  // }
+  handleUpToBoard(id) {
+    const handCards = this.state.handCards;
+    const handCard = handCards.find(card => card.id === id);
+    const handCardIndex = handCards.findIndex(card => card.id === id);
+    handCards.splice(handCardIndex, 1);
+
+    const boardCards = this.state.boardCards;
+    boardCards.unshift(handCard);
+    this.setState({boardCards: boardCards});
+  }
+
+  handleDownToHand(id) {
+    const boardCards = this.state.boardCards;
+    const boardCard = boardCards.find(card => card.id === id);
+    const boardCardIndex = boardCards.findIndex(card => card.id === id);
+    boardCards.splice(boardCardIndex, 1);
+
+    const handCards = this.state.handCards;
+    handCards.unshift(boardCard);
+    this.setState({handCards: handCards});
+  }
+
+  updateState(state){
+      const handCards = this.state.handCards;
+      const handCardIndex = handCards.findIndex(card => card.id === state.id);
+      handCards[handCardIndex].text = state.text;
+      this.setState({handCards: handCards});
+  }
 
   componentDidMount(){
     return fetch(API_URL)
@@ -56,6 +66,22 @@ class App extends Component {
   }
 
   render() {
+    const handCards = this.state.handCards.map((cardInfo) => (
+      <Card key={cardInfo.id}
+            value={cardInfo}
+            onClick={this.handleUpToBoard.bind(this, cardInfo.id)}
+            updateState={this.updateState.bind(this)}
+      />
+    ));
+
+    const boardCards = this.state.boardCards.map((cardInfo) => (
+      <Card key={cardInfo.id}
+            value={cardInfo}
+            onClick={this.handleDownToHand.bind(this, cardInfo.id)}
+            updateState={this.updateState.bind(this)}
+      />
+    ));
+
     return(
       <div className="App">
         <div className="header">
@@ -65,16 +91,12 @@ class App extends Component {
           <p>付箋に欲しい機能を書き起こそう！</p>
         </div>
         <div className="board">
-        {this.state.boardCards.map((value) => {
-          return value;
-        })}
+          {boardCards}
         </div>
         <div className="memo"></div>
         <div className="hand">
           <CardAddButton onClick={() => this.handleClick()}/>
-          {this.state.handCards.map((value) => {
-            return value;
-          })}
+          {handCards}
         </div>
       </div>
     );

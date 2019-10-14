@@ -64,7 +64,6 @@
   display: flex;
   flex-flow: row;
   justify-content: flex-start;
-  align-content: flex-start;
   overflow:auto;
 
   grid-row: 4 / 5;
