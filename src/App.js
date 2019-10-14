@@ -56,7 +56,7 @@ class App extends Component {
       if(handCardIndex !== -1 ){
         handCards.splice(handCardIndex, 1);
         this.setState({handCards: handCards});
-    }else if (boardCardIndex !== -1) {
+      }else if (boardCardIndex !== -1) {
         boardCards.splice(boardCardIndex, 1);
         this.setState({boardCards: boardCards});
       }
@@ -65,8 +65,17 @@ class App extends Component {
   updateState(state){
       const handCards = this.state.handCards;
       const handCardIndex = handCards.findIndex(card => card.id === state.id);
-      handCards[handCardIndex].text = state.text;
-      this.setState({handCards: handCards});
+
+      const boardCards = this.state.boardCards;
+      const boardCardIndex = boardCards.findIndex(card => card.id === state.id);
+
+      if(handCardIndex !== -1 ){
+        handCards[handCardIndex].text = state.text;
+        this.setState({handCards: handCards});
+      }else if (boardCardIndex !== -1) {
+        boardCards[boardCardIndex].text = state.text;
+        this.setState({boardCards: boardCards});
+      }
   }
 
   componentDidMount(){
