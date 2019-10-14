@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import {Card, CardAddButton} from './Card.js';
+import {Card, CardAddButton,Waku} from './Card.js';
 import './App.css';
+import Draggable from 'react-draggable';
+
 
 const API_URL = 'http://localhost:8000/api/v1/hello';
 
@@ -11,6 +13,7 @@ class App extends Component {
       hStatus: '',
       hMessage: '',
       cards: [],
+      
     };
   }
 
@@ -37,6 +40,21 @@ class App extends Component {
   render() {
     return(
       <div className="App">
+            <div className="desk">
+                <Waku />
+                <Waku />
+                <Waku />
+                <Waku />
+                <Waku />
+                <Waku />
+                <Waku />
+                <Waku />
+                <Waku />
+                <Waku />
+                <Waku />
+                <Waku />                      
+                
+            </div>
         <div className="header">
           <p>付箋に欲しい機能を書き起こそう！</p>
         </div>

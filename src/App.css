@@ -1,15 +1,33 @@
 .App {
+  display:grid;
   width: 100%;
   height: auto;
   min-height: 100vh;
   background-color: #F4F6F7;
+  grid-template-rows:  64px 2fr 1fr;
+  grid-template-columns: 4fr 1fr;
+  
+}
+
+.desk{
+  display: flex;
+
+   grid-row: 2;
+   grid-colum:1;
+  width:140vh;
+  height:63vh;
+  background-color:#a9a9a9;
+  overflow:auto;
 }
 
 .header {
   width: 100%;
-  height: 64px;
+  height: 100%;
   padding: 16px;
   background-color: #7DCEA0;
+  grid-row: 1 ;
+  grid-column: 1 / 3;
+
 }
 
 .header p {
@@ -19,10 +37,13 @@
 
 .board {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row;
   justify-content: flex-start;
   align-content: flex-start;
-  width: 100%;
-  height: 100%;
   padding: 20px;
+  background-color:#F5F5DC	;
+  overflow:auto;
+
+  grid-row: 3;
+  grid-column: 1 / 3;
 }

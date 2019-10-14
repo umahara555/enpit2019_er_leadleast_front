@@ -49,3 +49,83 @@
 .card-add-button:focus {
   outline:0;
 }
+
+.wakuF{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border: dashed 2px #ffa500;
+  border-radius: 16px;
+  background-color: rgba(0,0,0,0);
+  font-size: 28px;
+  color: #ffa500;
+}
+
+.wakuS{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border: dashed 2px #0000FF;
+  border-radius: 16px;
+  background-color: rgba(0,0,0,0);
+  font-size: 28px;
+  color: #0000FF;
+}
+
+
+.waku{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border: dashed 2px #ff69b4;
+  border-radius: 16px;
+  background-color: rgba(0,0,0,0);
+  font-size: 28px;
+  color: #ff69b4;
+}
+
+.focusicon {
+  color: #000;
+  position: absolute;
+  margin-left: 2px;
+  margin-top: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 1px;
+  border: solid 1px currentColor;
+}
+
+.focusicon:before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: -2px;
+  width: 7px;
+  height: 19px;
+  color: #85C1E9;
+  background-color: currentColor;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.focusicon:after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: -3px;
+  width: 9px;
+  height: 19px;
+  color: #85C1E9;
+  background-color: currentColor;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+
+
+
