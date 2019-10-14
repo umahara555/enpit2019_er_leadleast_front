@@ -21,7 +21,7 @@ Googleスプレッドシートやオンラインホワイトボードとは違�
 
 ```
 $ git clone https://github.com/umahara555/enpit2019_er_leadleast_front.git
-$ cd enpit2019_er_front
+$ cd enpit2019_er_leadleast_front
 $ cp .env.sample .env
 ```
 
