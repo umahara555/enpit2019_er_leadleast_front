@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import './Card.css';
-import Draggable from 'react-draggable';
-
 
 export class CardAddButton extends Component {
   render() {
@@ -18,54 +16,30 @@ export class CardAddButton extends Component {
   }
 }
 
-export class Waku extends Component {
-  render() {
-    return(
-    <div>
-          <div className="wakuF" />    
-          <div className="wakuS" />    
-          <div className="waku" />    
-          <div className="waku" />    
-          <div className="waku" />    
-          <div className="waku" />    
-          <div className="waku" />    
-      </div>
-    );
-  }
-}
-
 export class Card extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      value: ''
+      value: ""
     }
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange (e) {
-    this.setState({value: e.target.value})
+    this.setState({value: e.target.value});
+    this.props.updateState(this.state);
   }
 
   render() {
     return(
-    <div>
-              <Draggable
-        handle=".focusicon"
-        defaultPosition={{x: 0, y: 0}}
-        position={null}
-        grid={[10, 10]}
-        scale={1}
-        onStart={this.handleStart}
-        onDrag={this.handleDrag}
-        onStop={this.handleStop}>
-
-      <div className="card">
-     <div className="focusicon"></div>
-        <textarea onChange={this.handleChange} placeholder="ここにアイディア" />
-      </div>
-            </Draggable>
-
+      <div>
+        <div className="card">
+          {/*<button
+            className="upButton"
+            onClick={() => this.props.onClick()}
+          >↑</button>*/}
+          <textarea onChange={this.handleChange} placeholder="ここにアイディア" />
+        </div>
       </div>
     );
   }
