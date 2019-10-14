@@ -113,7 +113,7 @@ class App extends Component {
         <div className="board">
           {boardCards}
         </div>
-        <div className="memo"></div>
+        {/*<div className="memo"></div>*/}
         <div className="hand">
           <CardAddButton onClick={() => this.handleClick()}/>
           {handCards}
