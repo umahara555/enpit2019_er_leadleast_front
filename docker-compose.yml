@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  front:
+    build: ./
+    image: enpit2019_er_leadleast_front
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/app
+
