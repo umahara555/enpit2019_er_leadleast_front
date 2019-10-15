@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Card, CardAddButton} from './Card.js';
+import {Tips,ShowTips} from './tips.js'
 import './App.css';
+
 
 const API_URL = 'http://localhost:8000/api/v1/hello';
 
@@ -10,6 +12,7 @@ class App extends Component {
     this.state = {
       hStatus: '',
       hMessage: '',
+      tipsFlag: true,
       handCards: [],
       boardCards: [],
     };
@@ -77,8 +80,12 @@ class App extends Component {
         this.setState({boardCards: boardCards});
       }
   }
+  
+  tipsFlagChange() {
+      this.setState({tipsFlag: !this.state.tipsFlag});
+  }
 
-  componentDidMount(){
+  componentDidMount() {
     return fetch(API_URL)
       .then((response) => response.json())
       .then((responseJson) => {
@@ -112,9 +119,12 @@ class App extends Component {
     ));
 
     return(
+    <div>
+      { this.state.tipsFlag && <Tips onClick={() => this.tipsFlagChange()} /> }
       <div className="App">
         <div className="header">
           <p>ホワイトボード</p>
+          <ShowTips  onClick={() => this.tipsFlagChange()} />
         </div>
         <div className="nav">
           <p>付箋に欲しい機能を書き起こそう！</p>
@@ -128,6 +138,7 @@ class App extends Component {
           {handCards}
         </div>
       </div>
+   </div>
     );
   }
 }

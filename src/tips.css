@@ -1,0 +1,49 @@
+.tips-wrapper { 
+	position: fixed;
+	background-color: rgba(100,100,100,0.5);;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2;
+}
+
+.tips {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+	width: 70%;
+	height: 70%;
+	background-color: white;
+
+}
+
+.closeButton {
+	position: absolute;
+	right: 0;
+	top: 0;
+	-webkit-transform: translate(50%,-50%);
+    transform: translate(50%,-50%);
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	font-size: 2rem;
+}
+
+.closeButton:focus {
+  outline:0;
+}
+
+.openButton {
+	position: absolute;
+	right: 30px;
+	display: inline-box;
+	width: 48px;
+	height: 32px;
+	border-radius: 8px;
+
+}
+
+.openButton:focus {
+  outline:0;
+}
