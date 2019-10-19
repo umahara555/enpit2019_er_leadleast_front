@@ -2,3 +2,10 @@
   font-size: 5rem;
   font-weight: 400;
 }
+
+.header {
+}
+
+.header p:before {
+  content:"ログイン";
+}

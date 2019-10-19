@@ -7,3 +7,10 @@
   font-size: 5rem;
   font-weight: 100;
 }
+
+.header {
+}
+
+.header p:before {
+  content:"LeadLeast";
+}
