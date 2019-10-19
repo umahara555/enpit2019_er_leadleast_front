@@ -6,7 +6,7 @@ export class Login extends Component {
   render(){
     return(
       <div>
-        <Header className='header' />
+        <Header className='header' title='ログイン'/>
         <div className='login'>
           <h1>Login画面です</h1> 
         </div>

@@ -19,9 +19,6 @@
   background-color: #7DCEA0;
 }
 
-.header p:before {
-  content:"ホワイトボード";
-}
 
 .board{
   display: flex;

@@ -123,7 +123,7 @@ export class UserStoryMap extends Component {
     <div>
       { this.state.tipsFlag && <Tips onClick={() => this.tipsFlagChange()} /> }
       <div className="App">
-        <Header className="header" />
+        <Header className="header" title={'ホワイトボード：付箋に欲しい機能を書き出そう'}/>
         <ShowTips  onClick={() => this.tipsFlagChange()} />
         <div className="board">
           {boardCards}

@@ -6,7 +6,7 @@ export class LeanCanvas extends Component {
   render(){
     return(
       <div>
-        <Header className='header' />
+        <Header className='header' title='LeanCanvas' />
         <div className='lean'>
           <h1>LeanCanvasです</h1>    
         </div>
