@@ -2,11 +2,29 @@ import React, {Component} from 'react';
 import {Card, CardAddButton} from './Card.js';
 import {Tips,ShowTips} from './tips.js'
 import './App.css';
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+
 
 
 const API_URL = 'http://localhost:8000/api/v1/hello';
 
-class App extends Component {
+const App = () => (
+  <BrowserRouter>
+    <div>
+      <Route exact path='/' component={Home} />
+      <Route path='/userstorymap' component={UserStoryMap} />    
+    </div>
+  </BrowserRouter>
+)
+
+const Home = () =>(
+    <div>
+    <h1>Homeです</h1>
+    <p>プロダクトデザインを支援するツールです</p>    
+    </div>
+)
+
+class UserStoryMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
