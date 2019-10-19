@@ -3,7 +3,7 @@ import {Card, CardAddButton} from './Card.js';
 import {Tips,ShowTips} from './tips.js'
 import './App.css';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-
+import {Header} from './Header.js'
 
 
 const API_URL = 'http://localhost:8000/api/v1/hello';
@@ -140,13 +140,8 @@ class UserStoryMap extends Component {
     <div>
       { this.state.tipsFlag && <Tips onClick={() => this.tipsFlagChange()} /> }
       <div className="App">
-        <div className="header">
-          <p>ホワイトボード</p>
-          <ShowTips  onClick={() => this.tipsFlagChange()} />
-        </div>
-        <div className="nav">
-          <p>付箋に欲しい機能を書き起こそう！</p>
-        </div>
+        <Header className="header" />
+        <ShowTips  onClick={() => this.tipsFlagChange()} />
         <div className="board">
           {boardCards}
         </div>
