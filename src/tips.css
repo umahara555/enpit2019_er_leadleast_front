@@ -15,26 +15,35 @@
 	width: 50%;
 	height: 70%;
 	background-color: white;
+	overflow-y:scroll;
 }
 
 .tips p {
 	font-size:24px;
 }
+
+.tips h1 {
+	font-size:24px;
+}
 .tips img {
-	position: absolute;
+	position: relative;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	margin: auto;
 	width: auto;
-	height: 90%;
+	height: 30%;
+}
+
+.uso img {
+	height:60vh;
 }
 
 .closeButton {
 	position: absolute;
-	right: 0;
-	top: 0;
+	right: 25%;
+	top: 15%;
 	-webkit-transform: translate(50%,-50%);
     transform: translate(50%,-50%);
 	width: 40px;

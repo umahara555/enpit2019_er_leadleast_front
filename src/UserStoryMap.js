@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Card, CardAddButton} from './Card.js';
-import {Tips,ShowTips} from './tips.js'
+import {TipsUserStoryMap,ShowTips} from './tips.js'
 import './UserStoryMap.css';
 import {Header} from './Header.js'
 
@@ -121,7 +121,7 @@ export class UserStoryMap extends Component {
 
     return(
     <div>
-      { this.state.tipsFlag && <Tips onClick={() => this.tipsFlagChange()} /> }
+      { this.state.tipsFlag && <TipsUserStoryMap onClick={() => this.tipsFlagChange()} /> }
       <div className="App">
         <Header className="header" title={'ホワイトボード：付箋に欲しい機能を書き出そう'}/>
         <ShowTips  onClick={() => this.tipsFlagChange()} />
