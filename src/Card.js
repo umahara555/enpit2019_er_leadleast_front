@@ -34,17 +34,25 @@ export class Card extends Component {
   }
 
   render() {
+    const moveButton = (
+      <button
+        className="upButton"
+        onClick={() => this.props.onClick()}
+      >↑↓</button>
+    );
+
+    const deleteButton = (
+      <button
+        className="deleteButton"
+        onClick={() => this.props.onDeleteButtonClick()}
+      >x</button>
+    );
+
     return(
       <div>
         <div className="card">
-          <button
-            className="upButton"
-            onClick={() => this.props.onClick()}
-          >↑↓</button>
-          <button
-            className="deleteButton"
-            onClick={() => this.props.onDeleteButtonClick()}
-          >x</button>
+          {moveButton}
+          {deleteButton}
           <textarea onChange={this.handleChange} placeholder="ここにアイディア" value={this.state.text}/>
         </div>
       </div>
