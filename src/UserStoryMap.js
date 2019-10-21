@@ -129,17 +129,19 @@ export class UserStoryMap extends Component {
       { this.state.tipsFlag && <TipsUserStoryMap onClick={() => this.tipsFlagChange()} /> }
       <div className="App">
         <Header className="header" title={'ホワイトボード：付箋に欲しい機能を書き出そう'}/>
-        <Link to="/">
-            <h1>・Homeへ</h1>
-       </Link>  
         <ShowTips  onClick={() => this.tipsFlagChange()} />
+        
         <div className="board">
           {boardCards}
+
         </div>
         <button onClick={() => this.fetchData()}>だうんろおど</button>
         <button>あっぷろおど</button>
         {/*<div className="memo"></div>*/}
         <div className="hand">
+          <Link to="/" className="link">
+            <h1>・Homeへ</h1>
+          </Link>  
           <CardAddButton onClick={() => this.handleClick()}/>
           {handCards}
         </div>
