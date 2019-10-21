@@ -5,7 +5,9 @@
 	height: 100vh;
 	z-index: 2;
 }
-
+.header {
+	display: relative;
+}
 .tips {
 	position: absolute;
 	top: 50%;
@@ -16,6 +18,7 @@
 	height: 70%;
 	background-color: white;
 	overflow-y:scroll;
+	overflow-x:hidden;
 }
 
 .tips p {
@@ -25,7 +28,7 @@
 .tips h1 {
 	font-size:24px;
 }
-.tips img {
+.SImg {
 	position: relative;
 	top: 0;
 	left: 0;
@@ -36,8 +39,8 @@
 	height: 30%;
 }
 
-.uso img {
-	height:60vh;
+.LImg {
+	height:80%;
 }
 
 .closeButton {
