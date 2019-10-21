@@ -5,7 +5,9 @@
 	height: 100vh;
 	z-index: 2;
 }
-
+.header {
+	display: relative;
+}
 .tips {
 	position: absolute;
 	top: 50%;
@@ -15,26 +17,36 @@
 	width: 50%;
 	height: 70%;
 	background-color: white;
+	overflow-y:scroll;
+	overflow-x:hidden;
 }
 
 .tips p {
 	font-size:24px;
 }
-.tips img {
-	position: absolute;
+
+.tips h1 {
+	font-size:24px;
+}
+.SImg {
+	position: relative;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	margin: auto;
 	width: auto;
-	height: 90%;
+	height: 30%;
+}
+
+.LImg {
+	height:80%;
 }
 
 .closeButton {
 	position: absolute;
-	right: 0;
-	top: 0;
+	right: 25%;
+	top: 15%;
 	-webkit-transform: translate(50%,-50%);
     transform: translate(50%,-50%);
 	width: 40px;
@@ -53,6 +65,7 @@
 	display: inline-box;
 	width: 48px;
 	height: 32px;
+	top:12px;
 	border-radius: 8px;
 
 }
