@@ -5,7 +5,7 @@ import './UserStoryMap.css';
 import {Header} from './Header.js'
 
 const API_URL = 'http://localhost:5000/api/v1'
-//const SET_API_URL = API_URL + '/hello';
+const SET_API_URL = API_URL + '/handcards';
 const GET_API_URL = API_URL + '/handcards';
 
 export class UserStoryMap extends Component {
@@ -34,13 +34,24 @@ export class UserStoryMap extends Component {
         this.setState({
           cardStatus: responseJson.status,
           cardMessage: responseJson.card_data,
+		  boardCards: responseJson.card_data
         });
         console.log(responseJson.card_data);
       })
       .catch((error) =>{
         console.error(error);
-      });
-      
+      });    
+  }
+
+  sendData(text) {
+    const obj = {board: {"text": text}};
+    const method = "POST";
+    const body = JSON.stringify(obj);
+    const headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    };
+    fetch(SET_API_URL, {method, headers, body}).then((res)=> res.json()).then(console.log).catch(console.error);
   }
 
   handleUpToBoard(id) {
@@ -50,9 +61,7 @@ export class UserStoryMap extends Component {
     handCards.splice(handCardIndex, 1);
     this.setState({handCards: handCards});
 
-    const boardCards = this.state.boardCards;
-    boardCards.unshift(handCard);
-    this.setState({boardCards: boardCards});
+	this.sendData(handCard.text) 
   }
 
   handleDownToHand(id) {
@@ -132,7 +141,6 @@ export class UserStoryMap extends Component {
           {boardCards}
         </div>
         <button onClick={() => this.fetchData()}>だうんろおど</button>
-        <button>あっぷろおど</button>
         {/*<div className="memo"></div>*/}
         <div className="hand">
           <CardAddButton onClick={() => this.handleClick()}/>
