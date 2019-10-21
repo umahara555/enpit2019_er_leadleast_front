@@ -4,15 +4,16 @@ import {Tips,ShowTips} from './tips.js'
 import './UserStoryMap.css';
 import {Header} from './Header.js'
 
-const API_URL = 'http://localhost:8000/api/v1/hello';
-
+const API_URL = 'http://localhost:5000/api/v1'
+//const SET_API_URL = API_URL + '/hello';
+const GET_API_URL = API_URL + '/handcards';
 
 export class UserStoryMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hStatus: '',
-      hMessage: '',
+      cardStatus: '',
+      cardMessage: '',
       tipsFlag: true,
       handCards: [],
       boardCards: [],
@@ -24,6 +25,22 @@ export class UserStoryMap extends Component {
     const id = Math.round( Math.random () * 10000000 );
     cards.unshift({id: id, text: ""});
     this.setState({handCards: cards});
+  }
+
+  fetchData() {
+    fetch(GET_API_URL)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          cardStatus: responseJson.status,
+          cardMessage: responseJson.card_data,
+        });
+        console.log(responseJson.card_data);
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+      
   }
 
   handleUpToBoard(id) {
@@ -86,20 +103,6 @@ export class UserStoryMap extends Component {
       this.setState({tipsFlag: !this.state.tipsFlag});
   }
 
-  componentDidMount() {
-    return fetch(API_URL)
-      .then((response) => response.json())
-      .then((responseJson) => {
-        this.setState({
-          hStatus: responseJson.status,
-          hMessage: responseJson.message,
-        });
-      })
-      .catch((error) =>{
-        console.error(error);
-      });
-  }
-
   render() {
     const handCards = this.state.handCards.map((cardInfo) => (
       <Card key={cardInfo.id}
@@ -128,6 +131,8 @@ export class UserStoryMap extends Component {
         <div className="board">
           {boardCards}
         </div>
+        <button onClick={() => this.fetchData()}>だうんろおど</button>
+        <button>あっぷろおど</button>
         {/*<div className="memo"></div>*/}
         <div className="hand">
           <CardAddButton onClick={() => this.handleClick()}/>
