@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {Card, CardAddButton} from './Card.js';
-import {Tips,ShowTips} from './tips.js'
+import {TipsUserStoryMap,ShowTips} from './tips.js'
 import './UserStoryMap.css';
 import {Header} from './Header.js'
+import { Link } from 'react-router-dom';
+
 
 const API_URL = 'http://localhost:5000/api/v1'
 const SET_API_URL = API_URL + '/handcards';
@@ -133,16 +135,21 @@ export class UserStoryMap extends Component {
 
     return(
     <div>
-      { this.state.tipsFlag && <Tips onClick={() => this.tipsFlagChange()} /> }
+      { this.state.tipsFlag && <TipsUserStoryMap onClick={() => this.tipsFlagChange()} /> }
       <div className="App">
         <Header className="header" title={'ホワイトボード：付箋に欲しい機能を書き出そう'}/>
         <ShowTips  onClick={() => this.tipsFlagChange()} />
+        
         <div className="board">
           {boardCards}
+
         </div>
         <button onClick={() => this.fetchData()}>だうんろおど</button>
         {/*<div className="memo"></div>*/}
         <div className="hand">
+          <Link to="/" className="link">
+            <h1>・Homeへ</h1>
+          </Link>  
           <CardAddButton onClick={() => this.handleClick()}/>
           {handCards}
         </div>
