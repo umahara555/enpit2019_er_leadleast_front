@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Card, CardAddButton} from './Card.js';
 import {TipsUserStoryMap,ShowTips} from './tips.js'
-import './UserStoryMap.css';
 import {Header} from './Header.js'
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import './UserStoryMap.css';
 
 
 const API_URL = 'http://localhost:5000/api/v1'
@@ -14,13 +14,10 @@ export class UserStoryMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardStatus: '',
-      cardMessage: '',
       tipsFlag: true,
       handCards: [],
       boardCards: [],
     };
-
     this.fetchData();
   }
 
@@ -36,11 +33,8 @@ export class UserStoryMap extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
-          cardStatus: responseJson.status,
-          cardMessage: responseJson.card_data,
           boardCards: responseJson.card_data
         });
-        console.log(responseJson.card_data);
       })
       .catch((error) =>{
         console.error(error);
@@ -82,7 +76,6 @@ export class UserStoryMap extends Component {
           throw Error(postResponse.statusText)
         }
         const postResponseJson = await postResponse.json()
-        console.log(postResponseJson)
 
         // GET Board Data
         const getResponse = await fetch(GET_API_URL)
@@ -93,7 +86,6 @@ export class UserStoryMap extends Component {
         this.setState({
           boardCards: getResponseJson.card_data,
         });
-        console.log(getResponseJson)
       } catch (error) {
         console.log(error)
       }
