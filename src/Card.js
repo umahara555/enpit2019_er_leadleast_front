@@ -21,7 +21,8 @@ export class Card extends Component {
     super(props)
     this.state = {
       id: this.props.value.id,
-      text: this.props.value.text
+      text: this.props.value.text,
+      isEditMode: true,
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -38,7 +39,7 @@ export class Card extends Component {
       <button
         className="upButton"
         onClick={() => this.props.onClick()}
-      >↑↓</button>
+      >↑</button>
     );
 
     const deleteButton = (
@@ -51,9 +52,13 @@ export class Card extends Component {
     return(
       <div>
         <div className="card">
-          {moveButton}
-          {deleteButton}
-          <textarea onChange={this.handleChange} placeholder="ここにアイディア" value={this.state.text}/>
+          {this.state.isEditMode && moveButton}
+          {this.state.isEditMode && deleteButton}
+          <textarea onChange={this.handleChange}
+                    placeholder="ここにアイディア"
+                    value={this.state.text}
+                    readOnly={!this.state.isEditMode}
+          />
         </div>
       </div>
     );
