@@ -20,6 +20,8 @@ export class UserStoryMap extends Component {
       handCards: [],
       boardCards: [],
     };
+
+    this.fetchData();
   }
 
   handleClick() {
@@ -36,7 +38,7 @@ export class UserStoryMap extends Component {
         this.setState({
           cardStatus: responseJson.status,
           cardMessage: responseJson.card_data,
-		  boardCards: responseJson.card_data
+          boardCards: responseJson.card_data
         });
         console.log(responseJson.card_data);
       })
@@ -45,6 +47,7 @@ export class UserStoryMap extends Component {
       });
   }
 
+  /*
   sendData(text) {
     const obj = {board: {"text": text}};
     const method = "POST";
@@ -55,6 +58,7 @@ export class UserStoryMap extends Component {
     };
     fetch(SET_API_URL, {method, headers, body}).then((res)=> res.json()).then(console.log).catch(console.error);
   }
+  */
 
   handleUpToBoard(id) {
     const handCards = this.state.handCards;
@@ -63,7 +67,38 @@ export class UserStoryMap extends Component {
     handCards.splice(handCardIndex, 1);
     this.setState({handCards: handCards});
 
-	this.sendData(handCard.text)
+    const SendAndDownload = async () => {
+      try {
+        // PSOT Card Data
+        const obj = {board: {"text": handCard.text}};
+        const method = "POST";
+        const body = JSON.stringify(obj);
+        const headers = {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        };
+        const postResponse = await fetch(SET_API_URL, {method, headers, body})
+        if (!postResponse.ok) {
+          throw Error(postResponse.statusText)
+        }
+        const postResponseJson = await postResponse.json()
+        console.log(postResponseJson)
+
+        // GET Board Data
+        const getResponse = await fetch(GET_API_URL)
+        if (!getResponse.ok) {
+          throw Error(getResponse.statusText)
+        }
+        const getResponseJson = await getResponse.json()
+        this.setState({
+          boardCards: getResponseJson.card_data,
+        });
+        console.log(getResponseJson)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    SendAndDownload()
   }
 
   handleDownToHand(id) {
