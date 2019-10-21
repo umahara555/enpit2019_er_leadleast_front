@@ -42,7 +42,7 @@ export class UserStoryMap extends Component {
       })
       .catch((error) =>{
         console.error(error);
-      });    
+      });
   }
 
   sendData(text) {
@@ -63,7 +63,7 @@ export class UserStoryMap extends Component {
     handCards.splice(handCardIndex, 1);
     this.setState({handCards: handCards});
 
-	this.sendData(handCard.text) 
+	this.sendData(handCard.text)
   }
 
   handleDownToHand(id) {
@@ -109,7 +109,7 @@ export class UserStoryMap extends Component {
         this.setState({boardCards: boardCards});
       }
   }
-  
+
   tipsFlagChange() {
       this.setState({tipsFlag: !this.state.tipsFlag});
   }
@@ -121,6 +121,7 @@ export class UserStoryMap extends Component {
             onClick={this.handleUpToBoard.bind(this, cardInfo.id)}
             onDeleteButtonClick={this.handleDeleteCard.bind(this, cardInfo.id)}
             updateState={this.updateState.bind(this)}
+            isEditMode={true}
       />
     ));
 
@@ -130,6 +131,7 @@ export class UserStoryMap extends Component {
             onClick={this.handleDownToHand.bind(this, cardInfo.id)}
             onDeleteButtonClick={this.handleDeleteCard.bind(this, cardInfo.id)}
             updateState={this.updateState.bind(this)}
+            isEditMode={false}
       />
     ));
 
@@ -139,7 +141,7 @@ export class UserStoryMap extends Component {
       <div className="App">
         <Header className="header" title={'ホワイトボード：付箋に欲しい機能を書き出そう'}/>
         <ShowTips  onClick={() => this.tipsFlagChange()} />
-        
+
         <div className="board">
           {boardCards}
 
@@ -149,7 +151,7 @@ export class UserStoryMap extends Component {
         <div className="hand">
           <Link to="/" className="link">
             <h1>・Homeへ</h1>
-          </Link>  
+          </Link>
           <CardAddButton onClick={() => this.handleClick()}/>
           {handCards}
         </div>
