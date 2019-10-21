@@ -22,7 +22,7 @@ export class Card extends Component {
     this.state = {
       id: this.props.value.id,
       text: this.props.value.text,
-      isEditMode: true,
+      isEditMode: this.props.isEditMode,
     }
     this.handleChange = this.handleChange.bind(this);
   }
