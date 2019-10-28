@@ -86,9 +86,9 @@ export class UserStoryMap extends Component {
     boardCards.splice(boardCardIndex, 1);
     this.setState({boardCards: boardCards});
 
-    //const handCards = this.state.handCards;
-    //handCards.unshift(boardCard);
-    //this.setState({handCards: handCards});
+    const handCards = this.state.handCards;
+    handCards.unshift(boardCard);
+    this.setState({handCards: handCards});
     this.deleteData(boardCard.id)
   }
 
