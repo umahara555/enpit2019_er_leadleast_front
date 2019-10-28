@@ -9,6 +9,7 @@ import './UserStoryMap.css';
 const API_URL = 'http://localhost:5000/api/v1'
 const SET_API_URL = API_URL + '/handcards';
 const GET_API_URL = API_URL + '/handcards';
+const API_WS_URL = 'ws://localhost:5000/cable';
 
 export class UserStoryMap extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export class UserStoryMap extends Component {
       tipsFlag: true,
       handCards: [],
       boardCards: [],
+      ws: null,
     };
     this.fetchData();
   }
@@ -155,6 +157,36 @@ export class UserStoryMap extends Component {
 
   tipsFlagChange() {
       this.setState({tipsFlag: !this.state.tipsFlag});
+  }
+
+  componentDidMount() {
+      const ws = new WebSocket(API_WS_URL);
+      ws.onopen = () => {
+        ws.send(
+          JSON.stringify(
+            {"command": "subscribe",
+             "identifier":"{\"channel\":\"BoardChannel\"}"}
+          )
+        );
+      };
+      ws.onmessage = this.handleBoard.bind(this);
+      this.setState({ws: ws});
+  }
+
+  componentWillUnmount() {
+    this.state.ws.close();
+  }
+
+  handleBoard(event) {
+    const data = JSON.parse(event.data);
+    if ('message' in data) {
+      const messageData = JSON.parse(data.message);
+      if (typeof(messageData) == 'object' && 'card_data' in messageData) {
+        this.setState({
+          boardCards: messageData.card_data,
+        });
+      }
+    }
   }
 
   render() {
