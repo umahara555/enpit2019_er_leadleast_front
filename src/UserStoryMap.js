@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Card, CardAddButton} from './Card.js';
 import {TipsUserStoryMap,ShowTips} from './tips.js'
-import './UserStoryMap.css';
 import {Header} from './Header.js'
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import './UserStoryMap.css';
 
 
 const API_URL = 'http://localhost:5000/api/v1'
@@ -14,12 +14,11 @@ export class UserStoryMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardStatus: '',
-      cardMessage: '',
       tipsFlag: true,
       handCards: [],
       boardCards: [],
     };
+    this.fetchData();
   }
 
   handleClick() {
@@ -34,17 +33,15 @@ export class UserStoryMap extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
-          cardStatus: responseJson.status,
-          cardMessage: responseJson.card_data,
-		  boardCards: responseJson.card_data
+          boardCards: responseJson.card_data
         });
-        console.log(responseJson.card_data);
       })
       .catch((error) =>{
         console.error(error);
       });
   }
 
+  /*
   sendData(text) {
     const obj = {board: {"text": text}};
     const method = "POST";
@@ -55,6 +52,7 @@ export class UserStoryMap extends Component {
     };
     fetch(SET_API_URL, {method, headers, body}).then((res)=> res.json()).then(console.log).catch(console.error);
   }
+  */
 
   handleUpToBoard(id) {
     const handCards = this.state.handCards;
@@ -63,7 +61,36 @@ export class UserStoryMap extends Component {
     handCards.splice(handCardIndex, 1);
     this.setState({handCards: handCards});
 
-	this.sendData(handCard.text)
+    const SendAndDownload = async () => {
+      try {
+        // PSOT Card Data
+        const obj = {board: {"text": handCard.text}};
+        const method = "POST";
+        const body = JSON.stringify(obj);
+        const headers = {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        };
+        const postResponse = await fetch(SET_API_URL, {method, headers, body})
+        if (!postResponse.ok) {
+          throw Error(postResponse.statusText)
+        }
+        const postResponseJson = await postResponse.json()
+
+        // GET Board Data
+        const getResponse = await fetch(GET_API_URL)
+        if (!getResponse.ok) {
+          throw Error(getResponse.statusText)
+        }
+        const getResponseJson = await getResponse.json()
+        this.setState({
+          boardCards: getResponseJson.card_data,
+        });
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    SendAndDownload()
   }
 
   handleDownToHand(id) {
@@ -71,11 +98,27 @@ export class UserStoryMap extends Component {
     const boardCard = boardCards.find(card => card.id === id);
     const boardCardIndex = boardCards.findIndex(card => card.id === id);
     boardCards.splice(boardCardIndex, 1);
-    this.setState({boardCards: boardCards});
+	var result = "";
+    const delete_url = `${GET_API_URL}?id=${boardCard.id}`;
+    const method = "DELETE";
+    fetch(delete_url, {method})
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson.status);
+        this.setState({boardCards: boardCards});
+        if(responseJson.status=="SUCCESS"){
+	      console.log("OK");
+          const handCards = this.state.handCards;
+          handCards.unshift(boardCard);
+          this.setState({handCards: handCards});
+	    }else{
+	      console.log("BAD");
+	    }
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
 
-    const handCards = this.state.handCards;
-    handCards.unshift(boardCard);
-    this.setState({handCards: handCards});
   }
 
   handleDeleteCard(id) {
@@ -146,7 +189,7 @@ export class UserStoryMap extends Component {
           {boardCards}
 
         </div>
-        <button onClick={() => this.fetchData()}>だうんろおど</button>
+        <button onClick={() => this.fetchData()}>reload</button>
         {/*<div className="memo"></div>*/}
         <div className="hand">
           <Link to="/" className="link">
