@@ -6,13 +6,17 @@ import {LeanCanvas} from './LeanCanvas.js'
 import {Login} from './Login.js'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
+import { NewHeader } from './NewHeader.js'
+const NH = () => (<NewHeader />)
+
 const App = () => (
   <BrowserRouter>
     <div>
       <Route exact path='/' component={Home} />
-      <Route path='/userstorymap' component={UserStoryMap} /> 
-      <Route path='/leancanvas' component={LeanCanvas} />    
-      <Route path='/login' component={Login} /> 
+      <Route path='/userstorymap' component={UserStoryMap} />
+      <Route path='/leancanvas' component={LeanCanvas} />
+      <Route path='/login' component={Login} />
+      <Route path='/nh' component={NH} />
     </div>
   </BrowserRouter>
 )

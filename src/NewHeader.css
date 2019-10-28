@@ -1,0 +1,69 @@
+.new-header {
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  height: 40px;
+  padding: 4px;
+  background-color: #7DCEA0;
+}
+
+.header-left {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.header-icon {
+  display: inline-block;
+  margin: auto 0;
+  font-size: 3.2rem;
+}
+
+.header-title {
+  display: inline-block;
+  margin: auto 0;
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.header-btn {
+  display: inline-block;
+  width: auto;
+  height: 100%;
+  margin: auto 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: black;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+.header-btn:hover {
+  border-radius: 4px;
+  background-color: rgba(255,255,255,0.32);
+}
+
+.header-btn_login {
+  margin-left: 8px;
+  padding: 0 8px;
+}
+
+.header-btn_signup {
+  margin-left: 8px;
+  padding: 0 8px;
+  border: solid 2px black;
+  border-radius: 4px;
+}
