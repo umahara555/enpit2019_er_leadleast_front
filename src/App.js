@@ -7,7 +7,7 @@ import {Login} from './Login.js'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 import { NewHeader } from './NewHeader.js'
-const NH = () => (<NewHeader />)
+const NH = () => (<NewHeader isLoggedin={true}/>)
 
 const App = () => (
   <BrowserRouter>

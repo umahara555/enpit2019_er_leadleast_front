@@ -26,6 +26,10 @@
   width: 100%;
 }
 
+.header-right .header-btn {
+  margin-left: 8px;
+}
+
 .header-icon {
   display: inline-block;
   margin: auto 0;
@@ -57,12 +61,10 @@
 }
 
 .header-btn_login {
-  margin-left: 8px;
   padding: 0 8px;
 }
 
 .header-btn_signup {
-  margin-left: 8px;
   padding: 0 8px;
   border: solid 2px black;
   border-radius: 4px;

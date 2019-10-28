@@ -14,11 +14,15 @@ export class NewHeader extends Component {
           <p className="header-title">LL</p>
         </div>
         { (() => {
-          if (false) {
+          if (this.props.isLoggedin) {
             return (
               <div className="header-right">
-                <i className="material-icons header-icon">help_outline</i>
-                <i className="material-icons header-icon">account_circle</i>
+                <button className="header-btn">
+                  <i className="material-icons header-icon">help_outline</i>
+                </button>
+                <button className="header-btn">
+                  <i className="material-icons header-icon">account_circle</i>
+                </button>
               </div>
             );
           } else {
