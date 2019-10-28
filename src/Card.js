@@ -35,11 +35,18 @@ export class Card extends Component {
   }
 
   render() {
-    const moveButton = (
+    const upButton = (
       <button
         className="upButton"
         onClick={() => this.props.onClick()}
       >↑</button>
+    );
+    
+    const downButton = (
+      <button
+        className="downButton"
+        onClick={() => this.props.onClick()}
+      >↓</button>
     );
 
     const deleteButton = (
@@ -52,7 +59,8 @@ export class Card extends Component {
     return(
       <div>
         <div className="card">
-          {this.state.isEditMode && moveButton}
+          {this.state.isEditMode && upButton}
+          {!this.state.isEditMode && downButton}
           {this.state.isEditMode && deleteButton}
           <textarea onChange={this.handleChange}
                     placeholder="ここにアイディア"
