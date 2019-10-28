@@ -56,6 +56,19 @@ export class UserStoryMap extends Component {
     fetch(SET_API_URL, {method, headers, body}).then((res)=> res.json()).then(console.log).catch(console.error);
   }
 
+  deleteData(id) {
+    const delete_url = `${GET_API_URL}?id=${id}`;
+    const method = "DELETE";
+    fetch(delete_url, {method})
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson.status);
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+  }
+
   handleUpToBoard(id) {
     const handCards = this.state.handCards;
     const handCard = handCards.find(card => card.id === id);
@@ -73,9 +86,10 @@ export class UserStoryMap extends Component {
     boardCards.splice(boardCardIndex, 1);
     this.setState({boardCards: boardCards});
 
-    const handCards = this.state.handCards;
-    handCards.unshift(boardCard);
-    this.setState({handCards: handCards});
+    //const handCards = this.state.handCards;
+    //handCards.unshift(boardCard);
+    //this.setState({handCards: handCards});
+    this.deleteData(boardCard.id)
   }
 
   handleDeleteCard(id) {
@@ -146,7 +160,7 @@ export class UserStoryMap extends Component {
           {boardCards}
 
         </div>
-        <button onClick={() => this.fetchData()}>だうんろおど</button>
+        <button onClick={() => this.fetchData()}>reload</button>
         {/*<div className="memo"></div>*/}
         <div className="hand">
           <Link to="/" className="link">
