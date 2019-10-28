@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Home.css'
 import {Header} from './Header.js'
 import { Link } from 'react-router-dom';
+import bord from './images/title/bord.png';
 
 
 export class Home extends Component {
@@ -28,7 +29,7 @@ export class Home extends Component {
                </button>
           </div>
         </div>
-        <div className='link'>
+        {/*<div className='link'>
         Link list
           <Link to="/userstorymap">
             <p>・ホワイトボードへ</p>
@@ -39,7 +40,30 @@ export class Home extends Component {
           <Link to="/login">
             <p>・ログイン画面へ</p>
           </Link>
+        </div>*/}
+
+        <div className='Explanation-container-wrapper'>
+          <div className='Explanation-container'>
+            <div className='Explanation'>
+              <h3>エレベーターピッチ</h3>
+              <p>オンラインでアジャイルなプロダクトデザインしたい，<br/>
+              教育関係者（生徒，教員）向けの,<br/>
+              アジャイルなプロダクトデザイン支援を実現する，<br/>
+              LeadLeastというサービスです．<br/>
+              これは，オンラインでリーンキャンパスや<br/>
+              ユーザーストーリマップが共同編集ができ，<br/>
+              Googleスプレッドシートや<br/>
+              オンラインホワイトボードとは違い，<br/>
+              フォーマットが統一でき，<br/>
+              初学者でも一連の流れを体系的にデザインできる.<br/>
+              </p>
+            </div>
+            <div className='Explanation-image-wrapper'>
+              <img src={bord} className="SImg" />
+            </div>
+          </div>
         </div>
+
       </div>
 
     )
