@@ -80,14 +80,14 @@ export class UserStoryMap extends Component {
         const postResponseJson = await postResponse.json()
 
         // GET Board Data
-        const getResponse = await fetch(GET_API_URL)
-        if (!getResponse.ok) {
-          throw Error(getResponse.statusText)
-        }
-        const getResponseJson = await getResponse.json()
-        this.setState({
-          boardCards: getResponseJson.card_data,
-        });
+        // const getResponse = await fetch(GET_API_URL)
+        // if (!getResponse.ok) {
+        //   throw Error(getResponse.statusText)
+        // }
+        // const getResponseJson = await getResponse.json()
+        // this.setState({
+        //   boardCards: getResponseJson.card_data,
+        // });
       } catch (error) {
         console.log(error)
       }
