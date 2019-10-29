@@ -221,7 +221,7 @@ export class UserStoryMap extends Component {
           {boardCards}
 
         </div>
-        <button onClick={() => this.fetchData()}>reload</button>
+        {/*<button onClick={() => this.fetchData()}>reload</button>*/}
         {/*<div className="memo"></div>*/}
         <div className="hand">
           <Link to="/" className="link">
