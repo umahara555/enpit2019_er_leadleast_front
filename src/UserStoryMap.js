@@ -218,6 +218,7 @@ export class UserStoryMap extends Component {
         <ShowTips  onClick={() => this.tipsFlagChange()} />
 
         <div className="board">
+        <div className="split" />
           {boardCards}
 
         </div>
