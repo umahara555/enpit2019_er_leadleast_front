@@ -4,6 +4,8 @@ import {TipsUserStoryMap,ShowTips} from './tips.js'
 import {Header} from './Header.js'
 import {Link} from 'react-router-dom';
 import './UserStoryMap.css';
+import Draggable from 'react-draggable';
+
 
 
 const API_URL = 'http://localhost:5000/api/v1'
@@ -169,13 +171,29 @@ export class UserStoryMap extends Component {
     ));
 
     const boardCards = this.state.boardCards.map((cardInfo) => (
-      <Card key={cardInfo.id}
+          <Draggable
+        handle=".idou"
+        defaultPosition={{x: 0, y: 0}}
+        position={null}
+        grid={[25, 25]}
+        scale={1}
+        onStart={this.handleStart}
+        onDrag={this.handleDrag}
+        onStop={this.handleStop}>    
+        <div className="idou">
+      <Card
+            className="idou" 
+            key={cardInfo.id}
             value={cardInfo}
             onClick={this.handleDownToHand.bind(this, cardInfo.id)}
             onDeleteButtonClick={this.handleDeleteCard.bind(this, cardInfo.id)}
             updateState={this.updateState.bind(this)}
             isEditMode={false}
       />
+      </div>
+     </Draggable>
+
+      
     ));
 
     return(
@@ -186,9 +204,8 @@ export class UserStoryMap extends Component {
         <ShowTips  onClick={() => this.tipsFlagChange()} />
 
         <div className="board">
-        <div className="split" />
+        <div className="split" />        
           {boardCards}
-
         </div>
         <button onClick={() => this.fetchData()}>reload</button>
         {/*<div className="memo"></div>*/}
