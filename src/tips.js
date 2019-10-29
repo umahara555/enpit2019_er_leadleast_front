@@ -55,7 +55,7 @@ export class TipsUserStoryMap extends Component {
 				  </p>	
 				  <br /><br />			
 				  <h1>
-				    	ex.このTipsは画面右上のTipsボタンをクリックで再表示されます。<br />
+				    	ex.このガイドは画面右上のGUIDEボタンをクリックで再表示されます。<br />
 				  </h1>						  
 				  </div>
 				  <button className="closeButton"
@@ -72,7 +72,7 @@ export class ShowTips extends Component {
 		return(
 			<button className="openButton"
 					     onClick={() => this.props.onClick()}>
-					           TIPS
+					           GUIDE
 			</button>
 		);
 	}

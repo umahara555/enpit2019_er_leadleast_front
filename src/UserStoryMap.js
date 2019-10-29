@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import './UserStoryMap.css';
 
 
-const API_URL = 'http://localhost:8000/api/v1'
+const API_URL = 'http://localhost:5000/api/v1'
 const SET_API_URL = API_URL + '/handcards';
 const GET_API_URL = API_URL + '/handcards';
 
