@@ -5,6 +5,7 @@ import {Home} from './Home.js'
 import {LeanCanvas} from './LeanCanvas.js'
 import {Login} from './Login.js'
 import {ElevatorPitch} from './elevatorPitch.js'
+import {ProductBacklog} from './ProductBacklog.js'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
       <Route path='/leancanvas' component={LeanCanvas} />    
       <Route path='/login' component={Login} /> 
       <Route path='/elevatorpitch' component={ElevatorPitch} /> 
+      <Route path='/productbacklog' component={ProductBacklog} />
     </div>
   </BrowserRouter>
 )
