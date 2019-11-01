@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {Card, CardAddButton} from './Card.js';
+import {Card, CardAddButton, Card1, Card2} from './Card.js';
 import {TipsUserStoryMap,ShowTips} from './tips.js'
 import {Header} from './Header.js'
 import {Link} from 'react-router-dom';
 import './UserStoryMap.css';
 
 
-const API_URL = 'http://localhost:5000/api/v1'
+const API_URL = 'http://localhost5000/api/v1'
 const SET_API_URL = API_URL + '/handcards';
 const GET_API_URL = API_URL + '/handcards';
 
@@ -15,8 +15,9 @@ export class UserStoryMap extends Component {
     super(props);
     this.state = {
       tipsFlag: true,
-      handCards: [],
-      boardCards: [],
+      boardCards: ["1","2","3","4","5","6","7"],
+      boardCards1: ["1","2","3","4","5","6","7"],
+      boardCards2:["1","2","3","4","5","6","7"],
     };
     this.fetchData();
   }
@@ -158,25 +159,18 @@ export class UserStoryMap extends Component {
   }
 
   render() {
-    const handCards = this.state.handCards.map((cardInfo) => (
-      <Card key={cardInfo.id}
-            value={cardInfo}
-            onClick={this.handleUpToBoard.bind(this, cardInfo.id)}
-            onDeleteButtonClick={this.handleDeleteCard.bind(this, cardInfo.id)}
-            updateState={this.updateState.bind(this)}
-            isEditMode={true}
-      />
+    const boardCards = this.state.boardCards.map((cardInfo) => (
+      <Card />
     ));
 
-    const boardCards = this.state.boardCards.map((cardInfo) => (
-      <Card key={cardInfo.id}
-            value={cardInfo}
-            onClick={this.handleDownToHand.bind(this, cardInfo.id)}
-            onDeleteButtonClick={this.handleDeleteCard.bind(this, cardInfo.id)}
-            updateState={this.updateState.bind(this)}
-            isEditMode={false}
-      />
+    const boardCards1 = this.state.boardCards1.map((cardInfo) => (
+      <Card1 />
     ));
+    
+    const boardCards2 = this.state.boardCards2.map((cardInfo) => (
+      <Card2 />
+    ));
+    
 
     return(
     <div>
@@ -188,17 +182,13 @@ export class UserStoryMap extends Component {
         <div className="board">
         <div className="split" />
           {boardCards}
-
+          {boardCards1}
+          {boardCards2}
+          {boardCards2}
+          {boardCards2}
         </div>
         <button onClick={() => this.fetchData()}>reload</button>
         {/*<div className="memo"></div>*/}
-        <div className="hand">
-          <Link to="/" className="link">
-            <h1>・Homeへ</h1>
-          </Link>
-          <CardAddButton onClick={() => this.handleClick()}/>
-          {handCards}
-        </div>
       </div>
    </div>
     );
