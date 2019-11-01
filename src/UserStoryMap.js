@@ -4,6 +4,8 @@ import {TipsUserStoryMap,ShowTips} from './tips.js'
 import {Header} from './Header.js'
 import {Link} from 'react-router-dom';
 import './UserStoryMap.css';
+import {MoveHomeButton} from './tips.js'
+
 
 
 const API_URL = 'http://localhost5000/api/v1'
@@ -178,7 +180,7 @@ export class UserStoryMap extends Component {
       <div className="App">
         <Header className="header" title={'ユーザーストーリーマップ'}/>
         <ShowTips  onClick={() => this.tipsFlagChange()} />
-
+        <MoveHomeButton />
         <div className="board">
         <div className="split" />
           {boardCards}

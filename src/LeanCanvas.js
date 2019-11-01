@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './LeanCanvas.css'
 import {Header} from './Header.js'
 import { Link } from 'react-router-dom';
+import {MoveHomeButton} from './tips.js'
 
 
 export class LeanCanvas extends Component {
@@ -9,6 +10,7 @@ export class LeanCanvas extends Component {
     return(
       <div>
         <Header className='header' title='LeanCanvas' />
+        <MoveHomeButton />
         <div className='lean'>
             <div className="kadai">
                 <textarea className="name" readOnly >

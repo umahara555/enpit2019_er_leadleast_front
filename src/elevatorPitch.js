@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './elevatorPitch.css';
 import {Header} from './Header.js'
+import {MoveHomeButton} from './tips.js'
+
 
 export class ElevatorPitch extends Component {
 	
@@ -8,6 +10,7 @@ export class ElevatorPitch extends Component {
 		return(
 		<div>
 		        <Header className="header" title={'エレベーターピッチ'}/>
+		        <MoveHomeButton />
 			<div className="low">
 				<textarea />
 				<p>したい</p>

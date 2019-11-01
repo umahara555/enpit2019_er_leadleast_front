@@ -6,6 +6,8 @@ import husentuika from './images/userstorymap-tips/husentuika.png';
 import tehudahue from './images/userstorymap-tips/tehudahue.png';
 import tehudaex from './images/userstorymap-tips/tehudaex.png';
 import banidasu from './images/userstorymap-tips/banidasu.png';
+import {Link} from 'react-router-dom';
+
 
 export class TipsUserStoryMap extends Component {
 	render() {
@@ -74,6 +76,16 @@ export class ShowTips extends Component {
 					     onClick={() => this.props.onClick()}>
 					           GUIDE
 			</button>
+		);
+	}
+}
+
+export class MoveHomeButton extends Component {
+	render() {
+		return(
+　　　<Link to="/" className="homeButton">
+            <p>HOME</p>
+          </Link>  					           
 		);
 	}
 }

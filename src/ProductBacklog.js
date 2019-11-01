@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import './ProductBacklog.css';
 import {Header} from './Header.js'
+import {MoveHomeButton} from './tips.js'
+
+
 
 export class ProductBacklog extends Component {
 	
@@ -8,39 +11,39 @@ export class ProductBacklog extends Component {
 		return(
 		<div>
 		        <Header className="header" title={'プロダクトバックログ'}/>
-		        <div className="low">
+				<MoveHomeButton />
+		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
 		        </div>	
-		        <div className="low">
+		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
 		        </div>	
-		        <div className="low">
+		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
 		        </div>	
-		        <div className="low">
+		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
 		        </div>			        		        		        
-		        <div className="low">
+		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
 		        </div>	
-		        <div className="low">
+		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
 		        </div>	
-		        <div className="low">
+		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
 		        </div>
-		        <div className="low">
+		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
-		        </div>		        
-		        		        
+		        </div>		 
 		</div>
 		)
 	}

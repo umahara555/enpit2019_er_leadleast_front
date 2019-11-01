@@ -73,3 +73,21 @@
 .openButton:focus {
   outline:0;
 }
+
+.homeButton {
+	position: absolute;
+	right: 10%;
+	top:12px;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  background: #ECECEC;
+  transition: .4s;
+
+}
+
+.homeButton p {
+  font-size:24px;
+}
