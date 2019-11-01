@@ -17,10 +17,10 @@ export class Home extends Component {
        	  </h1>  
        	  <br /><br />
        	  <Link to="/userstorymap" className="serviseLink">
-            <p>・ホワイトボードへ</p>
+            <p>・ユーザーストーリーマップへ</p>
           </Link>  
           <Link to="/leancanvas" className="serviseLink">
-            <p>・リーンキャンパスへ</p>
+            <p>・リーンキャンバスへ</p>
           </Link>   
           <Link to="/elevatorpitch" className="serviseLink">
             <p>・エレベーターピッチへ</p>

@@ -9,7 +9,7 @@ export class LeanCanvas extends Component {
   render(){
     return(
       <div>
-        <Header className='header' title='LeanCanvas' />
+        <Header className='header' title='リーンキャンバス' />
         <MoveHomeButton />
         <div className='lean'>
             <div className="kadai">
