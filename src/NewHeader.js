@@ -8,14 +8,13 @@ export class NewHeader extends Component {
       <div className="new-header">
         <div className="header-left">
           <button className="header-btn">
-            <i className="material-icons header-icon">menu</i>
+            <i className="material-icons-outlined header-icon">home</i>
           </button>
         </div>
         <div className="header-center">
           <Link to="/" className="header-title">
             <p>Lead Least</p>
           </Link>
-          {/*<p className="header-title">LL</p>*/}
         </div>
         { (() => {
           if (this.props.isLoggedin) {
@@ -25,7 +24,7 @@ export class NewHeader extends Component {
                   <i className="material-icons header-icon">help_outline</i>
                 </button>
                 <button className="header-btn">
-                  <i className="material-icons header-icon">account_circle</i>
+                  <i className="material-icons-outlined header-icon">account_circle</i>
                 </button>
               </div>
             );
