@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './NewHeader.css';
 
 export class NewHeader extends Component {
@@ -11,7 +12,10 @@ export class NewHeader extends Component {
           </button>
         </div>
         <div className="header-center">
-          <p className="header-title">LL</p>
+          <Link to="/" className="header-title">
+            <p>Lead Least</p>
+          </Link>
+          {/*<p className="header-title">LL</p>*/}
         </div>
         { (() => {
           if (this.props.isLoggedin) {
