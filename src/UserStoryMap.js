@@ -9,6 +9,7 @@ import './UserStoryMap.css';
 const API_URL = 'http://localhost:5000/api/v1'
 const SET_API_URL = API_URL + '/handcards';
 const GET_API_URL = API_URL + '/handcards';
+const API_WS_URL = 'ws://localhost:5000/cable';
 
 export class UserStoryMap extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export class UserStoryMap extends Component {
       tipsFlag: true,
       handCards: [],
       boardCards: [],
+      ws: null,
     };
     this.fetchData();
   }
@@ -78,14 +80,14 @@ export class UserStoryMap extends Component {
         const postResponseJson = await postResponse.json()
 
         // GET Board Data
-        const getResponse = await fetch(GET_API_URL)
-        if (!getResponse.ok) {
-          throw Error(getResponse.statusText)
-        }
-        const getResponseJson = await getResponse.json()
-        this.setState({
-          boardCards: getResponseJson.card_data,
-        });
+        // const getResponse = await fetch(GET_API_URL)
+        // if (!getResponse.ok) {
+        //   throw Error(getResponse.statusText)
+        // }
+        // const getResponseJson = await getResponse.json()
+        // this.setState({
+        //   boardCards: getResponseJson.card_data,
+        // });
       } catch (error) {
         console.log(error)
       }
@@ -157,6 +159,36 @@ export class UserStoryMap extends Component {
       this.setState({tipsFlag: !this.state.tipsFlag});
   }
 
+  componentDidMount() {
+      const ws = new WebSocket(API_WS_URL);
+      ws.onopen = () => {
+        ws.send(
+          JSON.stringify(
+            {"command": "subscribe",
+             "identifier":"{\"channel\":\"BoardChannel\"}"}
+          )
+        );
+      };
+      ws.onmessage = this.handleBoard.bind(this);
+      this.setState({ws: ws});
+  }
+
+  componentWillUnmount() {
+    this.state.ws.close();
+  }
+
+  handleBoard(event) {
+    const data = JSON.parse(event.data);
+    if ('message' in data) {
+      const messageData = JSON.parse(data.message);
+      if (typeof(messageData) == 'object' && 'card_data' in messageData) {
+        this.setState({
+          boardCards: messageData.card_data,
+        });
+      }
+    }
+  }
+
   render() {
     const handCards = this.state.handCards.map((cardInfo) => (
       <Card key={cardInfo.id}
@@ -186,10 +218,11 @@ export class UserStoryMap extends Component {
         <ShowTips  onClick={() => this.tipsFlagChange()} />
 
         <div className="board">
+        {/*<div className="split" />*/}
           {boardCards}
 
         </div>
-        <button onClick={() => this.fetchData()}>reload</button>
+        {/*<button onClick={() => this.fetchData()}>reload</button>*/}
         {/*<div className="memo"></div>*/}
         <div className="hand">
           <Link to="/" className="link">
