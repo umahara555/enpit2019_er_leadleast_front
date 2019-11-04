@@ -2,14 +2,26 @@ import React, {Component} from 'react';
 import './LeanCanvas.css'
 import {Header} from './Header.js'
 import { Link } from 'react-router-dom';
-import {MoveHomeButton} from './tips.js'
+import {TipsLeanCanvas,ShowTips, MoveHomeButton} from './tips.js'
 
 
 export class LeanCanvas extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tipsFlag: true,
+    };
+  }
+  
+  tipsFlagChange() {
+      this.setState({tipsFlag: !this.state.tipsFlag});
+  }
   render(){
-    return(
+    return(    
       <div>
+      { this.state.tipsFlag && <TipsLeanCanvas onClick={() => this.tipsFlagChange()} /> }      
         <Header className='header' title='リーンキャンバス' />
+        <ShowTips  onClick={() => this.tipsFlagChange()} />        
         <MoveHomeButton />
         <div className='lean'>
             <div className="kadai">

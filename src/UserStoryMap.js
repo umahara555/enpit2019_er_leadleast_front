@@ -17,8 +17,8 @@ export class UserStoryMap extends Component {
     super(props);
     this.state = {
       tipsFlag: true,
-      boardCards: ["1","2","3","4","5","6","7"],
-      boardCards1: ["1","2","3","4","5","6","7"],
+      boardCards: ["1","2","3","4","5","6"],
+      boardCards1: ["1","2","3","4","5","6"],
       boardCards2:["1","2","3","4","5","6","7"],
     };
     this.fetchData();
@@ -181,6 +181,9 @@ export class UserStoryMap extends Component {
         <Header className="header" title={'ユーザーストーリーマップ'}/>
         <ShowTips  onClick={() => this.tipsFlagChange()} />
         <MoveHomeButton />
+        <Link to="/productbacklog" className="Usnext">
+            <p>→</p>
+        </Link>
         <div className="board">
         <div className="split" />
           {boardCards}

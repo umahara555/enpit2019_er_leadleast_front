@@ -1,15 +1,29 @@
 import React, {Component} from 'react';
 import './elevatorPitch.css';
 import {Header} from './Header.js'
-import {MoveHomeButton} from './tips.js'
+import {TipsElevatorPitch,ShowTips, MoveHomeButton} from './tips.js'
+
 
 
 export class ElevatorPitch extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      tipsFlag: true,
+    };
+  }
+  
+  tipsFlagChange() {
+      this.setState({tipsFlag: !this.state.tipsFlag});
+  }  
 	
 	render() {
 		return(
 		<div>
+      { this.state.tipsFlag && <TipsElevatorPitch onClick={() => this.tipsFlagChange()} /> }      		
 		        <Header className="header" title={'エレベーターピッチ'}/>
+        <ShowTips  onClick={() => this.tipsFlagChange()} />    		        
 		        <MoveHomeButton />
 			<div className="low">
 				<textarea />

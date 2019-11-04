@@ -69,6 +69,56 @@ export class TipsUserStoryMap extends Component {
 	}
 }
 
+export class TipsLeanCanvas extends Component {
+	render() {
+		return(
+			<div className="tips-wrapper">
+				<div className="tips">
+				<Header className="header" title={'このページの使い方'}/>								  
+				  </div>
+				  <button className="closeButton"
+			    		onClick={() => this.props.onClick()}>
+			  		           x
+			      </button>				
+			</div>
+		);
+	}
+}
+
+export class TipsElevatorPitch extends Component {
+	render() {
+		return(
+			<div className="tips-wrapper">
+				<div className="tips">
+				<Header className="header" title={'このページの使い方'}/>								  
+				  </div>
+				  <button className="closeButton"
+			    		onClick={() => this.props.onClick()}>
+			  		           x
+			      </button>				
+			</div>
+		);
+	}
+}
+
+export class TipsProductBacklog extends Component {
+	render() {
+		return(
+			<div className="tips-wrapper">
+				<div className="tips">
+				<Header className="header" title={'このページの使い方'}/>								  
+				  </div>
+				  <button className="closeButton"
+			    		onClick={() => this.props.onClick()}>
+			  		           x
+			      </button>				
+			</div>
+		);
+	}
+}
+
+
+
 export class ShowTips extends Component {
 	render() {
 		return(
@@ -79,6 +129,7 @@ export class ShowTips extends Component {
 		);
 	}
 }
+
 
 export class MoveHomeButton extends Component {
 	render() {

@@ -16,15 +16,15 @@ export class Home extends Component {
        	     下記のリンクから目的のページへと移動できます。
        	  </h1>  
        	  <br /><br />
-       	  <Link to="/userstorymap" className="serviseLink">
-            <p>・ユーザーストーリーマップへ</p>
-          </Link>  
           <Link to="/leancanvas" className="serviseLink">
             <p>・リーンキャンバスへ</p>
-          </Link>   
+          </Link>          	  
           <Link to="/elevatorpitch" className="serviseLink">
             <p>・エレベーターピッチへ</p>
           </Link>  
+       	  <Link to="/userstorymap" className="serviseLink">
+            <p>・ユーザーストーリーマップへ</p>
+          </Link>            
           <Link to="/productbacklog" className="serviseLink">
             <p>・プロダクトバックログへ</p>
           </Link>  
