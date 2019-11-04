@@ -38,6 +38,10 @@ export class ElevatorPitch extends Component {
 				<p>というプロダクトは、</p>
 			</div>			
 			<div className="low">
+				<textarea />
+				<p>です。</p>
+			</div>					
+			<div className="low">
 				<p>これは</p>
 				<textarea />
 				<p>ができ、</p>

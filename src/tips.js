@@ -16,7 +16,7 @@ export class TipsUserStoryMap extends Component {
 				<div className="tips">
 				<Header className="header" title={'このページの使い方'}/>			
 	
-
+{/*
                   <br /><br />
 				  <h1>
 				    	1.「付箋追加ボタンをクリックして、手札に付箋を増やそう。」<br />
@@ -58,7 +58,19 @@ export class TipsUserStoryMap extends Component {
 				  <br /><br />			
 				  <h1>
 				    	ex.このガイドは画面右上のGUIDEボタンをクリックで再表示されます。<br />
-				  </h1>						  
+				  </h1>	
+				  */}
+				  <h1>
+				  <br /> ユーザーストーリーマップを書きましょう<br/>   <br/>  
+				  	青の付箋にはユーザーストーリーの骨格<br/>  
+				  	ピンクの付箋にはユーザーストーリーの流れ<br/>  
+				  	黄の付箋にはユーザーストーリーの詳細<br/>  
+				  	を書き起こしましょう。<br/> <br/>
+				  					終了したら画面右上にあるNEXTボタンでプロダクトバックログに移動しましょう。<br/>
+				 <h1 className="alart">			
+				内容は保存されないので、スクリーンショット等で記録しておいてください。
+				</h1>
+				  </h1>					  
 				  </div>
 				  <button className="closeButton"
 			    		onClick={() => this.props.onClick()}>
@@ -75,6 +87,15 @@ export class TipsLeanCanvas extends Component {
 			<div className="tips-wrapper">
 				<div className="tips">
 				<Header className="header" title={'このページの使い方'}/>								  
+				<h1>
+				<br/>  
+				リーンキャンバスに取り組みましょう。<br/>  <br/>  
+				それぞれの題にそって枠の中に内容を書き込んでください。<br/>  <br/>  
+				終了したら画面右上にあるNEXTボタンでエレベーターピッチに移動しましょう。
+				<h1 className="alart">			
+				内容は保存されないので、スクリーンショット等で記録しておいてください。
+				</h1>
+				</h1>
 				  </div>
 				  <button className="closeButton"
 			    		onClick={() => this.props.onClick()}>
@@ -90,7 +111,15 @@ export class TipsElevatorPitch extends Component {
 		return(
 			<div className="tips-wrapper">
 				<div className="tips">
-				<Header className="header" title={'このページの使い方'}/>								  
+				<Header className="header" title={'このページの使い方'}/>							
+				<h1>
+					<br/>  エレベーターピッチに取り組みましょう<br/>  <br/>  
+					枠内に対応の文を書き込んでください。<br/><br/>
+									終了したら画面右上にあるNEXTボタンでユーザーストーリーマップに移動しましょう。<br/>
+				<h1 className="alart">					
+				内容は保存されないので、スクリーンショット等で記録しておいてください。
+					</h1>
+				</h1>	  
 				  </div>
 				  <button className="closeButton"
 			    		onClick={() => this.props.onClick()}>
@@ -106,7 +135,15 @@ export class TipsProductBacklog extends Component {
 		return(
 			<div className="tips-wrapper">
 				<div className="tips">
-				<Header className="header" title={'このページの使い方'}/>								  
+				<Header className="header" title={'このページの使い方'}/>								
+				<h1>
+				<br/>  
+				プロダクトバックログに取り組みましょう。<br/>  <br/>  
+				枠内に対応の文を書き込んでください。  <br/><br/>
+				<h1 className="alart">			
+				内容は保存されないので、スクリーンショット等で記録しておいてください。
+				</h1>
+				</h1>
 				  </div>
 				  <button className="closeButton"
 			    		onClick={() => this.props.onClick()}>
