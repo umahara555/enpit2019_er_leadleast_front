@@ -25,7 +25,6 @@ export class ElevatorPitch extends Component {
 		        <Header className="header" title={'エレベーターピッチ'}/>
         <ShowTips  onClick={() => this.tipsFlagChange()} />
         <NextButton urlName="/userstorymap" />
-		        <MoveHomeButton />
 			<div className="low">
 				<textarea />
 				<p>したい</p>

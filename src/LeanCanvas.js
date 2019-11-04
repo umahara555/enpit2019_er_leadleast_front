@@ -23,7 +23,6 @@ export class LeanCanvas extends Component {
         <Header className='header' title='リーンキャンバス' />
         <ShowTips  onClick={() => this.tipsFlagChange()} />        
         <NextButton urlName="/elevatorpitch" />
-        <MoveHomeButton />
         <div className='lean'>
             <div className="kadai">
                 <textarea className="name" readOnly >

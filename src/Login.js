@@ -10,7 +10,6 @@ export class Login extends Component {
     return(
       <div>
         <Header className='header' title='ログイン'/>
-        <MoveHomeButton />
         <div className='login'>
           <h1>
             ようこそ、ゲストさん。<br />

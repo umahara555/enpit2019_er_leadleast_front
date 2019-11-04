@@ -25,7 +25,6 @@ export class ProductBacklog extends Component {
 			
 		        <Header className="header" title={'プロダクトバックログ'}/>
         <ShowTips  onClick={() => this.tipsFlagChange()} />    		        
-				<MoveHomeButton />
 		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
