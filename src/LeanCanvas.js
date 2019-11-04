@@ -22,7 +22,6 @@ export class LeanCanvas extends Component {
       { this.state.tipsFlag && <TipsLeanCanvas onClick={() => this.tipsFlagChange()} /> }      
         <Header className='header' title='リーンキャンバス' />
         <ShowTips  onClick={() => this.tipsFlagChange()} />        
-        <MoveHomeButton />
         <div className='lean'>
             <div className="kadai">
                 <textarea className="name" readOnly >
