@@ -15,7 +15,10 @@ export class TipsUserStoryMap extends Component {
 			<div className="tips-container">
 				<div className="tips-background" onClick={() => this.props.onClick()}></div>
 				<div className="tips">
-				<Header className="header" title={'このページの使い方'}/>
+				<div className="tips-header">
+					<p>このページの使い方</p>
+				</div>
+				{/*]<Header className="header" title={'このページの使い方'}/>*/}
 
 
                   <br /><br />
