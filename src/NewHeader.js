@@ -7,9 +7,9 @@ export class NewHeader extends Component {
     return(
       <div className="new-header">
         <div className="header-left">
-          <button className="header-btn">
+          <Link to="/" className="header-btn">
             <i className="material-icons-outlined header-icon">home</i>
-          </button>
+          </Link>
         </div>
         <div className="header-center">
           <Link to="/" className="header-title">

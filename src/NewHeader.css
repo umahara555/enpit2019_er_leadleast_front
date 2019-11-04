@@ -49,25 +49,27 @@
   opacity: 1;
 }
 
+.header-icon {
+  display: inline-block;
+  position: relative;
+  margin: auto 0;
+  font-size: 2.4rem;
+  line-height: 40px;
+  color: black;
+}
+
 .header-btn {
   display: inline-block;
   position: relative;
   width: 40px;
   height: 40px;
   margin: auto 0;
-  padding: auto;
   font-size: 1.2rem;
   font-weight: 600;
   color: black;
+  text-align: center;
   border: none;
   background-color: rgba(0,0,0,0);
-}
-
-.header-icon {
-  display: inline-block;
-  margin: auto 0;
-  font-size: 2.4rem;
-  color: black;
 }
 
 .header-btn:hover {
