@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Card, CardAddButton, Card1, Card2} from './Card.js';
-import {TipsUserStoryMap,ShowTips} from './tips.js'
+import {TipsUserStoryMap,ShowTips, NextButton} from './tips.js'
 import {Header} from './Header.js'
 import {Link} from 'react-router-dom';
 import './UserStoryMap.css';
@@ -19,7 +19,7 @@ export class UserStoryMap extends Component {
       tipsFlag: true,
       boardCards: ["1","2","3","4","5","6"],
       boardCards1: ["1","2","3","4","5","6"],
-      boardCards2:["1","2","3","4","5","6","7"],
+      boardCards2:["1","2","3","4","5","6","7","8","9","10"],
     };
     this.fetchData();
   }
@@ -180,10 +180,8 @@ export class UserStoryMap extends Component {
       <div className="App">
         <Header className="header" title={'ユーザーストーリーマップ'}/>
         <ShowTips  onClick={() => this.tipsFlagChange()} />
+        <NextButton urlName="/productbacklog" />        
         <MoveHomeButton />
-        <Link to="/productbacklog" className="Usnext">
-            <p>→</p>
-        </Link>
         <div className="board">
         <div className="split" />
           {boardCards}

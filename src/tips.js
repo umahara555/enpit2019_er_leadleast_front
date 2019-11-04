@@ -140,3 +140,13 @@ export class MoveHomeButton extends Component {
 		);
 	}
 }
+
+export class NextButton extends Component {
+	render() {
+		return(
+　　　<Link to={this.props.urlName} className="nextButton">
+            <p>Next</p>
+          </Link>  					           
+		);
+	}
+}
