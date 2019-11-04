@@ -17,22 +17,6 @@ export class CardAddButton extends Component {
 }
 
 export class Card extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      id: this.props.value.id,
-      text: this.props.value.text,
-      isEditMode: this.props.isEditMode,
-    }
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(e) {
-    const state = this.state;
-    state.text = e.target.value;
-    this.setState(state);
-    this.props.updateState(state);
-  }
 
   render() {
     const upButton = (
@@ -59,16 +43,92 @@ export class Card extends Component {
     return(
       <div>
         <div className="card">
-          {this.state.isEditMode && upButton}
-          {!this.state.isEditMode && downButton}
-          {this.state.isEditMode && deleteButton}
+
           <textarea onChange={this.handleChange}
                     placeholder="ここにアイディア"
-                    value={this.state.text}
-                    readOnly={!this.state.isEditMode}
+
           />
         </div>
       </div>
     );
   }
 }
+
+
+export class Card1 extends Component {
+
+  render() {
+    const upButton = (
+      <button
+        className="upButton"
+        onClick={() => this.props.onClick()}
+      >↑</button>
+    );
+    
+    const downButton = (
+      <button
+        className="downButton"
+        onClick={() => this.props.onClick()}
+      >↓</button>
+    );
+
+    const deleteButton = (
+      <button
+        className="deleteButton"
+        onClick={() => this.props.onDeleteButtonClick()}
+      >x</button>
+    );
+
+    return(
+      <div>
+        <div className="card1">
+
+          <textarea onChange={this.handleChange}
+                    placeholder="ここにアイディア"
+
+          />
+        </div>
+      </div>
+    );
+  }
+}
+
+
+export class Card2 extends Component {
+
+  render() {
+    const upButton = (
+      <button
+        className="upButton"
+        onClick={() => this.props.onClick()}
+      >↑</button>
+    );
+    
+    const downButton = (
+      <button
+        className="downButton"
+        onClick={() => this.props.onClick()}
+      >↓</button>
+    );
+
+    const deleteButton = (
+      <button
+        className="deleteButton"
+        onClick={() => this.props.onDeleteButtonClick()}
+      >x</button>
+    );
+
+    return(
+      <div>
+        <div className="card2">
+
+          <textarea onChange={this.handleChange}
+                    placeholder="ここにアイディア"
+
+          />
+        </div>
+      </div>
+    );
+  }
+}
+

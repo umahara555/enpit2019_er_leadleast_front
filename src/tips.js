@@ -6,6 +6,8 @@ import husentuika from './images/userstorymap-tips/husentuika.png';
 import tehudahue from './images/userstorymap-tips/tehudahue.png';
 import tehudaex from './images/userstorymap-tips/tehudaex.png';
 import banidasu from './images/userstorymap-tips/banidasu.png';
+import {Link} from 'react-router-dom';
+
 
 export class TipsUserStoryMap extends Component {
 	render() {
@@ -68,6 +70,56 @@ export class TipsUserStoryMap extends Component {
 	}
 }
 
+export class TipsLeanCanvas extends Component {
+	render() {
+		return(
+			<div className="tips-wrapper">
+				<div className="tips">
+				<Header className="header" title={'このページの使い方'}/>								  
+				  </div>
+				  <button className="closeButton"
+			    		onClick={() => this.props.onClick()}>
+			  		           x
+			      </button>				
+			</div>
+		);
+	}
+}
+
+export class TipsElevatorPitch extends Component {
+	render() {
+		return(
+			<div className="tips-wrapper">
+				<div className="tips">
+				<Header className="header" title={'このページの使い方'}/>								  
+				  </div>
+				  <button className="closeButton"
+			    		onClick={() => this.props.onClick()}>
+			  		           x
+			      </button>				
+			</div>
+		);
+	}
+}
+
+export class TipsProductBacklog extends Component {
+	render() {
+		return(
+			<div className="tips-wrapper">
+				<div className="tips">
+				<Header className="header" title={'このページの使い方'}/>								  
+				  </div>
+				  <button className="closeButton"
+			    		onClick={() => this.props.onClick()}>
+			  		           x
+			      </button>				
+			</div>
+		);
+	}
+}
+
+
+
 export class ShowTips extends Component {
 	render() {
 		return(
@@ -75,6 +127,17 @@ export class ShowTips extends Component {
 					     onClick={() => this.props.onClick()}>
 					           GUIDE
 			</button>
+		);
+	}
+}
+
+
+export class MoveHomeButton extends Component {
+	render() {
+		return(
+　　　<Link to="/" className="homeButton">
+            <p>HOME</p>
+          </Link>  					           
 		);
 	}
 }
