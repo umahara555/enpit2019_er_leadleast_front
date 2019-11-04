@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './LeanCanvas.css'
 import {Header} from './Header.js'
 import { Link } from 'react-router-dom';
-import {TipsLeanCanvas,ShowTips, MoveHomeButton} from './tips.js'
+import {TipsLeanCanvas,ShowTips, MoveHomeButton, NextButton} from './tips.js'
 
 
 export class LeanCanvas extends Component {
@@ -22,6 +22,8 @@ export class LeanCanvas extends Component {
       { this.state.tipsFlag && <TipsLeanCanvas onClick={() => this.tipsFlagChange()} /> }      
         <Header className='header' title='リーンキャンバス' />
         <ShowTips  onClick={() => this.tipsFlagChange()} />        
+        <NextButton urlName="/elevatorpitch" />
+        <MoveHomeButton />
         <div className='lean'>
             <div className="kadai">
                 <textarea className="name" readOnly >

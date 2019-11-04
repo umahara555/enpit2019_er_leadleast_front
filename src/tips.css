@@ -1,18 +1,10 @@
-.tips-container {
+.tips-wrapper { 
 	position: fixed;
-
+	background-color: rgba(100,100,100,0.5);;
 	width: 100vw;
 	height: 100vh;
 	z-index: 2;
 }
-
-.tips-background {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(100,100,100,0.5);;
-}
-
 .header {
 	display: relative;
 }
@@ -36,18 +28,6 @@
 .tips h1 {
 	font-size:24px;
 }
-
-.tips-header {
-	width: 100%;
-	height: 40px;
-	background-color: #7DCEA0;
-}
-
-.tips-header p {
-	font-size: 2.4rem;
-  font-weight: 800;
-}
-
 .SImg {
 	position: relative;
 	top: 0;
@@ -81,7 +61,7 @@
 
 .openButton {
 	position: absolute;
-	right: 30px;
+	right: 90px;
 	display: inline-box;
 	width: 48px;
 	height: 32px;
@@ -92,4 +72,40 @@
 
 .openButton:focus {
   outline:0;
+}
+
+.homeButton {
+	position: absolute;
+	right: 10%;
+	top:12px;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  background: #ECECEC;
+  transition: .4s;
+
+}
+
+.homeButton p {
+  font-size:24px;
+}
+
+.nextButton {
+	position: absolute;
+	right: 1%;
+	top:12px;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #00BCD4;
+  background: #ECECEC;
+  transition: .4s;
+
+}
+
+.nextButton p {
+  font-size:24px;
 }

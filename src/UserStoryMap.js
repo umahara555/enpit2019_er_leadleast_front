@@ -1,24 +1,25 @@
 import React, {Component} from 'react';
-import {Card, CardAddButton} from './Card.js';
-import {TipsUserStoryMap,ShowTips} from './tips.js'
+import {Card, CardAddButton, Card1, Card2} from './Card.js';
+import {TipsUserStoryMap,ShowTips, NextButton} from './tips.js'
 import {Header} from './Header.js'
 import {Link} from 'react-router-dom';
 import './UserStoryMap.css';
+import {MoveHomeButton} from './tips.js'
 
 
-const API_URL = 'http://localhost:5000/api/v1'
+
+const API_URL = 'http://localhost5000/api/v1'
 const SET_API_URL = API_URL + '/handcards';
 const GET_API_URL = API_URL + '/handcards';
-const API_WS_URL = 'ws://localhost:5000/cable';
 
 export class UserStoryMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
       tipsFlag: true,
-      handCards: [],
-      boardCards: [],
-      ws: null,
+      boardCards: ["1","2","3","4","5","6"],
+      boardCards1: ["1","2","3","4","5","6"],
+      boardCards2:["1","2","3","4","5","6","7","8","9","10"],
     };
     this.fetchData();
   }
@@ -80,14 +81,14 @@ export class UserStoryMap extends Component {
         const postResponseJson = await postResponse.json()
 
         // GET Board Data
-        // const getResponse = await fetch(GET_API_URL)
-        // if (!getResponse.ok) {
-        //   throw Error(getResponse.statusText)
-        // }
-        // const getResponseJson = await getResponse.json()
-        // this.setState({
-        //   boardCards: getResponseJson.card_data,
-        // });
+        const getResponse = await fetch(GET_API_URL)
+        if (!getResponse.ok) {
+          throw Error(getResponse.statusText)
+        }
+        const getResponseJson = await getResponse.json()
+        this.setState({
+          boardCards: getResponseJson.card_data,
+        });
       } catch (error) {
         console.log(error)
       }
@@ -159,78 +160,38 @@ export class UserStoryMap extends Component {
       this.setState({tipsFlag: !this.state.tipsFlag});
   }
 
-  componentDidMount() {
-      const ws = new WebSocket(API_WS_URL);
-      ws.onopen = () => {
-        ws.send(
-          JSON.stringify(
-            {"command": "subscribe",
-             "identifier":"{\"channel\":\"BoardChannel\"}"}
-          )
-        );
-      };
-      ws.onmessage = this.handleBoard.bind(this);
-      this.setState({ws: ws});
-  }
-
-  componentWillUnmount() {
-    this.state.ws.close();
-  }
-
-  handleBoard(event) {
-    const data = JSON.parse(event.data);
-    if ('message' in data) {
-      const messageData = JSON.parse(data.message);
-      if (typeof(messageData) == 'object' && 'card_data' in messageData) {
-        this.setState({
-          boardCards: messageData.card_data,
-        });
-      }
-    }
-  }
-
   render() {
-    const handCards = this.state.handCards.map((cardInfo) => (
-      <Card key={cardInfo.id}
-            value={cardInfo}
-            onClick={this.handleUpToBoard.bind(this, cardInfo.id)}
-            onDeleteButtonClick={this.handleDeleteCard.bind(this, cardInfo.id)}
-            updateState={this.updateState.bind(this)}
-            isEditMode={true}
-      />
+    const boardCards = this.state.boardCards.map((cardInfo) => (
+      <Card />
     ));
 
-    const boardCards = this.state.boardCards.map((cardInfo) => (
-      <Card key={cardInfo.id}
-            value={cardInfo}
-            onClick={this.handleDownToHand.bind(this, cardInfo.id)}
-            onDeleteButtonClick={this.handleDeleteCard.bind(this, cardInfo.id)}
-            updateState={this.updateState.bind(this)}
-            isEditMode={false}
-      />
+    const boardCards1 = this.state.boardCards1.map((cardInfo) => (
+      <Card1 />
     ));
+    
+    const boardCards2 = this.state.boardCards2.map((cardInfo) => (
+      <Card2 />
+    ));
+    
 
     return(
     <div>
       { this.state.tipsFlag && <TipsUserStoryMap onClick={() => this.tipsFlagChange()} /> }
       <div className="App">
-        <Header className="header" title={'ホワイトボード：付箋に欲しい機能を書き出そう'}/>
+        <Header className="header" title={'ユーザーストーリーマップ'}/>
         <ShowTips  onClick={() => this.tipsFlagChange()} />
-
+        <NextButton urlName="/productbacklog" />        
+        <MoveHomeButton />
         <div className="board">
-        {/*<div className="split" />*/}
+        <div className="split" />
           {boardCards}
-
+          {boardCards1}
+          {boardCards2}
+          {boardCards2}
+          {boardCards2}
         </div>
-        {/*<button onClick={() => this.fetchData()}>reload</button>*/}
+        <button onClick={() => this.fetchData()}>reload</button>
         {/*<div className="memo"></div>*/}
-        <div className="hand">
-          {/*<Link to="/" className="link">
-            <h1>・Homeへ</h1>
-          </Link>*/}
-          <CardAddButton onClick={() => this.handleClick()}/>
-          {handCards}
-        </div>
       </div>
    </div>
     );

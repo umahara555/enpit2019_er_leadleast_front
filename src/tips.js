@@ -12,14 +12,10 @@ import {Link} from 'react-router-dom';
 export class TipsUserStoryMap extends Component {
 	render() {
 		return(
-			<div className="tips-container">
-				<div className="tips-background" onClick={() => this.props.onClick()}></div>
+			<div className="tips-wrapper">
 				<div className="tips">
-				<div className="tips-header">
-					<p>このページの使い方</p>
-				</div>
-				{/*]<Header className="header" title={'このページの使い方'}/>*/}
-
+				<Header className="header" title={'このページの使い方'}/>			
+	
 
                   <br /><br />
 				  <h1>
@@ -29,16 +25,16 @@ export class TipsUserStoryMap extends Component {
 				    	↓付箋追加ボタン
 				  </p>
 				  <img src={husentuika} className="SImg" />
-				  <br />
+				  <br /> 
 				  <p>↓付箋が4つ追加された手札</p>
 				  <img src={tehudahue} className="SImg" />
 				  <br /> <br /> <br />
 				  <h1>
 				    	2.「付箋をクリックして、付箋に欲しい機能を書き出そう。」<br />
 				  </h1>
-				  <p>
+				  <p>	
 					↓付箋 <br />
-				  </p>
+				  </p>					
 				  <img src={husen} className="SImg" />
 			      <p>
 			        	↓書き出し例
@@ -58,16 +54,16 @@ export class TipsUserStoryMap extends Component {
 				  </h1>
 				  <p>
 				  いらなくなった付箋は、付箋の右上に設置されている×ボタンをクリックすれば削除することができます。<br />
-				  </p>
-				  <br /><br />
+				  </p>	
+				  <br /><br />			
 				  <h1>
 				    	ex.このガイドは画面右上のGUIDEボタンをクリックで再表示されます。<br />
-				  </h1>
+				  </h1>						  
 				  </div>
 				  <button className="closeButton"
 			    		onClick={() => this.props.onClick()}>
 			  		           x
-			      </button>
+			      </button>				
 			</div>
 		);
 	}
@@ -140,6 +136,16 @@ export class MoveHomeButton extends Component {
 		return(
 　　　<Link to="/" className="homeButton">
             <p>HOME</p>
+          </Link>  					           
+		);
+	}
+}
+
+export class NextButton extends Component {
+	render() {
+		return(
+　　　<Link to={this.props.urlName} className="nextButton">
+            <p>Next</p>
           </Link>  					           
 		);
 	}

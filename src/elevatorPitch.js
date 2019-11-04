@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './elevatorPitch.css';
 import {Header} from './Header.js'
-import {TipsElevatorPitch,ShowTips, MoveHomeButton} from './tips.js'
+import {TipsElevatorPitch,ShowTips, MoveHomeButton, NextButton} from './tips.js'
 
 
 
@@ -23,7 +23,9 @@ export class ElevatorPitch extends Component {
 		<div>
       { this.state.tipsFlag && <TipsElevatorPitch onClick={() => this.tipsFlagChange()} /> }      		
 		        <Header className="header" title={'エレベーターピッチ'}/>
-        <ShowTips  onClick={() => this.tipsFlagChange()} />    		        
+        <ShowTips  onClick={() => this.tipsFlagChange()} />
+        <NextButton urlName="/userstorymap" />
+		        <MoveHomeButton />
 			<div className="low">
 				<textarea />
 				<p>したい</p>
