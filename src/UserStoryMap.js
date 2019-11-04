@@ -183,11 +183,32 @@ export class UserStoryMap extends Component {
         <NextButton urlName="/productbacklog" />        
         <div className="board">
         <div className="split" />
+        <div className="boardCard">
           {boardCards}
+        </div>
+        <div className="boardCard1">  
           {boardCards1}
+          </div>
+          <div className="boardCard2-0">
+          <div className="boardCard2">
           {boardCards2}
+          </div>
+          <div className="boardCard2-1">
           {boardCards2}
+          </div>
+          <div className="boardCard2-1">
           {boardCards2}
+          </div>
+          <div className="boardCard2-1">
+          {boardCards2}
+          </div>
+          <div className="boardCard2-1">
+          {boardCards2}
+          </div>      
+          <div className="boardCard2-1">
+          {boardCards2}
+          </div>                                       
+          </div>
         </div>
         <button onClick={() => this.fetchData()}>reload</button>
         {/*<div className="memo"></div>*/}
