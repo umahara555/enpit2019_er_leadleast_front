@@ -6,6 +6,21 @@
   background-color: #85C1E9;
 }
 
+.card1{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background-color: #ffc0cb;
+}
+.card2 {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background-color: #FFFFCC	;
+}
+
 .card:hover {
   background-color: #5DADE2;
 }
@@ -56,6 +71,44 @@
 }
 
 .card textarea:focus {
+  outline:0;
+}
+
+.card1 textarea {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  padding: 0;
+  width: 80%;
+  height: 80%;
+  resize: none;
+  border: none;
+  font-size: 18px;
+  background-color: rgba(0,0,0,0);
+}
+
+.card1 textarea:focus {
+  outline:0;
+}
+
+.card2 textarea {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  padding: 0;
+  width: 80%;
+  height: 80%;
+  resize: none;
+  border: none;
+  font-size: 18px;
+  background-color: rgba(0,0,0,0);
+}
+
+.card2 textarea:focus {
   outline:0;
 }
 

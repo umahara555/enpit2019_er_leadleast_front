@@ -6,16 +6,17 @@ import husentuika from './images/userstorymap-tips/husentuika.png';
 import tehudahue from './images/userstorymap-tips/tehudahue.png';
 import tehudaex from './images/userstorymap-tips/tehudaex.png';
 import banidasu from './images/userstorymap-tips/banidasu.png';
+import {Link} from 'react-router-dom';
+
 
 export class TipsUserStoryMap extends Component {
 	render() {
 		return(
-			<div className="tips-container">
-				<div className="tips-background" onClick={() => this.props.onClick()}></div>
+			<div className="tips-wrapper">
 				<div className="tips">
-				<Header className="header" title={'このページの使い方'}/>
-
-
+				<Header className="header" title={'このページの使い方'}/>			
+	
+{/*
                   <br /><br />
 				  <h1>
 				    	1.「付箋追加ボタンをクリックして、手札に付箋を増やそう。」<br />
@@ -24,16 +25,16 @@ export class TipsUserStoryMap extends Component {
 				    	↓付箋追加ボタン
 				  </p>
 				  <img src={husentuika} className="SImg" />
-				  <br />
+				  <br /> 
 				  <p>↓付箋が4つ追加された手札</p>
 				  <img src={tehudahue} className="SImg" />
 				  <br /> <br /> <br />
 				  <h1>
 				    	2.「付箋をクリックして、付箋に欲しい機能を書き出そう。」<br />
 				  </h1>
-				  <p>
+				  <p>	
 					↓付箋 <br />
-				  </p>
+				  </p>					
 				  <img src={husen} className="SImg" />
 			      <p>
 			        	↓書き出し例
@@ -53,20 +54,107 @@ export class TipsUserStoryMap extends Component {
 				  </h1>
 				  <p>
 				  いらなくなった付箋は、付箋の右上に設置されている×ボタンをクリックすれば削除することができます。<br />
-				  </p>
-				  <br /><br />
+				  </p>	
+				  <br /><br />			
 				  <h1>
 				    	ex.このガイドは画面右上のGUIDEボタンをクリックで再表示されます。<br />
-				  </h1>
+				  </h1>	
+				  */}
+				  <h1>
+				  <br /> ユーザーストーリーマップを書きましょう<br/>   <br/>  
+				  	青の付箋にはユーザーストーリーの骨格<br/>  
+				  	ピンクの付箋にはユーザーストーリーの流れ<br/>  
+				  	黄の付箋にはユーザーストーリーの詳細<br/>  
+				  	を書き起こしましょう。<br/> <br/>
+				  					終了したら画面右上にあるNEXTボタンでプロダクトバックログに移動しましょう。<br/>
+				 <h1 className="alart">			
+				内容は保存されないので、スクリーンショット等で記録しておいてください。
+				</h1>
+				  </h1>					  
 				  </div>
 				  <button className="closeButton"
 			    		onClick={() => this.props.onClick()}>
 			  		           x
-			      </button>
+			      </button>				
 			</div>
 		);
 	}
 }
+
+export class TipsLeanCanvas extends Component {
+	render() {
+		return(
+			<div className="tips-wrapper">
+				<div className="tips">
+				<Header className="header" title={'このページの使い方'}/>								  
+				<h1>
+				<br/>  
+				リーンキャンバスに取り組みましょう。<br/>  <br/>  
+				それぞれの題にそって枠の中に内容を書き込んでください。<br/>  <br/>  
+				終了したら画面右上にあるNEXTボタンでエレベーターピッチに移動しましょう。
+				<h1 className="alart">			
+				内容は保存されないので、スクリーンショット等で記録しておいてください。
+				</h1>
+				</h1>
+				  </div>
+				  <button className="closeButton"
+			    		onClick={() => this.props.onClick()}>
+			  		           x
+			      </button>				
+			</div>
+		);
+	}
+}
+
+export class TipsElevatorPitch extends Component {
+	render() {
+		return(
+			<div className="tips-wrapper">
+				<div className="tips">
+				<Header className="header" title={'このページの使い方'}/>							
+				<h1>
+					<br/>  エレベーターピッチに取り組みましょう<br/>  <br/>  
+					枠内に対応の文を書き込んでください。<br/><br/>
+									終了したら画面右上にあるNEXTボタンでユーザーストーリーマップに移動しましょう。<br/>
+				<h1 className="alart">					
+				内容は保存されないので、スクリーンショット等で記録しておいてください。
+					</h1>
+				</h1>	  
+				  </div>
+				  <button className="closeButton"
+			    		onClick={() => this.props.onClick()}>
+			  		           x
+			      </button>				
+			</div>
+		);
+	}
+}
+
+export class TipsProductBacklog extends Component {
+	render() {
+		return(
+			<div className="tips-wrapper">
+				<div className="tips">
+				<Header className="header" title={'このページの使い方'}/>								
+				<h1>
+				<br/>  
+				プロダクトバックログに取り組みましょう。<br/>  <br/>  
+				枠内に対応の文を書き込んでください。  <br/><br/>
+				<h1 className="alart">			
+				内容は保存されないので、スクリーンショット等で記録しておいてください。
+				</h1>
+				</h1>
+				  </div>
+				  <button className="closeButton"
+			    		onClick={() => this.props.onClick()}>
+			  		           x
+			      </button>				
+			</div>
+		);
+	}
+}
+
+
 
 export class ShowTips extends Component {
 	render() {
@@ -75,6 +163,27 @@ export class ShowTips extends Component {
 					     onClick={() => this.props.onClick()}>
 					           GUIDE
 			</button>
+		);
+	}
+}
+
+
+export class MoveHomeButton extends Component {
+	render() {
+		return(
+　　　<Link to="/" className="homeButton">
+            <p>HOME</p>
+          </Link>  					           
+		);
+	}
+}
+
+export class NextButton extends Component {
+	render() {
+		return(
+　　　<Link to={this.props.urlName} className="nextButton">
+            <p>Next</p>
+          </Link>  					           
 		);
 	}
 }
