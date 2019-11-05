@@ -22,6 +22,7 @@ export class ElevatorPitch extends Component {
 		return(
 		<div>
       { this.state.tipsFlag && <TipsElevatorPitch onClick={() => this.tipsFlagChange()} /> }      		
+      <div className="Ele">
 		        <Header className="header" title={'エレベーターピッチ'}/>
         <ShowTips  onClick={() => this.tipsFlagChange()} />
         <NextButton urlName="/userstorymap" />
@@ -53,7 +54,8 @@ export class ElevatorPitch extends Component {
 			<div className="low">
 				<textarea />
 				<p>が備わっています。</p>
-			</div>						
+			</div>				
+			</div>		
 		</div>			
 		);
 	}

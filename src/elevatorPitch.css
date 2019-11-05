@@ -1,3 +1,11 @@
+.Ele{
+  display:absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F4F6F7;
+  
+}
+
 .low{
 	  display: flex;
   flex-flow: row;

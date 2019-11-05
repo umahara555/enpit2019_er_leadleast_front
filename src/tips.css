@@ -1,10 +1,17 @@
-.tips-wrapper { 
+.tips-container {
 	position: fixed;
-	background-color: rgba(100,100,100,0.5);;
 	width: 100vw;
 	height: 100vh;
 	z-index: 2;
 }
+
+.tips-background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(100,100,100,0.5);;
+}
+
 .header {
 	display: relative;
 }

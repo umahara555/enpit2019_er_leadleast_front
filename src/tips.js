@@ -12,8 +12,8 @@ import {Link} from 'react-router-dom';
 export class TipsUserStoryMap extends Component {
 	render() {
 		return(
-			<div className="tips-wrapper">
-				<div className="tips">
+			<div className="tips-container">
+				<div className="tips-background" onClick={() => this.props.onClick()}></div>				<div className="tips">
 				<Header className="header" title={'このページの使い方'}/>			
 	
 {/*
@@ -84,8 +84,8 @@ export class TipsUserStoryMap extends Component {
 export class TipsLeanCanvas extends Component {
 	render() {
 		return(
-			<div className="tips-wrapper">
-				<div className="tips">
+			<div className="tips-container">
+				<div className="tips-background" onClick={() => this.props.onClick()}></div>				<div className="tips">
 				<Header className="header" title={'このページの使い方'}/>								  
 				<h1>
 				<br/>  
@@ -109,8 +109,8 @@ export class TipsLeanCanvas extends Component {
 export class TipsElevatorPitch extends Component {
 	render() {
 		return(
-			<div className="tips-wrapper">
-				<div className="tips">
+			<div className="tips-container">
+				<div className="tips-background" onClick={() => this.props.onClick()}></div>				<div className="tips">
 				<Header className="header" title={'このページの使い方'}/>							
 				<h1>
 					<br/>  エレベーターピッチに取り組みましょう<br/>  <br/>  
@@ -133,8 +133,8 @@ export class TipsElevatorPitch extends Component {
 export class TipsProductBacklog extends Component {
 	render() {
 		return(
-			<div className="tips-wrapper">
-				<div className="tips">
+			<div className="tips-container">
+				<div className="tips-background" onClick={() => this.props.onClick()}></div>				<div className="tips">
 				<Header className="header" title={'このページの使い方'}/>								
 				<h1>
 				<br/>  
