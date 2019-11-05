@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './tips.css';
-import {Header} from './Header.js'
 import husen from './images/userstorymap-tips/husen.png';
 import husentuika from './images/userstorymap-tips/husentuika.png';
 import tehudahue from './images/userstorymap-tips/tehudahue.png';
@@ -13,8 +12,11 @@ export class TipsUserStoryMap extends Component {
 	render() {
 		return(
 			<div className="tips-container">
-				<div className="tips-background" onClick={() => this.props.onClick()}></div>				<div className="tips">
-				<Header className="header" title={'このページの使い方'}/>			
+				<div className="tips-background" onClick={() => this.props.onClick()}></div>			
+					<div className="tips">
+				      <div className="guide-header">
+        <p>このページの使い方</p>
+      </div>							
 	
 {/*
                   <br /><br />
@@ -88,7 +90,9 @@ export class TipsLeanCanvas extends Component {
 		return(
 			<div className="tips-container">
 				<div className="tips-background" onClick={() => this.props.onClick()}></div>				<div className="tips">
-				<Header className="header" title={'このページの使い方'}/>								  
+      <div className="guide-header">
+        <p>このページの使い方</p>
+      </div>										  
 				<h1>
 				<br/>  
 				リーンキャンバスに取り組みましょう。<br/>  <br/>  
@@ -115,7 +119,9 @@ export class TipsElevatorPitch extends Component {
 		return(
 			<div className="tips-container">
 				<div className="tips-background" onClick={() => this.props.onClick()}></div>				<div className="tips">
-				<Header className="header" title={'このページの使い方'}/>							
+				      <div className="guide-header">
+        <p>このページの使い方</p>
+      </div>									
 				<h1>
 					<br/>  エレベーターピッチに取り組みましょう<br/>  <br/>  
 					枠内に対応の文を書き込んでください。<br/><br/>
@@ -141,7 +147,9 @@ export class TipsProductBacklog extends Component {
 		return(
 			<div className="tips-container">
 				<div className="tips-background" onClick={() => this.props.onClick()}></div>				<div className="tips">
-				<Header className="header" title={'このページの使い方'}/>								
+				      <div className="guide-header">
+        <p>このページの使い方</p>
+      </div>										
 				<h1>
 				<br/>  
 				プロダクトバックログに取り組みましょう。<br/>  <br/>  
