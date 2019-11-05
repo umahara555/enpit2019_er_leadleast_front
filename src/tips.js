@@ -70,6 +70,8 @@ export class TipsUserStoryMap extends Component {
 				 <h1 className="alart">			
 				内容は保存されないので、スクリーンショット等で記録しておいてください。
 				</h1>
+				<br/><br/>
+				このガイドは右上にあるGUIDEボタンで再度表示することができます。				
 				  </h1>					  
 				  </div>
 				  <button className="closeButton"
@@ -95,6 +97,8 @@ export class TipsLeanCanvas extends Component {
 				<h1 className="alart">			
 				内容は保存されないので、スクリーンショット等で記録しておいてください。
 				</h1>
+				<br/><br/>
+				このガイドは右上にあるGUIDEボタンで再度表示することができます。
 				</h1>
 				  </div>
 				  <button className="closeButton"
@@ -119,6 +123,8 @@ export class TipsElevatorPitch extends Component {
 				<h1 className="alart">					
 				内容は保存されないので、スクリーンショット等で記録しておいてください。
 					</h1>
+				<br/><br/>
+				このガイドは右上にあるGUIDEボタンで再度表示することができます。					
 				</h1>	  
 				  </div>
 				  <button className="closeButton"
@@ -143,6 +149,8 @@ export class TipsProductBacklog extends Component {
 				<h1 className="alart">			
 				内容は保存されないので、スクリーンショット等で記録しておいてください。
 				</h1>
+				<br/><br/>
+				このガイドは右上にあるGUIDEボタンで再度表示することができます。				
 				</h1>
 				  </div>
 				  <button className="closeButton"

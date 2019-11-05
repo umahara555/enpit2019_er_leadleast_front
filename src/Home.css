@@ -1,14 +1,31 @@
+.home {
+  display:table;
+  width:100%;
+  height:700px;
+  text-align:center;
+}
+.terget {
+    display:table-cell;
+  vertical-align:middle;
+}
+
 .home h1{
-  font-size: 5rem;
-  font-weight: 400;
+  font-size: 10rem;
+  font-weight: 700;
 }
 
 .home p{
-  font-size: 5rem;
-  font-weight: 100;
+  font-size: 10rem;
+  font-weight: 700;
 }
 
 .header {
+}
+
+.link p{
+  color: #ff7c5;
+  font-weight: bold;
+  font-size:36px;
 }
 
 .serviseLink{
@@ -16,11 +33,34 @@
   padding: 0.5em 1em;
   text-decoration: none;
   background: #f7f7f7;
-  border-left: solid 6px #ff7c5c;/*左線*/
-  color: #ff7c5c;/*文字色*/
+  border-left: solid 6px #ff7c5c;
+  color: #ff7c5c;
   font-weight: bold;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
-  width:50%;
+  width:550px;
   height:9.5vh;
   margin:10px;
+} 
+
+.serviseLink p{
+  font-size:36px;
+
+}
+
+.Link p{
+    font-size: 5rem;
+    font-weight: 100;
+}
+
+.Button {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: orange;
+  font-size: 36px;
+  font-weight: 700;
+  
+  color: white;
 }

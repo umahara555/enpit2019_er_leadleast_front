@@ -5,17 +5,34 @@ import { Link } from 'react-router-dom';
 
 
 export class Home extends Component {
+  constructor(props){
+      super(props);
+   this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick(){
+    this.props.history.push("/leancanvas");
+  }
+  
   render(){
     return(
       <div>
         <Header className='header' title={'LeadLeast'} />
         <div className='home'>
-       	  <p>プロダクトデザインを支援するツール</p>
-       	  <h1>
-       	     のHome画面です<br />
-       	     下記のリンクから目的のページへと移動できます。
-       	  </h1>  
-       	  <br /><br />
+          <div className='terget'>
+       	    <h1>LeadLeast</h1>
+            <p>for beginner Agile team</p>
+            <br />
+              <button
+              className='Button'
+               onClick={this.handleClick}>
+               クリックして<br/>プロダクトデザインを開始
+               </button>
+          </div>
+        </div>
+        <div className='link'>
+        <p>・サービスのリンク</p>
+          <Link to="/userstorymap">
+          </Link>
           <Link to="/leancanvas" className="serviseLink">
             <p>・リーンキャンバスへ</p>
           </Link>          	  
@@ -31,11 +48,6 @@ export class Home extends Component {
           <Link to="/login" className="serviseLink">
             <p>・ログイン画面へ</p>
           </Link>            
-          
-          
-          
-        </div>
-        <div>
         </div>
       </div>  
         
