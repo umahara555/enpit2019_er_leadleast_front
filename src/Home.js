@@ -10,7 +10,7 @@ export class Home extends Component {
    this.handleClick = this.handleClick.bind(this)
   }
   handleClick(){
-    this.props.history.push("/leancanvas");
+    this.props.history.push("/product/0/leancanvas");
   }
   
   render(){
@@ -31,20 +31,18 @@ export class Home extends Component {
           </div>
         </div>
         <div className='link'>
-          <Link to="/userstorymap">
-          </Link>
-          <Link to="/leancanvas" className="serviseLink">
+          <Link to="/product/0/leancanvas" className="serviseLink">
             <p>リーンキャンバスへ</p>
           </Link>          	  
-          <Link to="/elevatorpitch" className="serviseLink">
+          <Link to="/product/0/elevatorpitch" className="serviseLink">
             <p>エレベーターピッチへ</p>
-          </Link>  
-       	  <Link to="/userstorymap" className="serviseLink">
+          </Link>
+       	  <Link to="/product/0/userstorymap" className="serviseLink">
             <p>ユーザーストーリーマップへ</p>
-          </Link>            
-          <Link to="/productbacklog" className="serviseLink">
+          </Link>
+          <Link to="/product/0/productbacklog" className="serviseLink">
             <p>プロダクトバックログへ</p>
-          </Link>  
+          </Link>
         </div>
       </div>  
         

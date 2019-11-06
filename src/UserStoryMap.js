@@ -16,6 +16,7 @@ export class UserStoryMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      productID: this.props.match.params,
       tipsFlag: true,
       boardCards: ["1","2","3","4","5","6"],
       boardCards1: ["1","2","3","4","5","6"],

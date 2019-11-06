@@ -9,6 +9,7 @@ export class LeanCanvas extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      productID: this.props.match.params,
       tipsFlag: true,
     };
   }
