@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { guideElevatorPitch, Showguide, MoveHomeButton, NextButton } from './Guide.js';
+import { GuideElevatorPitch, ShowGuide, MoveHomeButton, NextButton } from './Guide.js';
 import './ElevatorPitch.css';
 
 export class ElevatorPitch extends Component {
@@ -20,10 +20,10 @@ export class ElevatorPitch extends Component {
 	render() {
 		return(
 		<div>
-      { this.state.guideFlag && <guideElevatorPitch onClick={() => this.guideFlagChange()} /> }
+      { this.state.guideFlag && <GuideElevatorPitch onClick={() => this.guideFlagChange()} /> }
       <div className="Ele">
 		        <Header className="header" title={'エレベーターピッチ'}/>
-        <Showguide  onClick={() => this.guideFlagChange()} />
+        <ShowGuide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName="/userstorymap" />
 			<div className="low">
 				<textarea />

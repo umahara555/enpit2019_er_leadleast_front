@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { guideLeanCanvas, Showguide, MoveHomeButton, NextButton } from './Guide.js';
+import { GuideLeanCanvas, ShowGuide, MoveHomeButton, NextButton } from './Guide.js';
 import './LeanCanvas.css';
 
 export class LeanCanvas extends Component {
@@ -18,9 +18,9 @@ export class LeanCanvas extends Component {
   render(){
     return(    
       <div>
-      { this.state.guideFlag && <guideLeanCanvas onClick={() => this.guideFlagChange()} /> }
+      { this.state.guideFlag && <GuideLeanCanvas onClick={() => this.guideFlagChange()} /> }
         <Header className='header' title='リーンキャンバス' />
-        <Showguide  onClick={() => this.guideFlagChange()} />
+        <ShowGuide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName="/elevatorpitch" />
         <div className='lean'>
             <div className="kadai">

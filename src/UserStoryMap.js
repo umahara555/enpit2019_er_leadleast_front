@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardAddButton, Card1, Card2 } from './Card.js';
-import { guideUserStoryMap, Showguide, NextButton } from './Guide.js';
+import { GuideUserStoryMap, ShowGuide, NextButton } from './Guide.js';
 import { Header } from './Header.js';
 import { MoveHomeButton } from './Guide.js';
 import './UserStoryMap.css'
@@ -174,10 +174,10 @@ export class UserStoryMap extends Component {
 
     return(
     <div>
-      { this.state.guideFlag && <guideUserStoryMap onClick={() => this.guideFlagChange()} /> }
+      { this.state.guideFlag && <GuideUserStoryMap onClick={() => this.guideFlagChange()} /> }
       <div className="App">
         <Header className="header" title={'ユーザーストーリーマップ'}/>
-        <Showguide  onClick={() => this.guideFlagChange()} />
+        <ShowGuide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName="/productbacklog" />        
         <div className="board">
         <div className="split" />

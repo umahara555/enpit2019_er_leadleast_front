@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { guideProductBacklog, Showguide, MoveHomeButton } from './Guide.js';
+import { GuideProductBacklog, ShowGuide, MoveHomeButton } from './Guide.js';
 import './ProductBacklog.css';
 
 export class ProductBacklog extends Component {
@@ -19,10 +19,10 @@ export class ProductBacklog extends Component {
 	render() {
 		return(
 		<div>
-      { this.state.guideFlag && <guideProductBacklog onClick={() => this.guideFlagChange()} /> }
+      { this.state.guideFlag && <GuideProductBacklog onClick={() => this.guideFlagChange()} /> }
 			
 		        <Header className="header" title={'プロダクトバックログ'}/>
-        <Showguide  onClick={() => this.guideFlagChange()} />
+        <ShowGuide  onClick={() => this.guideFlagChange()} />
 		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />

@@ -8,7 +8,7 @@ import banidasu from './images/userstorymap-guide/banidasu.png';
 import {Link} from 'react-router-dom';
 
 
-export class guideUserStoryMap extends Component {
+export class GuideUserStoryMap extends Component {
 	render() {
 		return(
 			<div className="guide-container">
@@ -85,7 +85,7 @@ export class guideUserStoryMap extends Component {
 	}
 }
 
-export class guideLeanCanvas extends Component {
+export class GuideLeanCanvas extends Component {
 	render() {
 		return(
 			<div className="guide-container">
@@ -114,7 +114,7 @@ export class guideLeanCanvas extends Component {
 	}
 }
 
-export class guideElevatorPitch extends Component {
+export class GuideElevatorPitch extends Component {
 	render() {
 		return(
 			<div className="guide-container">
@@ -142,7 +142,7 @@ export class guideElevatorPitch extends Component {
 	}
 }
 
-export class guideProductBacklog extends Component {
+export class GuideProductBacklog extends Component {
 	render() {
 		return(
 			<div className="guide-container">
@@ -172,7 +172,7 @@ export class guideProductBacklog extends Component {
 
 
 
-export class Showguide extends Component {
+export class ShowGuide extends Component {
 	render() {
 		return(
 			<button className="openButton"
