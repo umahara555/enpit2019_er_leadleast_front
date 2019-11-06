@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import './Home.css'
-import {Header} from './Header.js'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Header } from './Header.js';
 import bord from './images/title/bord.png';
+import './Home.css';
 
 
 export class Home extends Component {
@@ -20,7 +20,7 @@ export class Home extends Component {
         <div className='home'>
           <div className='terget'>
        	    <h1>LeadLeast</h1>
-            <p>for beginner Agile team</p>
+            <p>- Begin Product Design -</p>
             <br />
               <button
               className='Button'

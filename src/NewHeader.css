@@ -1,0 +1,87 @@
+.new-header {
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  height: 38px;
+  background-color: #7DCEA0;
+}
+
+.header-left {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.header-right .header-btn {
+  margin-left: 8px;
+}
+
+.header-title {
+  display: inline-block;
+  margin: auto 0;
+  text-decoration: none;
+}
+
+.header-title:visited {
+  color: black;
+}
+
+.header-title p {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: black;
+  opacity: 0.8;
+}
+
+.header-title p:hover {
+  opacity: 1;
+}
+
+.header-icon {
+  display: inline-block;
+  position: relative;
+  margin: auto 0;
+  font-size: 2.4rem;
+  line-height: 38px;
+  color: black;
+}
+
+.header-btn {
+  display: inline-block;
+  position: relative;
+  width: 38px;
+  height: 38px;
+  margin: auto 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+.header-btn:hover {
+  background-color: rgba(255,255,255,0.32);
+}
+
+.header-btn_login {
+  padding: 0 8px;
+}
+
+.header-btn_signup {
+  padding: 0 8px;
+  border: solid 2px black;
+  border-radius: 4px;
+}

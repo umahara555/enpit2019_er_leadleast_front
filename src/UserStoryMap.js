@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
-import {Card, CardAddButton} from './Card.js';
-import {TipsUserStoryMap,ShowTips} from './tips.js'
-import './UserStoryMap.css';
-import {Header} from './Header.js'
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Card, CardAddButton, Card1, Card2 } from './Card.js';
+import { GuideUserStoryMap, ShowGuide, NextButton } from './Guide.js';
+import { Header } from './Header.js';
+import { MoveHomeButton } from './Guide.js';
+import './UserStoryMap.css'
 
-
-const API_URL = 'http://localhost:5000/api/v1'
+const API_URL = 'http://localhost5000/api/v1';
 const SET_API_URL = API_URL + '/handcards';
 const GET_API_URL = API_URL + '/handcards';
 
@@ -14,12 +13,13 @@ export class UserStoryMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardStatus: '',
-      cardMessage: '',
-      tipsFlag: true,
-      handCards: [],
-      boardCards: [],
+      productID: this.props.match.params,
+      guideFlag: true,
+      boardCards: ["1","2","3","4","5","6"],
+      boardCards1: ["1","2","3","4","5","6"],
+      boardCards2:["1","2","3","4","5","6","7","8","9","10"],
     };
+    this.fetchData();
   }
 
   handleClick() {
@@ -34,17 +34,15 @@ export class UserStoryMap extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
-          cardStatus: responseJson.status,
-          cardMessage: responseJson.card_data,
-		  boardCards: responseJson.card_data
+          boardCards: responseJson.card_data
         });
-        console.log(responseJson.card_data);
       })
       .catch((error) =>{
         console.error(error);
       });
   }
 
+  /*
   sendData(text) {
     const obj = {board: {"text": text}};
     const method = "POST";
@@ -55,6 +53,7 @@ export class UserStoryMap extends Component {
     };
     fetch(SET_API_URL, {method, headers, body}).then((res)=> res.json()).then(console.log).catch(console.error);
   }
+  */
 
   handleUpToBoard(id) {
     const handCards = this.state.handCards;
@@ -63,7 +62,36 @@ export class UserStoryMap extends Component {
     handCards.splice(handCardIndex, 1);
     this.setState({handCards: handCards});
 
-	this.sendData(handCard.text)
+    const SendAndDownload = async () => {
+      try {
+        // PSOT Card Data
+        const obj = {board: {"text": handCard.text}};
+        const method = "POST";
+        const body = JSON.stringify(obj);
+        const headers = {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        };
+        const postResponse = await fetch(SET_API_URL, {method, headers, body})
+        if (!postResponse.ok) {
+          throw Error(postResponse.statusText)
+        }
+        const postResponseJson = await postResponse.json()
+
+        // GET Board Data
+        const getResponse = await fetch(GET_API_URL)
+        if (!getResponse.ok) {
+          throw Error(getResponse.statusText)
+        }
+        const getResponseJson = await getResponse.json()
+        this.setState({
+          boardCards: getResponseJson.card_data,
+        });
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    SendAndDownload()
   }
 
   handleDownToHand(id) {
@@ -71,11 +99,27 @@ export class UserStoryMap extends Component {
     const boardCard = boardCards.find(card => card.id === id);
     const boardCardIndex = boardCards.findIndex(card => card.id === id);
     boardCards.splice(boardCardIndex, 1);
-    this.setState({boardCards: boardCards});
+	var result = "";
+    const delete_url = `${GET_API_URL}?id=${boardCard.id}`;
+    const method = "DELETE";
+    fetch(delete_url, {method})
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson.status);
+        this.setState({boardCards: boardCards});
+        if(responseJson.status=="SUCCESS"){
+	      console.log("OK");
+          const handCards = this.state.handCards;
+          handCards.unshift(boardCard);
+          this.setState({handCards: handCards});
+	    }else{
+	      console.log("BAD");
+	    }
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
 
-    const handCards = this.state.handCards;
-    handCards.unshift(boardCard);
-    this.setState({handCards: handCards});
   }
 
   handleDeleteCard(id) {
@@ -110,51 +154,62 @@ export class UserStoryMap extends Component {
       }
   }
 
-  tipsFlagChange() {
-      this.setState({tipsFlag: !this.state.tipsFlag});
+  guideFlagChange() {
+      this.setState({guideFlag: !this.state.guideFlag});
   }
 
   render() {
-    const handCards = this.state.handCards.map((cardInfo) => (
-      <Card key={cardInfo.id}
-            value={cardInfo}
-            onClick={this.handleUpToBoard.bind(this, cardInfo.id)}
-            onDeleteButtonClick={this.handleDeleteCard.bind(this, cardInfo.id)}
-            updateState={this.updateState.bind(this)}
-            isEditMode={true}
-      />
+    const boardCards = this.state.boardCards.map((cardInfo) => (
+      <Card />
     ));
 
-    const boardCards = this.state.boardCards.map((cardInfo) => (
-      <Card key={cardInfo.id}
-            value={cardInfo}
-            onClick={this.handleDownToHand.bind(this, cardInfo.id)}
-            onDeleteButtonClick={this.handleDeleteCard.bind(this, cardInfo.id)}
-            updateState={this.updateState.bind(this)}
-            isEditMode={false}
-      />
+    const boardCards1 = this.state.boardCards1.map((cardInfo) => (
+      <Card1 />
     ));
+    
+    const boardCards2 = this.state.boardCards2.map((cardInfo) => (
+      <Card2 />
+    ));
+    
 
     return(
     <div>
-      { this.state.tipsFlag && <TipsUserStoryMap onClick={() => this.tipsFlagChange()} /> }
+      { this.state.guideFlag && <GuideUserStoryMap onClick={() => this.guideFlagChange()} /> }
       <div className="App">
-        <Header className="header" title={'ホワイトボード：付箋に欲しい機能を書き出そう'}/>
-        <ShowTips  onClick={() => this.tipsFlagChange()} />
-
+        <Header className="header" title={'ユーザーストーリーマップ'}/>
+        <ShowGuide  onClick={() => this.guideFlagChange()} />
+        <NextButton urlName="/product/0/productbacklog" />
         <div className="board">
+        <div className="split" />
+        <div className="boardCard">
           {boardCards}
-
         </div>
-        <button onClick={() => this.fetchData()}>だうんろおど</button>
+        <div className="boardCard1">  
+          {boardCards1}
+          </div>
+          <div className="boardCard2-0">
+          <div className="boardCard2">
+          {boardCards2}
+          </div>
+          <div className="boardCard2-1">
+          {boardCards2}
+          </div>
+          <div className="boardCard2-1">
+          {boardCards2}
+          </div>
+          <div className="boardCard2-1">
+          {boardCards2}
+          </div>
+          <div className="boardCard2-1">
+          {boardCards2}
+          </div>      
+          <div className="boardCard2-1">
+          {boardCards2}
+          </div>                                       
+          </div>
+        </div>
+         {/*<button onClick={() => this.fetchData()}>reload</button>*/}
         {/*<div className="memo"></div>*/}
-        <div className="hand">
-          <Link to="/" className="link">
-            <h1>・Homeへ</h1>
-          </Link>
-          <CardAddButton onClick={() => this.handleClick()}/>
-          {handCards}
-        </div>
       </div>
    </div>
     );
