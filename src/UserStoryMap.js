@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Card, CardAddButton, Card1, Card2 } from './Card.js';
-import { TipsUserStoryMap, ShowTips, NextButton } from './tips.js';
+import { guideUserStoryMap, Showguide, NextButton } from './Guide.js';
 import { Header } from './Header.js';
-import { MoveHomeButton } from './tips.js';
+import { MoveHomeButton } from './Guide.js';
 import './UserStoryMap.css'
 
 const API_URL = 'http://localhost5000/api/v1';
@@ -14,7 +14,7 @@ export class UserStoryMap extends Component {
     super(props);
     this.state = {
       productID: this.props.match.params,
-      tipsFlag: true,
+      guideFlag: true,
       boardCards: ["1","2","3","4","5","6"],
       boardCards1: ["1","2","3","4","5","6"],
       boardCards2:["1","2","3","4","5","6","7","8","9","10"],
@@ -154,8 +154,8 @@ export class UserStoryMap extends Component {
       }
   }
 
-  tipsFlagChange() {
-      this.setState({tipsFlag: !this.state.tipsFlag});
+  guideFlagChange() {
+      this.setState({guideFlag: !this.state.guideFlag});
   }
 
   render() {
@@ -174,10 +174,10 @@ export class UserStoryMap extends Component {
 
     return(
     <div>
-      { this.state.tipsFlag && <TipsUserStoryMap onClick={() => this.tipsFlagChange()} /> }
+      { this.state.guideFlag && <guideUserStoryMap onClick={() => this.guideFlagChange()} /> }
       <div className="App">
         <Header className="header" title={'ユーザーストーリーマップ'}/>
-        <ShowTips  onClick={() => this.tipsFlagChange()} />
+        <Showguide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName="/productbacklog" />        
         <div className="board">
         <div className="split" />

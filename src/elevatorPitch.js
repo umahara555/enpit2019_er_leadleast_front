@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { TipsElevatorPitch, ShowTips, MoveHomeButton, NextButton } from './tips.js';
+import { guideElevatorPitch, Showguide, MoveHomeButton, NextButton } from './Guide.js';
 import './elevatorPitch.css';
 
 export class ElevatorPitch extends Component {
@@ -9,21 +9,21 @@ export class ElevatorPitch extends Component {
     super(props);
     this.state = {
 			productID: this.props.match.params,
-      tipsFlag: true,
+      guideFlag: true,
     };
   }
   
-  tipsFlagChange() {
-      this.setState({tipsFlag: !this.state.tipsFlag});
+  guideFlagChange() {
+      this.setState({guideFlag: !this.state.guideFlag});
   }  
 	
 	render() {
 		return(
 		<div>
-      { this.state.tipsFlag && <TipsElevatorPitch onClick={() => this.tipsFlagChange()} /> }      		
+      { this.state.guideFlag && <guideElevatorPitch onClick={() => this.guideFlagChange()} /> }
       <div className="Ele">
 		        <Header className="header" title={'エレベーターピッチ'}/>
-        <ShowTips  onClick={() => this.tipsFlagChange()} />
+        <Showguide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName="/userstorymap" />
 			<div className="low">
 				<textarea />

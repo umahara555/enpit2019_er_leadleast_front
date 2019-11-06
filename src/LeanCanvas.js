@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { TipsLeanCanvas, ShowTips, MoveHomeButton, NextButton } from './tips.js';
+import { guideLeanCanvas, Showguide, MoveHomeButton, NextButton } from './Guide.js';
 import './LeanCanvas.css';
 
 export class LeanCanvas extends Component {
@@ -8,19 +8,19 @@ export class LeanCanvas extends Component {
     super(props);
     this.state = {
       productID: this.props.match.params,
-      tipsFlag: true,
+      guideFlag: true,
     };
   }
   
-  tipsFlagChange() {
-      this.setState({tipsFlag: !this.state.tipsFlag});
+  guideFlagChange() {
+      this.setState({guideFlag: !this.state.guideFlag});
   }
   render(){
     return(    
       <div>
-      { this.state.tipsFlag && <TipsLeanCanvas onClick={() => this.tipsFlagChange()} /> }      
+      { this.state.guideFlag && <guideLeanCanvas onClick={() => this.guideFlagChange()} /> }
         <Header className='header' title='リーンキャンバス' />
-        <ShowTips  onClick={() => this.tipsFlagChange()} />        
+        <Showguide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName="/elevatorpitch" />
         <div className='lean'>
             <div className="kadai">

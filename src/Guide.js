@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
-import './tips.css';
-import husen from './images/userstorymap-tips/husen.png';
-import husentuika from './images/userstorymap-tips/husentuika.png';
-import tehudahue from './images/userstorymap-tips/tehudahue.png';
-import tehudaex from './images/userstorymap-tips/tehudaex.png';
-import banidasu from './images/userstorymap-tips/banidasu.png';
+import './Guide.css';
+import husen from './images/userstorymap-guide/husen.png';
+import husentuika from './images/userstorymap-guide/husentuika.png';
+import tehudahue from './images/userstorymap-guide/tehudahue.png';
+import tehudaex from './images/userstorymap-guide/tehudaex.png';
+import banidasu from './images/userstorymap-guide/banidasu.png';
 import {Link} from 'react-router-dom';
 
 
-export class TipsUserStoryMap extends Component {
+export class guideUserStoryMap extends Component {
 	render() {
 		return(
-			<div className="tips-container">
-				<div className="tips-background" onClick={() => this.props.onClick()}></div>			
-					<div className="tips">
+			<div className="guide-container">
+				<div className="guide-background" onClick={() => this.props.onClick()}></div>
+					<div className="guide">
 				      <div className="guide-header">
         <p>このページの使い方</p>
       </div>							
@@ -85,11 +85,11 @@ export class TipsUserStoryMap extends Component {
 	}
 }
 
-export class TipsLeanCanvas extends Component {
+export class guideLeanCanvas extends Component {
 	render() {
 		return(
-			<div className="tips-container">
-				<div className="tips-background" onClick={() => this.props.onClick()}></div>				<div className="tips">
+			<div className="guide-container">
+				<div className="guide-background" onClick={() => this.props.onClick()}></div>				<div className="guide">
       <div className="guide-header">
         <p>このページの使い方</p>
       </div>										  
@@ -114,11 +114,11 @@ export class TipsLeanCanvas extends Component {
 	}
 }
 
-export class TipsElevatorPitch extends Component {
+export class guideElevatorPitch extends Component {
 	render() {
 		return(
-			<div className="tips-container">
-				<div className="tips-background" onClick={() => this.props.onClick()}></div>				<div className="tips">
+			<div className="guide-container">
+				<div className="guide-background" onClick={() => this.props.onClick()}></div>				<div className="guide">
 				      <div className="guide-header">
         <p>このページの使い方</p>
       </div>									
@@ -142,11 +142,11 @@ export class TipsElevatorPitch extends Component {
 	}
 }
 
-export class TipsProductBacklog extends Component {
+export class guideProductBacklog extends Component {
 	render() {
 		return(
-			<div className="tips-container">
-				<div className="tips-background" onClick={() => this.props.onClick()}></div>				<div className="tips">
+			<div className="guide-container">
+				<div className="guide-background" onClick={() => this.props.onClick()}></div>				<div className="guide">
 				      <div className="guide-header">
         <p>このページの使い方</p>
       </div>										
@@ -172,7 +172,7 @@ export class TipsProductBacklog extends Component {
 
 
 
-export class ShowTips extends Component {
+export class Showguide extends Component {
 	render() {
 		return(
 			<button className="openButton"

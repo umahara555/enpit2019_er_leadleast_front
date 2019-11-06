@@ -9,14 +9,14 @@
   font-size: 2.4rem;
   font-weight: 800;
 }
-.tips-container {
+.guide-container {
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
 	z-index: 2;
 }
 
-.tips-background {
+.guide-background {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -26,7 +26,7 @@
 .header {
 	display: relative;
 }
-.tips {
+.guide {
 	position: absolute;
 	top: 50%;
     left: 50%;
@@ -39,11 +39,11 @@
 	overflow-x:hidden;
 }
 
-.tips p {
+.guide p {
 	font-size:24px;
 }
 
-.tips h1 {
+.guide h1 {
 	font-size:24px;
 }
 .SImg {

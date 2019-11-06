@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { TipsProductBacklog, ShowTips, MoveHomeButton } from './tips.js';
+import { guideProductBacklog, Showguide, MoveHomeButton } from './Guide.js';
 import './ProductBacklog.css';
 
 export class ProductBacklog extends Component {
@@ -8,21 +8,21 @@ export class ProductBacklog extends Component {
     super(props);
     this.state = {
 			productID: this.props.match.params,
-      tipsFlag: true,
+      guideFlag: true,
     };
   }
   
-  tipsFlagChange() {
-      this.setState({tipsFlag: !this.state.tipsFlag});
+  guideFlagChange() {
+      this.setState({guideFlag: !this.state.guideFlag});
   }
     	
 	render() {
 		return(
 		<div>
-      { this.state.tipsFlag && <TipsProductBacklog onClick={() => this.tipsFlagChange()} /> }      		
+      { this.state.guideFlag && <guideProductBacklog onClick={() => this.guideFlagChange()} /> }
 			
 		        <Header className="header" title={'プロダクトバックログ'}/>
-        <ShowTips  onClick={() => this.tipsFlagChange()} />    		        
+        <Showguide  onClick={() => this.guideFlagChange()} />
 		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
