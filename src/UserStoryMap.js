@@ -3,7 +3,7 @@ import { Card, CardAddButton, Card1, Card2 } from './Card.js';
 import { TipsUserStoryMap, ShowTips, NextButton } from './tips.js';
 import { Header } from './Header.js';
 import { MoveHomeButton } from './tips.js';
-import './UserStoryMap.css';
+import './UserStoryMap.css'
 
 const API_URL = 'http://localhost5000/api/v1';
 const SET_API_URL = API_URL + '/handcards';
