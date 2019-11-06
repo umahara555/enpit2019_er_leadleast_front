@@ -1,14 +1,11 @@
-import React, {Component} from 'react';
-import {Card, CardAddButton, Card1, Card2} from './Card.js';
-import {TipsUserStoryMap,ShowTips, NextButton} from './tips.js'
-import {Header} from './Header.js'
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Card, CardAddButton, Card1, Card2 } from './Card.js';
+import { TipsUserStoryMap, ShowTips, NextButton } from './tips.js';
+import { Header } from './Header.js';
+import { MoveHomeButton } from './tips.js';
 import './UserStoryMap.css';
-import {MoveHomeButton} from './tips.js'
 
-
-
-const API_URL = 'http://localhost5000/api/v1'
+const API_URL = 'http://localhost5000/api/v1';
 const SET_API_URL = API_URL + '/handcards';
 const GET_API_URL = API_URL + '/handcards';
 

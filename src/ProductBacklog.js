@@ -1,10 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { Header } from './Header.js';
+import { TipsProductBacklog, ShowTips, MoveHomeButton } from './tips.js';
 import './ProductBacklog.css';
-import {Header} from './Header.js'
-import {TipsProductBacklog,ShowTips, MoveHomeButton} from './tips.js'
-
-
-
 
 export class ProductBacklog extends Component {
   constructor(props) {

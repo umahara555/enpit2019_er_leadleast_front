@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
-import './Home.css'
-import {Header} from './Header.js'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import { Header } from './Header.js';
+import './Home.css';
 
 export class Home extends Component {
   constructor(props){
@@ -16,7 +15,6 @@ export class Home extends Component {
   render(){
     return(
       <div>
-
         <Header className='header' title={'LeadLeast'} />
         <div className='home'>
           <div className='terget'>
@@ -44,8 +42,7 @@ export class Home extends Component {
             <p>プロダクトバックログへ</p>
           </Link>
         </div>
-      </div>  
-        
+      </div>
     )
   }  
 }

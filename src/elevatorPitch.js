@@ -1,9 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { Header } from './Header.js';
+import { TipsElevatorPitch, ShowTips, MoveHomeButton, NextButton } from './tips.js';
 import './elevatorPitch.css';
-import {Header} from './Header.js'
-import {TipsElevatorPitch,ShowTips, MoveHomeButton, NextButton} from './tips.js'
-
-
 
 export class ElevatorPitch extends Component {
 

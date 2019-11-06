@@ -1,9 +1,6 @@
-import React, {Component} from 'react';
-import './Login.css'
-import {Header} from './Header.js'
-import { Link } from 'react-router-dom';
-import {MoveHomeButton} from './tips.js'
-
+import React, { Component } from 'react';
+import { Header } from './Header.js';
+import './Login.css';
 
 export class Login extends Component {
   render(){

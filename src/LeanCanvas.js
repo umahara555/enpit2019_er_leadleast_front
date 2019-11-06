@@ -1,9 +1,7 @@
-import React, {Component} from 'react';
-import './LeanCanvas.css'
-import {Header} from './Header.js'
-import { Link } from 'react-router-dom';
-import {TipsLeanCanvas,ShowTips, MoveHomeButton, NextButton} from './tips.js'
-
+import React, { Component } from 'react';
+import { Header } from './Header.js';
+import { TipsLeanCanvas, ShowTips, MoveHomeButton, NextButton } from './tips.js';
+import './LeanCanvas.css';
 
 export class LeanCanvas extends Component {
   constructor(props) {
