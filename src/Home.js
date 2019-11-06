@@ -11,14 +11,14 @@ export class Home extends Component {
    this.handleClick = this.handleClick.bind(this)
   }
   handleClick(){
-    this.props.history.push("/userstorymap");
+    this.props.history.push("/product/0/leancanvas");
   }
   render(){
     return(
       <div>
         <Header className='header' title={'LeadLeast'} />
         <div className='home'>
-          <div className='terget'>
+          <div className='target'>
        	    <h1>LeadLeast</h1>
             <p>- Begin Product Design -</p>
             <br />
@@ -41,7 +41,6 @@ export class Home extends Component {
             <p>・ログイン画面へ</p>
           </Link>
         </div>*/}
-
         <div className='Explanation-container-wrapper'>
           <div className='Explanation-container'>
             <div className='Explanation'>
@@ -59,11 +58,10 @@ export class Home extends Component {
               </p>
             </div>
             <div className='Explanation-image-wrapper'>
-              <img src={bord} className="SImg" />
+              <img src={bord} className="Explanation-image" />
             </div>
           </div>
         </div>
-
       </div>
 
     )

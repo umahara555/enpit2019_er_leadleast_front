@@ -4,8 +4,8 @@
   height:700px;
   text-align:center;
 }
-.terget {
-    display:table-cell;
+.target {
+  display:table-cell;
   vertical-align:middle;
 }
 .home h1{
@@ -15,7 +15,7 @@
 
 .home p{
   font-size: 3rem;
-  font-weight: 150;
+  font-weight: 200;
 }
 
 .header {
@@ -38,23 +38,24 @@
 }
 
 .Explanation-container-wrapper {
-  /* background-color: black; */
-  padding: 40px 0px;
+  padding: 40px 0;
   height: 800px;
   display: flex;
+  /*background-color: pink;*/
 }
 
 .Explanation-container {
-  /* background-color: black; */
+  width: 100%;
   margin-left: 40px;
   display: flex;
   overflow: hidden;
+  /*background-color: grey;*/
 }
 
 .Explanation {
   position: relative;
   width: 40%;
-  /* background-color: red; */
+  /*background-color: red;*/
 }
 
 .Explanation h3 {
@@ -73,16 +74,13 @@
 .Explanation-image-wrapper {
   position: relative;
   width: 60%;
-  /* background-color: blue; */
+  /*background-color: blue;*/
 }
 
-.SImg {
+.Explanation-image {
 	position: relative;
-	/* top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: 20px; */
-	width: auto;
+	width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: 0 0;
 }
