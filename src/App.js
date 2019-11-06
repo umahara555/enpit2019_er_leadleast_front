@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './Home.js';
 import { LeanCanvas } from './LeanCanvas.js';
-import { ElevatorPitch } from './elevatorPitch.js';
+import { ElevatorPitch } from './ElevatorPitch.js';
 import { UserStoryMap } from './UserStoryMap.js';
 import { ProductBacklog } from './ProductBacklog.js';
 import { Login } from './Login.js';
