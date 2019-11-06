@@ -24,7 +24,7 @@ export class ElevatorPitch extends Component {
       <div className="Ele">
 		        <Header className="header" title={'エレベーターピッチ'}/>
         <ShowGuide  onClick={() => this.guideFlagChange()} />
-        <NextButton urlName="/userstorymap" />
+        <NextButton urlName="/product/0/userstorymap" />
 			<div className="low">
 				<textarea />
 				<p>したい</p>

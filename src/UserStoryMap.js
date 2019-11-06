@@ -178,7 +178,7 @@ export class UserStoryMap extends Component {
       <div className="App">
         <Header className="header" title={'ユーザーストーリーマップ'}/>
         <ShowGuide  onClick={() => this.guideFlagChange()} />
-        <NextButton urlName="/productbacklog" />        
+        <NextButton urlName="/product/0/productbacklog" />
         <div className="board">
         <div className="split" />
         <div className="boardCard">
