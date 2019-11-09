@@ -7,7 +7,7 @@ export class ProductBacklog extends Component {
   constructor(props) {
     super(props);
     this.state = {
-			productID: this.props.match.params,
+			productID: this.props.match.params.productID,
       guideFlag: true,
     };
   }
