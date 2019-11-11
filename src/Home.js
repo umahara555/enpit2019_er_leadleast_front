@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from './Header.js';
-import bord from './images/title/bord.png';
+import LeanCanvas from './images/title/LeanCanvas.png';
+import ElevatorPitch from './images/title/ElevatorPitch.png';
+import ProductBacklog from './images/title/ProductBacklog.png';
+import UserStoryMap from './images/title/UserStoryMap.png';
 import './Home.css';
 
 
@@ -44,24 +47,59 @@ export class Home extends Component {
         <div className='Explanation-container-wrapper'>
           <div className='Explanation-container'>
             <div className='Explanation'>
-              <h3>エレベーターピッチ</h3>
-              <p>オンラインでアジャイルなプロダクトデザインしたい，<br/>
-              教育関係者（生徒，教員）向けの,<br/>
-              アジャイルなプロダクトデザイン支援を実現する，<br/>
-              LeadLeastというサービスです．<br/>
-              これは，オンラインでリーンキャンパスや<br/>
-              ユーザーストーリマップが共同編集ができ，<br/>
-              Googleスプレッドシートや<br/>
-              オンラインホワイトボードとは違い，<br/>
-              フォーマットが統一でき，<br/>
-              初学者でも一連の流れを体系的にデザインできる.<br/>
-              </p>
+              <h3>リーンキャンバス</h3>
+                <p>
+                  これはリーンキャンバスです。
+                </p>
             </div>
             <div className='Explanation-image-wrapper'>
-              <img src={bord} className="Explanation-image" />
+              <img src={LeanCanvas} className="Explanation-image" />
             </div>
           </div>
         </div>
+
+        <div className='Explanation-container-wrapper'>
+          <div className='Explanation-container'>
+            <div className='Explanation'>
+              <h3>エレベーターピッチ</h3>
+              <p>
+                これはエレベーターピッチです。
+              </p>
+            </div>
+            <div className='Explanation-image-wrapper'>
+              <img src={ElevatorPitch} className="Explanation-image" />
+            </div>
+          </div>
+        </div>
+
+        <div className='Explanation-container-wrapper'>
+          <div className='Explanation-container'>
+            <div className='Explanation'>
+              <h3>プロダクトバックログ</h3>
+              <p>
+                これはプロダクトバックログです。
+              </p>
+            </div>
+            <div className='Explanation-image-wrapper'>
+              <img src={ProductBacklog} className="Explanation-image" />
+            </div>
+          </div>
+        </div>
+
+        <div className='Explanation-container-wrapper'>
+          <div className='Explanation-container'>
+            <div className='Explanation'>
+              <h3>ユーザーストーリーマップ</h3>
+              <p>
+                これはユーザーストーリーマップです。
+              </p>
+            </div>
+            <div className='Explanation-image-wrapper'>
+              <img src={UserStoryMap} className="Explanation-image" />
+            </div>
+          </div>
+        </div>
+
       </div>
 
     )
