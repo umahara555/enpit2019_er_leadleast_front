@@ -39,9 +39,8 @@ export class LeanCanvas extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({
-          //board_texts: responseJson.board_texts,
+          board_texts: responseJson.board_texts,
         });
-        console.log(responseJson)
       })
       .catch((error) =>{
         console.error(error);
