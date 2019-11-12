@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from './Header.js';
+import LeanCanvas from './images/title/LeanCanvas.png';
+import ElevatorPitch from './images/title/ElevatorPitch.png';
+import ProductBacklog from './images/title/ProductBacklog.png';
+import UserStoryMap from './images/title/UserStoryMap.png';
 import './Home.css';
 
 const API_URL = 'http://localhost:5000/api/v1';
@@ -42,38 +46,99 @@ export class Home extends Component {
 	}.bind(this)
 	CreateNewProduct()
   }
-  
   render(){
     return(
       <div>
         <Header className='header' title={'LeadLeast'} />
         <div className='home'>
-          <div className='terget'>
+          <div className='target'>
        	    <h1>LeadLeast</h1>
             <p>- Begin Product Design -</p>
             <br />
               <button
               className='Button'
                onClick={this.handleClick}>
-               はじめる
-                               </button>
+               CLICK TO START
+               </button>
           </div>
         </div>
-        <div className='link'>
-          <Link to="/product/0/leancanvas" className="serviseLink">
-            <p>リーンキャンバスへ</p>
-          </Link>          	  
-          <Link to="/product/0/elevatorpitch" className="serviseLink">
-            <p>エレベーターピッチへ</p>
+        {/*<div className='link'>
+        Link list
+          <Link to="/userstorymap">
+            <p>・ホワイトボードへ</p>
           </Link>
-       	  <Link to="/product/0/userstorymap" className="serviseLink">
-            <p>ユーザーストーリーマップへ</p>
+          <Link to="/leancanvas">
+            <p>・リーンキャンパスへ</p>
           </Link>
-          <Link to="/product/0/productbacklog" className="serviseLink">
-            <p>プロダクトバックログへ</p>
+          <Link to="/login">
+            <p>・ログイン画面へ</p>
           </Link>
+        </div>*/}
+        <div className='Explanation-container-wrapper'>
+          <div className='Explanation-container'>
+            <div className='Explanation'>
+              <h3>リーンキャンバス</h3>
+                <p> 
+                 リーンキャンバスを用いて、<br/>
+                 12の視点から企画しているサービスの価値を掘り下げましょう。
+                </p>
+            </div>
+            <div className='Explanation-image-wrapper'>
+              <img src={LeanCanvas} className="Explanation-imageR" />
+            </div>
+          </div>
         </div>
+
+        <div className='Explanation-container-wrapper'>
+          <div className='Explanation-container'>
+            <div className='Explanation'>
+              <h3>エレベーターピッチ</h3>
+              <p>
+                エレベーターピッチを用いて、<br/>
+                リーンキャンバスで明確にしたサービスの構造を<br/>
+                端的に説明できる形にしましょう。
+              </p>
+            </div>
+            <div className='Explanation-image-wrapper'>
+              <img src={ElevatorPitch} className="Explanation-imageL" />
+            </div>
+          </div>
+        </div>
+
+        <div className='Explanation-container-wrapper'>
+          <div className='Explanation-container'>
+            <div className='Explanation'>
+              <h3>ユーザーストーリーマップ</h3>
+              <p>
+                ユーザーストーリーマップを用いて、<br/>
+                ユーザーの体験を三段階構造、時系列順で挙げることで、<br/>
+                プロダクトの全体像をつかみましょう。
+              </p>
+            </div>
+            <div className='Explanation-image-wrapper'>
+              <img src={UserStoryMap} className="Explanation-imageR" />
+            </div>
+          </div>
+        </div>
+        
+        <div className='Explanation-container-wrapper'>
+          <div className='Explanation-container'>
+            <div className='Explanation'>
+              <h3>プロダクトバックログ</h3>
+              <p>
+                プロダクトバックログを用いて、<br/>
+                ユーザーストーリーマップを参考に、<br/>
+                提供するサービスの優先順位を定めましょう。
+              </p>
+            </div>
+            <div className='Explanation-image-wrapper'>
+              <img src={ProductBacklog} className="Explanation-imageL" />
+            </div>
+          </div>
+        </div>        
+
       </div>
+
     )
-  }  
+  }
 }
