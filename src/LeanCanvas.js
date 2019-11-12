@@ -156,7 +156,6 @@ export class LeanCanvas extends Component {
             </textarea>
           <textarea className="write" id="txt12" value={this.state.board_texts.txt12.text} onChange={this.handleChange}/>
         </div>
-        <button onclick={()=>this.download}>ダウンロード</button>
       </div>
     </div>
     )
