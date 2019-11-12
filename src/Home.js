@@ -45,6 +45,13 @@ export class Home extends Component {
         postResponseJson = await postResponse.json()
 
         method = "POST";
+        postResponse = await fetch(API_URL+'/user_story_map/'+product_id, {method})
+        if (!postResponse.ok) {
+          throw Error(postResponse.statusText)
+        }
+        postResponseJson = await postResponse.json()
+
+        method = "POST";
         postResponse = await fetch(API_URL+'/product_backlog/'+product_id, {method})
         if (!postResponse.ok) {
           throw Error(postResponse.statusText)

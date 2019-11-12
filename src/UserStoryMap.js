@@ -22,12 +22,12 @@ export class UserStoryMap extends Component {
     this.fetchData();
   }
 
-  handleClick() {
+  /*handleClick() {
     const cards = this.state.handCards;
     const id = Math.round( Math.random () * 10000000 );
     cards.unshift({id: id, text: ""});
     this.setState({handCards: cards});
-  }
+  }*/
 
   fetchData() {
     fetch(GET_API_URL)
@@ -55,7 +55,7 @@ export class UserStoryMap extends Component {
   }
   */
 
-  handleUpToBoard(id) {
+  /*handleUpToBoard(id) {
     const handCards = this.state.handCards;
     const handCard = handCards.find(card => card.id === id);
     const handCardIndex = handCards.findIndex(card => card.id === id);
@@ -92,9 +92,9 @@ export class UserStoryMap extends Component {
       }
     }
     SendAndDownload()
-  }
+  }*/
 
-  handleDownToHand(id) {
+  /*handleDownToHand(id) {
     const boardCards = this.state.boardCards;
     const boardCard = boardCards.find(card => card.id === id);
     const boardCardIndex = boardCards.findIndex(card => card.id === id);
@@ -120,9 +120,9 @@ export class UserStoryMap extends Component {
         console.error(error);
       });
 
-  }
+  }*/
 
-  handleDeleteCard(id) {
+/*  handleDeleteCard(id) {
       const handCards = this.state.handCards;
       const handCardIndex = handCards.findIndex(card => card.id === id);
 
@@ -136,9 +136,9 @@ export class UserStoryMap extends Component {
         boardCards.splice(boardCardIndex, 1);
         this.setState({boardCards: boardCards});
       }
-  }
+  }*/
 
-  updateState(state){
+ /* updateState(state){
       const handCards = this.state.handCards;
       const handCardIndex = handCards.findIndex(card => card.id === state.id);
 
@@ -152,7 +152,7 @@ export class UserStoryMap extends Component {
         boardCards[boardCardIndex].text = state.text;
         this.setState({boardCards: boardCards});
       }
-  }
+  }*/
 
   guideFlagChange() {
       this.setState({guideFlag: !this.state.guideFlag});
@@ -197,15 +197,15 @@ export class UserStoryMap extends Component {
           <div className="boardCard2-1">
           {boardCards2}
           </div>
+{/*          <div className="boardCard2-1">
+          {boardCards2}
+          </div>
           <div className="boardCard2-1">
           {boardCards2}
           </div>
           <div className="boardCard2-1">
           {boardCards2}
-          </div>      
-          <div className="boardCard2-1">
-          {boardCards2}
-          </div>                                       
+          </div> */}
           </div>
         </div>
          {/*<button onClick={() => this.fetchData()}>reload</button>*/}
