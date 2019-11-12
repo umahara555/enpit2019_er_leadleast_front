@@ -43,6 +43,14 @@ export class Home extends Component {
           throw Error(postResponse.statusText)
         }
         postResponseJson = await postResponse.json()
+
+        method = "POST";
+        postResponse = await fetch(API_URL+'/product_backlog/'+product_id, {method})
+        if (!postResponse.ok) {
+          throw Error(postResponse.statusText)
+        }
+        postResponseJson = await postResponse.json()
+
       } catch (error) {
         console.log(error)
       }
