@@ -71,7 +71,7 @@ export class LeanCanvas extends Component {
         { this.state.guideFlag && <GuideLeanCanvas onClick={() => this.guideFlagChange()} /> }
         <Header className='header' title='リーンキャンバス' />
         <ShowGuide  onClick={() => this.guideFlagChange()} />
-        <NextButton urlName="/product/0/elevatorpitch" />
+        <NextButton urlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} />
         <div className='lean'>
           <div className="kadai">
             <textarea className="name" readOnly >

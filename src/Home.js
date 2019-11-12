@@ -28,11 +28,17 @@ export class Home extends Component {
           throw Error(postResponse.statusText)
         }
         let postResponseJson = await postResponse.json()
-		product_id = postResponseJson.product_id
-		console.log(product_id)
+		    product_id = postResponseJson.product_id
 
         method = "POST";
         postResponse = await fetch(API_URL+'/leancanvas/'+product_id, {method})
+        if (!postResponse.ok) {
+          throw Error(postResponse.statusText)
+        }
+        postResponseJson = await postResponse.json()
+
+        method = "POST";
+        postResponse = await fetch(API_URL+'/elevator_pitch/'+product_id, {method})
         if (!postResponse.ok) {
           throw Error(postResponse.statusText)
         }
