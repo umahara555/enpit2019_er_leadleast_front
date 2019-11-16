@@ -23,6 +23,7 @@ export class ProductBacklog extends Component {
 			
 		        <Header className="header" title={'プロダクトバックログ'}/>
         <ShowGuide  onClick={() => this.guideFlagChange()} />
+        <div className="backlog">
 		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
@@ -55,6 +56,7 @@ export class ProductBacklog extends Component {
 		        <p>●</p>
 		        	<textarea />
 		        </div>		 
+		    </div>    
 		</div>
 		)
 	}
