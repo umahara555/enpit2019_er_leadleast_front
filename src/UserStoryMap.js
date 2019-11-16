@@ -5,9 +5,9 @@ import { Header } from './Header.js';
 import { MoveHomeButton } from './Guide.js';
 import './UserStoryMap.css'
 
-const API_URL = 'http://localhost5000/api/v1';
-const SET_API_URL = API_URL + '/handcards';
-const GET_API_URL = API_URL + '/handcards';
+const API_URL = 'http://localhost:5000/api/v1';
+// const SET_API_URL = API_URL + '/handcards';
+// const GET_API_URL = API_URL + '/handcards';
 
 export class UserStoryMap extends Component {
   constructor(props) {
@@ -15,11 +15,113 @@ export class UserStoryMap extends Component {
     this.state = {
       productID: this.props.match.params.productID,
       guideFlag: true,
-      boardCards: ["1","2","3","4","5","6"],
-      boardCards1: ["1","2","3","4","5","6"],
-      boardCards2:["1","2","3","4","5","6","7","8","9","10"],
+      board_texts: {
+        group1: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+        },
+        group2: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+        },
+        group3: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+        },
+        group4: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+        },
+        group5: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+        },
+        group6: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+        },
+        group7: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+        },
+        group8: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+        },
+      },
+      // boardCards: ["1","2","3","4","5","6"],
+      // boardCards1: ["1","2","3","4","5","6"],
+      // boardCards2:["1","2","3","4","5","6","7","8","9","10"],
     };
-    this.fetchData();
+    // this.fetchData();
+    this.handleChange = this.handleChange.bind(this);
+    this.getBoardTexts();
+  }
+
+  getBoardTexts() {
+    fetch(API_URL + '/user_story_map/' + this.props.match.params.productID)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          board_texts: responseJson.board_texts,
+        });
+      })
+      .catch((error) =>{
+        console.error(error);
+      });
+  }
+
+  handleChange(state){
+    const board_texts = this.state.board_texts;
+    const key = state.id.split('_');
+    board_texts[key[0]][key[1]].text = state.value;
+    this.setState({board_texts: board_texts});
+
+    const obj = { board_texts: board_texts };
+    const method = "PATCH";
+    const body = JSON.stringify(obj);
+    const headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    };
+    fetch(API_URL+'/user_story_map/'+this.state.productID, {method, headers, body})
+      .then((res)=> res.json())
+      .then((responseJson) => {
+        console.log(responseJson);
+      })
+      .catch(console.error);
   }
 
   /*handleClick() {
@@ -29,7 +131,7 @@ export class UserStoryMap extends Component {
     this.setState({handCards: cards});
   }*/
 
-  fetchData() {
+  /*fetchData() {
     fetch(GET_API_URL)
       .then((response) => response.json())
       .then((responseJson) => {
@@ -40,7 +142,7 @@ export class UserStoryMap extends Component {
       .catch((error) =>{
         console.error(error);
       });
-  }
+  }*/
 
   /*
   sendData(text) {
@@ -159,6 +261,71 @@ export class UserStoryMap extends Component {
   }
 
   render() {
+    const boardCards = Object.keys(this.state.board_texts).map((key) => {
+      return Object.keys(this.state.board_texts[key]).map((txt) => {
+        // TODO : Card側のモード設定で色を変更するようにする
+        if (key === 'group1') {
+          return <Card key={key+'_'+txt}
+                       id={key+'_'+txt}
+                       value={this.state.board_texts[key][txt].text}
+                       updateState={this.handleChange}
+          />;
+        } else if (key === 'group2') {
+          return <Card1 key={key+'_'+txt}
+                       id={key+'_'+txt}
+                       value={this.state.board_texts[key][txt].text}
+                       updateState={this.handleChange}
+          />;
+        } else {
+          return <Card2 key={key+'_'+txt}
+                       id={key+'_'+txt}
+                       value={this.state.board_texts[key][txt].text}
+                       updateState={this.handleChange}
+          />;
+        }
+      });
+    });
+
+    return(
+      <div className="App">
+        <Header className="header" title={'ユーザーストーリーマップ'}/>
+        <ShowGuide  onClick={() => this.guideFlagChange()} />
+        <NextButton urlName={"/product/" + this.props.match.params.productID + "/productbacklog"} />
+        {/*TODO : ループでまわせそうなところはループでやる*/}
+        <div className="board">
+          <div className="split" />
+          <div className="boardCard">
+            {boardCards[0]}
+          </div>
+          <div className="boardCard1">
+            {boardCards[1]}
+          </div>
+          <div className="boardCard2-0">
+            <div className="boardCard2">
+              {boardCards[2]}
+            </div>
+            <div className="boardCard2-1">
+              {boardCards[3]}
+            </div>
+            <div className="boardCard2-1">
+              {boardCards[4]}
+            </div>
+            <div className="boardCard2-1">
+              {boardCards[5]}
+            </div>
+            <div className="boardCard2-1">
+              {boardCards[6]}
+            </div>
+            <div className="boardCard2-1">
+              {boardCards[7]}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  /*render() {
     const boardCards = this.state.boardCards.map((cardInfo) => (
       <Card />
     ));
@@ -166,11 +333,11 @@ export class UserStoryMap extends Component {
     const boardCards1 = this.state.boardCards1.map((cardInfo) => (
       <Card1 />
     ));
-    
+
     const boardCards2 = this.state.boardCards2.map((cardInfo) => (
       <Card2 />
     ));
-    
+
 
     return(
     <div>
@@ -187,7 +354,7 @@ export class UserStoryMap extends Component {
         <div className="boardCard">
           {boardCards}
         </div>
-        <div className="boardCard1">  
+        <div className="boardCard1">
           {boardCards1}
           </div>
           <div className="boardCard2-0">
@@ -200,21 +367,21 @@ export class UserStoryMap extends Component {
           <div className="boardCard2-1">
           {boardCards2}
           </div>
-{/*          <div className="boardCard2-1">
-          {boardCards2}
-          </div>
           <div className="boardCard2-1">
           {boardCards2}
           </div>
           <div className="boardCard2-1">
           {boardCards2}
-          </div> */}
+          </div>
+          <div className="boardCard2-1">
+          {boardCards2}
+          </div>
           </div>
         </div>
-         {/*<button onClick={() => this.fetchData()}>reload</button>*/}
-        {/*<div className="memo"></div>*/}
+         {/!*<button onClick={() => this.fetchData()}>reload</button>*!/}
+        {/!*<div className="memo"></div>*!/}
       </div>
    </div>
     );
-  }
+  }*/
 }
