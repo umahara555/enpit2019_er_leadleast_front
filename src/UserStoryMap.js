@@ -288,11 +288,11 @@ export class UserStoryMap extends Component {
 
     return(
       <div className="App">
+        { this.state.guideFlag && <GuideUserStoryMap onClick={() => this.guideFlagChange()} /> }      
         <Header className="header" title={'ユーザーストーリーマップ'}/>
         <ShowGuide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/productbacklog"} />
         <BackButton urlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} />         
-        
         <AllMenu className="allmenu-user" Uflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>        
         {/*TODO : ループでまわせそうなところはループでやる*/}
         <div className="board">
