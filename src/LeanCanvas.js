@@ -87,7 +87,14 @@ export class LeanCanvas extends Component {
           </div>
 
           <div className="kizon">
-            <textarea className="name" readOnly >
+            <div className="kadaiGuidea" title="aaa">
+            HINT
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+          
+            <textarea className="name" readOnly >            
               [2]既存の代替品
             </textarea>
             <textarea className="write" id="txt2" value={this.state.board_texts.txt2.text} onChange={this.handleChange}/>
@@ -150,17 +157,17 @@ export class LeanCanvas extends Component {
           </div>
 
           <div className="cost">
-            <textarea className="name" readOnly >
+            <textarea className="nameL" readOnly >
               [10]コスト構造
             </textarea>
-            <textarea className="write" id="txt11" value={this.state.board_texts.txt11.text} onChange={this.handleChange}/>
+            <textarea className="writeL" id="txt11" value={this.state.board_texts.txt11.text} onChange={this.handleChange}/>
           </div>
 
           <div className="syueki">
-            <textarea className="name" readOnly >
+            <textarea className="nameL" readOnly >
               [9]収益の流れ
             </textarea>
-          <textarea className="write" id="txt12" value={this.state.board_texts.txt12.text} onChange={this.handleChange}/>
+          <textarea className="writeL" id="txt12" value={this.state.board_texts.txt12.text} onChange={this.handleChange}/>
         </div>
       </div>
     </div>
