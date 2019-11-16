@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { GuideElevatorPitch, ShowGuide, MoveHomeButton, NextButton } from './Guide.js';
+import { GuideElevatorPitch, ShowGuide, NextButton } from './Guide.js';
 import './ElevatorPitch.css';
 
 const API_URL = 'http://localhost:5000/api/v1';

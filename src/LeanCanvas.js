@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { GuideLeanCanvas, ShowGuide, MoveHomeButton, NextButton } from './Guide.js';
+import { GuideLeanCanvas, ShowGuide, NextButton } from './Guide.js';
 import './LeanCanvas.css';
 
 const API_URL = 'http://localhost:5000/api/v1';
