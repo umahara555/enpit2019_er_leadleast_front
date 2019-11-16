@@ -83,7 +83,7 @@ export class LeanCanvas extends Component {
             <p>?</p>
               <div className="hidekadaiGuide">
                          サービスの対象のユーザーが抱えている課題、<br/>
-         または解決すべき課題を複数個あげてください。<br/><br/>
+         または解決すべき課題を1~3個あげてください。<br/><br/>
               </div>    
             </div>
             </div>    
@@ -98,7 +98,8 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide" title="aaa">
             <p>?</p>
               <div className="hidekadaiGuide">
-                aaa
+                [1]で挙げた課題を解決するためにユーザーが現在<br/>
+                行なっている具体的な対処をあげてください。
               </div>    
             </div>
             </div>    
@@ -113,7 +114,8 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide" title="aaa">
             <p>?</p>
               <div className="hidekadaiGuide">
-                aaa
+                [1]であげた課題を解決するための方法を<br/>
+                説明してください。
               </div>    
             </div>
             </div>    
@@ -128,7 +130,8 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide" title="aaa">
             <p>?</p>
               <div className="hidekadaiGuide">
-                aaa
+                企画したサービスがどのような規模,段階を踏んで<br/>
+                発展していくか書き込んでください
               </div>    
             </div>
             </div>    
@@ -143,7 +146,10 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide" title="aaa">
             <p>?</p>
               <div className="hidekadaiGuide">
-                aaa
+                企画しているサービスがユーザーにとって<br/>
+                興味を引くに値する要素、固有の利点を<br/>
+                挙げてください。
+                               
               </div>    
             </div>
             </div>    
@@ -158,7 +164,9 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide" title="aaa">
             <p>?</p>
               <div className="hidekadaiGuide">
-                aaa
+                企画しているサービスを、衆知のサービスを引用して<br/>
+                ユーザーに簡潔にサービスの概要を伝えるフレーズを挙げてください。<br/>
+                例えば、twitter=匿名のfacebook
               </div>    
             </div>
             </div>    
@@ -172,8 +180,8 @@ export class LeanCanvas extends Component {
             </div>
             <div className="kadaiGuide" title="aaa">
             <p>?</p>
-              <div className="hidekadaiGuide">
-                aaa
+              <div className="RhidekadaiGuide">
+                他者が簡単に真似できない技術、ノウハウ、サービスなどを挙げてください。
               </div>    
             </div>
             </div>    
@@ -187,8 +195,8 @@ export class LeanCanvas extends Component {
             </div>
             <div className="kadaiGuide" title="aaa">
             <p>?</p>
-              <div className="hidekadaiGuide">
-                aaa
+              <div className="RhidekadaiGuide">
+                企画したサービスを顧客に知ってもらう経路を挙げてください。
               </div>    
             </div>
             </div>              
@@ -202,8 +210,8 @@ export class LeanCanvas extends Component {
             </div>
             <div className="kadaiGuide" title="aaa">
             <p>?</p>
-              <div className="hidekadaiGuide">
-                aaa
+              <div className="RhidekadaiGuide">
+                ターゲットユーザーを挙げてください。
               </div>    
             </div>
             </div>    
@@ -217,8 +225,8 @@ export class LeanCanvas extends Component {
             </div>
             <div className="kadaiGuide" title="aaa">
             <p>?</p>
-              <div className="hidekadaiGuide">
-                aaa
+              <div className="RhidekadaiGuide">
+                このサービスを最も早く利用するであろうユーザーの特徴を挙げてください。
               </div>    
             </div>
             </div>    
@@ -233,7 +241,7 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide" title="aaa">
             <p>?</p>
               <div className="hidekadaiGuide">
-                aaa
+                サービスを運用できるようになるまでの、コストを挙げてください。
               </div>    
             </div>
             </div>    
@@ -243,12 +251,12 @@ export class LeanCanvas extends Component {
           <div className="syueki">
             <div className="element">
               <div className="ename">
-            <p>[10]収益の流れ</p>
+            <p>[9]収益の流れ</p>
             </div>
             <div className="kadaiGuide" title="aaa">
             <p>?</p>
-              <div className="hidekadaiGuide">
-                aaa
+              <div className="RhidekadaiGuide">
+                収益となる要素を挙げ、どの程度の収入になるか書き込んでください。
               </div>    
             </div>
             </div>    

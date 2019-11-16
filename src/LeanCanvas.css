@@ -90,8 +90,19 @@ display:block;
 .hidekadaiGuide{
     display: none;
     position: absolute;
-    top:50vh;
-    left:50vh;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 1.6em;
+    color: #fff;
+    border-radius: 5px;
+    background: #000;
+    width: 60vh;  
+}
+
+.RhidekadaiGuide{
+    display: none;
+    position: absolute;
+    right:1vh;
     padding: 10px;
     font-size: 18px;
     line-height: 1.6em;
@@ -102,6 +113,11 @@ display:block;
 }
 
 .kadaiGuide:hover .hidekadaiGuide{
+    display: inline-block;
+    z-index:30;
+}
+
+.kadaiGuide:hover .RhidekadaiGuide{
     display: inline-block;
     z-index:30;
 }
