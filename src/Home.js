@@ -99,9 +99,9 @@ export class Home extends Component {
           <div className='Explanation-container'>
             <div className='Explanation'>
               <h3>リーンキャンバス</h3>
-                <p> 
-                 リーンキャンバスを用いて、<br/>
-                 12の視点から企画しているサービスの価値を掘り下げましょう。
+                <p>
+                  リーンキャンバスを用いて、<br/>
+                  12の視点から企画しているサービスの価値を掘り下げましょう。
                 </p>
             </div>
             <div className='Explanation-image-wrapper'>
@@ -110,18 +110,18 @@ export class Home extends Component {
           </div>
         </div>
 
-        <div className='Explanation-container-wrapper'>
-          <div className='Explanation-container'>
-            <div className='Explanation'>
+        <div className='Explanation-container-wrapper2'>
+          <div className='Explanation-image2'>
+            <img src={ElevatorPitch} className="Explanation-image" />
+          </div>
+          <div className='Explanation-container2'>
+            <div className='Explanation2'>
               <h3>エレベーターピッチ</h3>
               <p>
                 エレベーターピッチを用いて、<br/>
                 リーンキャンバスで明確にしたサービスの構造を<br/>
                 端的に説明できる形にしましょう。
               </p>
-            </div>
-            <div className='Explanation-image-wrapper'>
-              <img src={ElevatorPitch} className="Explanation-imageL" />
             </div>
           </div>
         </div>
@@ -137,23 +137,23 @@ export class Home extends Component {
               </p>
             </div>
             <div className='Explanation-image-wrapper'>
-              <img src={UserStoryMap} className="Explanation-imageR" />
+              <img src={UserStoryMap} className="Explanation-image" />
             </div>
           </div>
         </div>
-        
-        <div className='Explanation-container-wrapper'>
-          <div className='Explanation-container'>
-            <div className='Explanation'>
+
+        <div className='Explanation-container-wrapper2'>
+          <div className='Explanation-image2'>
+            <img src={ProductBacklog} className="Explanation-image" />
+          </div>
+          <div className='Explanation-container2'>
+            <div className='Explanation2'>
               <h3>プロダクトバックログ</h3>
               <p>
                 プロダクトバックログを用いて、<br/>
                 ユーザーストーリーマップを参考に、<br/>
                 提供するサービスの優先順位を定めましょう。
               </p>
-            </div>
-            <div className='Explanation-image-wrapper'>
-              <img src={ProductBacklog} className="Explanation-imageL" />
             </div>
           </div>
         </div>        

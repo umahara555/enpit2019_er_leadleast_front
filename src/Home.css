@@ -92,3 +92,49 @@
   object-fit: cover;
   object-position: 0 0;
 }
+
+
+.Explanation-container-wrapper2 {
+  padding: 40px 0;
+  height: 800px;
+  display: flex;
+  /* background-color: pink; */
+}
+
+.Explanation-container2 {
+  width: 40%;
+  margin-left: 40px;
+  display: flex;
+  overflow: hidden;
+  /* background-color: grey; */
+}
+
+.Explanation-image2 {
+  position: relative;
+  width: 60%;
+  /* background-color: red; */
+}
+
+.Explanation-image-wrapper2 {
+  position: relative;
+  width: 60%;
+  /* background-color: blue; */
+}
+.Explanation2 {
+  position: relative;
+  margin-left: 80px;
+  width: 80%;
+  /* background-color: red; */
+}
+
+.Explanation2 h3 {
+  font-size: 3.2rem;
+  line-height: 200%;
+  /* margin: 1.6rem; */
+}
+
+.Explanation2 p {
+  font-size: 1.6rem;
+  line-height: 180%;
+  /* margin: 1.6rem; */
+}
