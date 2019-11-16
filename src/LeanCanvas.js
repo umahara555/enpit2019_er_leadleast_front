@@ -74,87 +74,192 @@ export class LeanCanvas extends Component {
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} />  
         <AllMenu className="allmenu-user" Lflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>
         <div className='lean'>
-          <div className="kadai">
-            <textarea className="name" readOnly >
-              [1]課題　
-            </textarea>
+          <div className="kadai">      
+            <div className="element">
+              <div className="ename">
+            <p>[1]課題</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="hidekadaiGuide">
+                         サービスの対象のユーザーが抱えている課題、<br/>
+         または解決すべき課題を1~3個あげてください。<br/><br/>
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt1" value={this.state.board_texts.txt1.text} onChange={this.handleChange}/>
           </div>
 
           <div className="kizon">
-            <textarea className="name" readOnly >            
-              [2]既存の代替品
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[2]既存の代替品</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="hidekadaiGuide">
+                [1]で挙げた課題を解決するためにユーザーが現在<br/>
+                行なっている具体的な対処をあげてください。
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt2" value={this.state.board_texts.txt2.text} onChange={this.handleChange}/>
           </div>
 
           <div className="solution">
-            <textarea className="name" readOnly >
-              [7]ソリューション
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[7]ソリューション</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="hidekadaiGuide">
+                [1]であげた課題を解決するための方法を<br/>
+                説明してください。
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt3" value={this.state.board_texts.txt3.text} onChange={this.handleChange}/>
           </div>
 
           <div className="syuyou">
-            <textarea className="name" readOnly >
-              [12]主要指標
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[12]主要指標</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="hidekadaiGuide">
+                企画したサービスがどのような規模,段階を踏んで<br/>
+                発展していくか書き込んでください
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt4" value={this.state.board_texts.txt4.text} onChange={this.handleChange}/>
           </div>
 
           <div className="dokuzi">
-            <textarea className="name" readOnly >
-              [5]独自の価値提案
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[5]独自の価値提案</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="hidekadaiGuide">
+                企画しているサービスがユーザーにとって<br/>
+                興味を引くに値する要素、固有の利点を<br/>
+                挙げてください。
+                               
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt5" value={this.state.board_texts.txt5.text} onChange={this.handleChange}/>
           </div>
 
           <div className="highlevel">
-            <textarea className="name" readOnly >
-              [6]ハイレベルコンセプト
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[6]ハイレベルコンセプト</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="hidekadaiGuide">
+                企画しているサービスを、衆知のサービスを引用して<br/>
+                ユーザーに簡潔にサービスの概要を伝えるフレーズを挙げてください。<br/>
+                例えば、twitter=匿名のfacebook
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt6" value={this.state.board_texts.txt6.text} onChange={this.handleChange}/>
           </div>
 
           <div className="attouteki">
-            <textarea className="name" readOnly >
-              [11]圧倒的な優位性
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[11]圧倒的な優位性</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="RhidekadaiGuide">
+                他者が簡単に真似できない技術、ノウハウ、サービスなどを挙げてください。
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt7" value={this.state.board_texts.txt7.text} onChange={this.handleChange}/>
           </div>
 
           <div className="tyaneru">
-            <textarea className="name" readOnly >
-              [8]チャネル
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[8]チャネル</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="RhidekadaiGuide">
+                企画したサービスを顧客に知ってもらう経路を挙げてください。
+              </div>    
+            </div>
+            </div>              
             <textarea className="write" id="txt8" value={this.state.board_texts.txt8.text} onChange={this.handleChange}/>
           </div>
 
           <div className="kokyaku">
-            <textarea className="name" readOnly >
-              [3]顧客セグメント
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[3]顧客セグメント</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="RhidekadaiGuide">
+                ターゲットユーザーを挙げてください。
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt9" value={this.state.board_texts.txt9.text} onChange={this.handleChange}/>
           </div>
 
           <div className="early">
-            <textarea className="name" readOnly >
-              [4]アーリーアダプタ
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[4]アーリーアダプタ</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="RhidekadaiGuide">
+                このサービスを最も早く利用するであろうユーザーの特徴を挙げてください。
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt10" value={this.state.board_texts.txt10.text} onChange={this.handleChange}/>
           </div>
 
           <div className="cost">
-            <textarea className="nameL" readOnly >
-              [10]コスト構造
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[10]コスト構造</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="hidekadaiGuide">
+                サービスを運用できるようになるまでの、コストを挙げてください。
+              </div>    
+            </div>
+            </div>    
             <textarea className="writeL" id="txt11" value={this.state.board_texts.txt11.text} onChange={this.handleChange}/>
           </div>
 
           <div className="syueki">
-            <textarea className="nameL" readOnly >
-              [9]収益の流れ
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[9]収益の流れ</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            <p>?</p>
+              <div className="RhidekadaiGuide">
+                収益となる要素を挙げ、どの程度の収入になるか書き込んでください。
+              </div>    
+            </div>
+            </div>    
           <textarea className="writeL" id="txt12" value={this.state.board_texts.txt12.text} onChange={this.handleChange}/>
         </div>
       </div>

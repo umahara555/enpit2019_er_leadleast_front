@@ -16,6 +16,7 @@
 	z-index: 2;
 }
 
+
 .guide-background {
 	position: absolute;
 	width: 100%;
@@ -37,7 +38,22 @@
 	background-color: white;
 	overflow-y:scroll;
 	overflow-x:hidden;
+	padding:10px 10px;
 }
+
+.guide::-webkit-scrollbar {
+	width:8px;
+	border: solid 10px #eee;
+}
+.guide::-webkit-scrollbar-track{
+	background:white;
+	border: solid 1px #eee;
+}
+.guide::-webkit-scrollbar-thumb{
+	background:gray;
+	border-radius: 4px;
+}
+
 
 .guide p {
 	font-size:24px;
@@ -63,10 +79,10 @@
 
 .closeButton {
 	position: absolute;
-	right: 25%;
-	top: 15%;
+	right: 24%;
+	top: 12%;
 	-webkit-transform: translate(50%,-50%);
-    transform: translate(50%,-50%);
+  transform: translate(50%,-50%);
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
@@ -79,17 +95,24 @@
 
 .openButton {
 	position: absolute;
-	right: 12%;
-	display: inline-box;
-	width: 48px;
+	right: 16%;
+	width: 54px;
 	height: 32px;
 	top:12px;
-	border-radius: 8px;
+  display: inline-block;
+  font-weight: bold;
+  font-size:14px;
+  text-decoration: none;
+  color: #FFF;
+  background: green;
+  transition: .4s;	
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.29);	
+	border-radius: 10px;  	
 
 }
 
-.openButton:focus {
-  outline:0;
+.openButton:hover {
+	background-color:#fd9535;
 }
 
 .homeButton {
@@ -112,38 +135,50 @@
 
 .nextButton {
 	position: absolute;
-	right: 1%;
+	right: 0.5%;
 	top:12px;
   display: inline-block;
   font-weight: bold;
   padding: 0.25em 0.5em;
   text-decoration: none;
-  color: #00BCD4;
-  background: #ECECEC;
+  color: #FFF;
+  background: green;
   transition: .4s;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.29);	
+	border-radius: 10px;    
+}
 
+.nextButton:hover{
+  background: #fd9535;	
 }
 
 .nextButton p {
   font-size:24px;
 }
 
+
 .backButton {
 	position: absolute;
-	right: 6%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.29);	
+  border-radius: 10px;  
+	right: 6.7%;
 	top:12px;
   display: inline-block;
   font-weight: bold;
   padding: 0.25em 0.5em;
   text-decoration: none;
-  color: #00BCD4;
-  background: #ECECEC;
+  color: #FFF;
+  background: green;
   transition: .4s;
 
 }
 
 .backButton p {
   font-size:24px;
+}
+
+.backButton:hover{
+	background-color:#fd9535;
 }
 
 .allmenu{

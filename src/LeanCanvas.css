@@ -55,48 +55,69 @@ display:block;
   grid-column: 1 / 2;
 }
 
+
+.element{
+  border:1px solid black;
+  display: flex;
+  background-color:white;
+  height:10%;
+  width:100%;
+}
+.ename{
+  font-size:36px;
+}
+.ename p{
+  line-height: 22px;
+  font-size:18px;
+}
 .kadaiGuide{
-  position:absolute;
-  left:5%;
-  top:8.4%;
+  position:relative;
   display: inline-block;
-  padding: 0.3em 1em;
+  height: 16px;
+  width: 16px;
+  margin: auto 0;
+  margin-left: 2px;
+  text-align:center;
   text-decoration: none;
-  color: #7DCEA0;
-  border: solid 2px #7DCEA0;
-  border-radius: 3px;
-  transition: .4s;  
-  display: inline-block;
-  
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  background-color: black;
+  border: solid 2px black;
+  border-radius: 50%; 
 }
 
-.kadaiGuidea{
-  position:absolute;
-  left:5%;
-  top:16.4%;
-  display: inline-block;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  color: #7DCEA0;
-  border: solid 2px #7DCEA0;
-  border-radius: 3px;
-  transition: .4s;  
-  display: inline-block;
-  
-}
 .hidekadaiGuide{
     display: none;
     position: absolute;
     padding: 10px;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 1.6em;
     color: #fff;
     border-radius: 5px;
     background: #000;
-    width: 100px;  
+    width: 60vh;  
+}
+
+.RhidekadaiGuide{
+    display: none;
+    position: absolute;
+    right:1vh;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 1.6em;
+    color: #fff;
+    border-radius: 5px;
+    background: #000;
+    width: 60vh;  
 }
 
 .kadaiGuide:hover .hidekadaiGuide{
+    display: inline-block;
+    z-index:30;
+}
+
+.kadaiGuide:hover .RhidekadaiGuide{
     display: inline-block;
     z-index:30;
 }
