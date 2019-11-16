@@ -80,7 +80,7 @@ export class LeanCanvas extends Component {
             <p>[1]課題</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                          サービスの対象のユーザーが抱えている課題、<br/>
          または解決すべき課題を複数個あげてください。<br/><br/>
@@ -96,7 +96,7 @@ export class LeanCanvas extends Component {
             <p>[2]既存の代替品</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 aaa
               </div>    
@@ -111,7 +111,7 @@ export class LeanCanvas extends Component {
             <p>[7]ソリューション</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 aaa
               </div>    
@@ -126,7 +126,7 @@ export class LeanCanvas extends Component {
             <p>[12]主要指標</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 aaa
               </div>    
@@ -141,7 +141,7 @@ export class LeanCanvas extends Component {
             <p>[5]独自の価値提案</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 aaa
               </div>    
@@ -156,7 +156,7 @@ export class LeanCanvas extends Component {
             <p>[6]ハイレベルコンセプト</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 aaa
               </div>    
@@ -171,7 +171,7 @@ export class LeanCanvas extends Component {
             <p>[11]圧倒的な優位性</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 aaa
               </div>    
@@ -186,7 +186,7 @@ export class LeanCanvas extends Component {
             <p>[8]チャネル</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 aaa
               </div>    
@@ -201,7 +201,7 @@ export class LeanCanvas extends Component {
             <p>[3]顧客セグメント</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 aaa
               </div>    
@@ -216,7 +216,7 @@ export class LeanCanvas extends Component {
             <p>[4]アーリーアダプタ</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 aaa
               </div>    
@@ -231,7 +231,7 @@ export class LeanCanvas extends Component {
             <p>[10]コスト構造</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 aaa
               </div>    
@@ -246,7 +246,7 @@ export class LeanCanvas extends Component {
             <p>[10]収益の流れ</p>
             </div>
             <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 aaa
               </div>    

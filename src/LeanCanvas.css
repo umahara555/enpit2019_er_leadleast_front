@@ -64,30 +64,34 @@ display:block;
   width:100%;
 }
 .ename{
-  
   font-size:36px;
 }
 .ename p{
+  line-height: 22px;
   font-size:18px;
 }
 .kadaiGuide{
   position:relative;
   display: inline-block;
-  height:99%;
+  height: 16px;
+  width: 16px;
+  margin: auto 0;
+  margin-left: 2px;
   text-align:center;
-  padding: 0.1em 0.8em;
   text-decoration: none;
-  color: #7DCEA0;
-  background-color:white;
-  border: solid 2px #7DCEA0;
-  border-radius: 3px;
-  transition: .4s;  
-  display: inline-block; 
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  background-color: black;
+  border: solid 2px black;
+  border-radius: 50%; 
 }
 
 .hidekadaiGuide{
     display: none;
     position: absolute;
+    top:50vh;
+    left:50vh;
     padding: 10px;
     font-size: 18px;
     line-height: 1.6em;
