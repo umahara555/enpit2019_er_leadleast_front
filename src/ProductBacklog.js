@@ -25,6 +25,7 @@ export class ProductBacklog extends Component {
         <ShowGuide  onClick={() => this.guideFlagChange()} />
         <BackButton urlName={"/product/" + this.props.match.params.productID + "/userstorymap"} />     
         <AllMenu className="allmenu-user" Pflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>        
+          <div className="backlog">
 		        <div className="plow">
 		        <p>●</p>
 		        	<textarea />
