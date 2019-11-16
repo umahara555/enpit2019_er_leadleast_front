@@ -17,6 +17,21 @@ export class CardAddButton extends Component {
 }
 
 export class Card extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      id: this.props.id,
+      value: this.props.value,
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const state = this.state;
+    state.value = e.target.value;
+    this.setState(state);
+    this.props.updateState(state);
+  }
 
   render() {
     const upButton = (
@@ -45,6 +60,7 @@ export class Card extends Component {
         <div className="card">
 
           <textarea onChange={this.handleChange}
+                    value={this.props.value}
                     placeholder="ここにアイディア"
 
           />
@@ -56,6 +72,21 @@ export class Card extends Component {
 
 
 export class Card1 extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      id: this.props.id,
+      value: this.props.value,
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const state = this.state;
+    state.value = e.target.value;
+    this.setState(state);
+    this.props.updateState(state);
+  }
 
   render() {
     const upButton = (
@@ -64,7 +95,7 @@ export class Card1 extends Component {
         onClick={() => this.props.onClick()}
       >↑</button>
     );
-    
+
     const downButton = (
       <button
         className="downButton"
@@ -84,6 +115,7 @@ export class Card1 extends Component {
         <div className="card1">
 
           <textarea onChange={this.handleChange}
+                    value={this.props.value}
                     placeholder="ここにアイディア"
 
           />
@@ -93,8 +125,22 @@ export class Card1 extends Component {
   }
 }
 
-
 export class Card2 extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      id: this.props.id,
+      value: this.props.value,
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const state = this.state;
+    state.value = e.target.value;
+    this.setState(state);
+    this.props.updateState(state);
+  }
 
   render() {
     const upButton = (
@@ -103,7 +149,7 @@ export class Card2 extends Component {
         onClick={() => this.props.onClick()}
       >↑</button>
     );
-    
+
     const downButton = (
       <button
         className="downButton"
@@ -123,6 +169,7 @@ export class Card2 extends Component {
         <div className="card2">
 
           <textarea onChange={this.handleChange}
+                    value={this.props.value}
                     placeholder="ここにアイディア"
 
           />
