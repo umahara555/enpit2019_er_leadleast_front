@@ -264,7 +264,7 @@ export class NextButton extends Component {
 	render() {
 		return(
 　　　<Link to={this.props.urlName} className="nextButton">
-            <p>Next</p>
+            <p>Next→</p>
           </Link>  					           
 		);
 	}
@@ -274,7 +274,7 @@ export class BackButton extends Component {
 	render() {
 		return(
 　　　<Link to={this.props.urlName} className="backButton">
-            <p>Back</p>
+            <p>←Back</p>
           </Link>  					           
 		);
 	}

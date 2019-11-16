@@ -79,7 +79,7 @@
 
 .openButton {
 	position: absolute;
-	right: 12%;
+	right: 16%;
 	display: inline-box;
 	width: 48px;
 	height: 32px;
@@ -112,38 +112,50 @@
 
 .nextButton {
 	position: absolute;
-	right: 1%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.29);	
+	border-radius: 10px;  
+	right: 0.5%;
 	top:12px;
   display: inline-block;
   font-weight: bold;
   padding: 0.25em 0.5em;
   text-decoration: none;
-  color: #00BCD4;
-  background: #ECECEC;
+  color: #FFF;
+  background: green;
   transition: .4s;
+}
 
+.nextButton:hover{
+  background: #fd9535;	
 }
 
 .nextButton p {
   font-size:24px;
 }
 
+
 .backButton {
 	position: absolute;
-	right: 6%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.29);	
+  border-radius: 10px;  
+	right: 6.7%;
 	top:12px;
   display: inline-block;
   font-weight: bold;
   padding: 0.25em 0.5em;
   text-decoration: none;
-  color: #00BCD4;
-  background: #ECECEC;
+  color: #FFF;
+  background: green;
   transition: .4s;
 
 }
 
 .backButton p {
   font-size:24px;
+}
+
+.backButton:hover{
+	background-color:#fd9535;
 }
 
 .allmenu{
