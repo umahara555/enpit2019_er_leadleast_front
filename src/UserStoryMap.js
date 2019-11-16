@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardAddButton, Card1, Card2 } from './Card.js';
-import { GuideUserStoryMap, ShowGuide, NextButton } from './Guide.js';
+import { GuideUserStoryMap, ShowGuide, NextButton, BackButton, AllMenu } from './Guide.js';
 import { Header } from './Header.js';
 import { MoveHomeButton } from './Guide.js';
 import './UserStoryMap.css'
@@ -178,7 +178,10 @@ export class UserStoryMap extends Component {
       <div className="App">
         <Header className="header" title={'ユーザーストーリーマップ'}/>
         <ShowGuide  onClick={() => this.guideFlagChange()} />
-        <NextButton urlName="/product/0/productbacklog" />
+        <NextButton urlName={"/product/" + this.props.match.params.productID + "/productbacklog"} />          
+        <BackButton urlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} />         
+        <AllMenu className="allmenu-user" Uflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>
+             
         <div className="board">
         <div className="split" />
         <div className="boardCard">

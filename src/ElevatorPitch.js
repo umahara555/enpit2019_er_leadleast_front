@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { GuideElevatorPitch, ShowGuide, MoveHomeButton, NextButton } from './Guide.js';
+import { GuideElevatorPitch, ShowGuide, MoveHomeButton, NextButton, BackButton, AllMenu } from './Guide.js';
 import './ElevatorPitch.css';
 
 const API_URL = 'http://localhost:5000/api/v1';
@@ -70,6 +70,8 @@ export class ElevatorPitch extends Component {
 		        <Header className="header" title={'エレベーターピッチ'}/>
         <ShowGuide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/userstorymap"} />
+        <BackButton urlName={"/product/" + this.props.match.params.productID + "/leancanvas"} />     
+        <AllMenu className="allmenu-user" Eflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>        
 			<div className="low">
 				<textarea id="txt1" value={this.state.board_texts.txt1.text} onChange={this.handleChange}/>
 				<p>したい</p>

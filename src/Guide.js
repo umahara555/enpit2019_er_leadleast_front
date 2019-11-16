@@ -269,3 +269,61 @@ export class NextButton extends Component {
 		);
 	}
 }
+
+export class BackButton extends Component {
+	render() {
+		return(
+　　　<Link to={this.props.urlName} className="backButton">
+            <p>Back</p>
+          </Link>  					           
+		);
+	}
+}
+
+export class AllMenu extends Component {
+	render() {
+		return(
+		<div className="allmenu">
+			{ this.props.Lflag ? 			
+　　　	<Link to={this.props.LurlName} className="menu-bar-true">
+            <p>LeanCanvas</p>
+      </Link>  					 
+      :
+　　　	<Link to={this.props.LurlName} className="menu-bar">
+            <p>LeanCanvas</p>
+      </Link>  			      	
+      }
+      
+			{ this.props.Eflag ? 
+　　　	<Link to={this.props.EurlName} className="menu-bar-true">
+            <p>ElevatorPitch</p>
+      </Link>  					 
+      :
+　　　	<Link to={this.props.EurlName} className="menu-bar">
+            <p>ElevatorPitch</p>
+      </Link>  			      	
+      }
+      
+      { this.props.Uflag ? 
+　　　	<Link to={this.props.UurlName} className="menu-bar-true">
+            <p>UserStoryMap</p>
+      </Link>  					 
+      :
+　　　	<Link to={this.props.UurlName} className="menu-bar">
+            <p>UserStoryMap</p>
+      </Link>  			      	
+      }
+      
+      { this.props.Pflag ? 
+　　　	<Link to={this.props.PurlName} className="menu-bar-true">
+            <p>ProductBacklog</p>
+      </Link>  					 
+      :
+　　　	<Link to={this.props.PurlName} className="menu-bar">
+            <p>ProductBacklog</p>
+      </Link>  			      	
+      }            
+		</div>          
+		);
+	}
+}

@@ -19,7 +19,6 @@
   background-color: #7DCEA0;
 }
 
-
 .board{
   display: flex;
   flex-flow: row wrap;

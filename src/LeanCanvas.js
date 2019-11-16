@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { GuideLeanCanvas, ShowGuide, MoveHomeButton, NextButton } from './Guide.js';
+import { GuideLeanCanvas, ShowGuide, MoveHomeButton, NextButton, BackButton, AllMenu } from './Guide.js';
 import './LeanCanvas.css';
 
 const API_URL = 'http://localhost:5000/api/v1';
@@ -71,7 +71,8 @@ export class LeanCanvas extends Component {
         { this.state.guideFlag && <GuideLeanCanvas onClick={() => this.guideFlagChange()} /> }
         <Header className='header' title='リーンキャンバス' />
         <ShowGuide  onClick={() => this.guideFlagChange()} />
-        <NextButton urlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} />
+        <NextButton urlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} />  
+        <AllMenu className="allmenu-user" Lflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>
         <div className='lean'>
           <div className="kadai">
             <textarea className="name" readOnly >
