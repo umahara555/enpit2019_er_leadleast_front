@@ -74,12 +74,6 @@ export class LeanCanvas extends Component {
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} />
         <div className='lean'>
           <div className="kadai">
-            <div className="kadaiGuide" title="aaa">
-            HINT
-              <div className="hidekadaiGuide">
-                aaa
-              </div>    
-            </div>
             <textarea className="name" readOnly >
               [1]課題　
             </textarea>
@@ -87,13 +81,6 @@ export class LeanCanvas extends Component {
           </div>
 
           <div className="kizon">
-            <div className="kadaiGuidea" title="aaa">
-            HINT
-              <div className="hidekadaiGuide">
-                aaa
-              </div>    
-            </div>
-          
             <textarea className="name" readOnly >            
               [2]既存の代替品
             </textarea>
