@@ -57,6 +57,7 @@ export class ProductBacklog extends Component {
 		        <p>●</p>
 		        	<textarea />
 		        </div>		 
+		    </div>    
 		</div>
 		)
 	}

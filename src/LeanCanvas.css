@@ -4,21 +4,21 @@
 }
 
 .lean {
-overflow:auto;
+overflow:scroll;
   display: grid;
 
-  width: 100vw;
-  height: 100vh;
+  width: 1440px;
+  height: 730px;
 
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 20vw 20vw 10vw 10vw 20vw 20vw;
+  grid-template-columns: 288px 288px 144px 144px 288px 288px;
 
   background-color: #F4F6F7;
 }
 
 .name{
 display:block;
-	width:100%;
+	min-width:100%;
 	height:10%;
 	font-size:18px;
 	  resize: none;
@@ -29,14 +29,14 @@ display:block;
   resize: none;
     	font-size:24px;
 
-  width:100%;
-  height:90%;
+  min-width:100%;
+  min-height:90%;
 }
 
 .nameL{
 display:block;
 	width:100%;
-	height:5%;
+	height:10%;
 	font-size:18px;
 	  resize: none;
 }
@@ -47,7 +47,7 @@ display:block;
     	font-size:24px;
 
   width:100%;
-  height:95%;
+  height:90%;
 }
 
 .kadai{
@@ -55,6 +55,51 @@ display:block;
   grid-column: 1 / 2;
 }
 
+.kadaiGuide{
+  position:absolute;
+  left:5%;
+  top:8.4%;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #7DCEA0;
+  border: solid 2px #7DCEA0;
+  border-radius: 3px;
+  transition: .4s;  
+  display: inline-block;
+  
+}
+
+.kadaiGuidea{
+  position:absolute;
+  left:5%;
+  top:16.4%;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #7DCEA0;
+  border: solid 2px #7DCEA0;
+  border-radius: 3px;
+  transition: .4s;  
+  display: inline-block;
+  
+}
+.hidekadaiGuide{
+    display: none;
+    position: absolute;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1.6em;
+    color: #fff;
+    border-radius: 5px;
+    background: #000;
+    width: 100px;  
+}
+
+.kadaiGuide:hover .hidekadaiGuide{
+    display: inline-block;
+    z-index:30;
+}
 .kizon{
   grid-row: 2 / 3;
   grid-column: 1 / 2;
