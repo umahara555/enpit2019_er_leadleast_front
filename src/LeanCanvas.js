@@ -74,87 +74,184 @@ export class LeanCanvas extends Component {
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} />  
         <AllMenu className="allmenu-user" Lflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>
         <div className='lean'>
-          <div className="kadai">
-            <textarea className="name" readOnly >
-              [1]課題　
-            </textarea>
+          <div className="kadai">      
+            <div className="element">
+              <div className="ename">
+            <p>[1]課題</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                         サービスの対象のユーザーが抱えている課題、<br/>
+         または解決すべき課題を複数個あげてください。<br/><br/>
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt1" value={this.state.board_texts.txt1.text} onChange={this.handleChange}/>
           </div>
 
           <div className="kizon">
-            <textarea className="name" readOnly >            
-              [2]既存の代替品
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[2]既存の代替品</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt2" value={this.state.board_texts.txt2.text} onChange={this.handleChange}/>
           </div>
 
           <div className="solution">
-            <textarea className="name" readOnly >
-              [7]ソリューション
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[7]ソリューション</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt3" value={this.state.board_texts.txt3.text} onChange={this.handleChange}/>
           </div>
 
           <div className="syuyou">
-            <textarea className="name" readOnly >
-              [12]主要指標
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[12]主要指標</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt4" value={this.state.board_texts.txt4.text} onChange={this.handleChange}/>
           </div>
 
           <div className="dokuzi">
-            <textarea className="name" readOnly >
-              [5]独自の価値提案
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[5]独自の価値提案</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt5" value={this.state.board_texts.txt5.text} onChange={this.handleChange}/>
           </div>
 
           <div className="highlevel">
-            <textarea className="name" readOnly >
-              [6]ハイレベルコンセプト
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[6]ハイレベルコンセプト</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt6" value={this.state.board_texts.txt6.text} onChange={this.handleChange}/>
           </div>
 
           <div className="attouteki">
-            <textarea className="name" readOnly >
-              [11]圧倒的な優位性
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[11]圧倒的な優位性</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt7" value={this.state.board_texts.txt7.text} onChange={this.handleChange}/>
           </div>
 
           <div className="tyaneru">
-            <textarea className="name" readOnly >
-              [8]チャネル
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[8]チャネル</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+            </div>              
             <textarea className="write" id="txt8" value={this.state.board_texts.txt8.text} onChange={this.handleChange}/>
           </div>
 
           <div className="kokyaku">
-            <textarea className="name" readOnly >
-              [3]顧客セグメント
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[3]顧客セグメント</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt9" value={this.state.board_texts.txt9.text} onChange={this.handleChange}/>
           </div>
 
           <div className="early">
-            <textarea className="name" readOnly >
-              [4]アーリーアダプタ
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[4]アーリーアダプタ</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+            </div>    
             <textarea className="write" id="txt10" value={this.state.board_texts.txt10.text} onChange={this.handleChange}/>
           </div>
 
           <div className="cost">
-            <textarea className="nameL" readOnly >
-              [10]コスト構造
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[10]コスト構造</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+            </div>    
             <textarea className="writeL" id="txt11" value={this.state.board_texts.txt11.text} onChange={this.handleChange}/>
           </div>
 
           <div className="syueki">
-            <textarea className="nameL" readOnly >
-              [9]収益の流れ
-            </textarea>
+            <div className="element">
+              <div className="ename">
+            <p>[10]収益の流れ</p>
+            </div>
+            <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                aaa
+              </div>    
+            </div>
+            </div>    
           <textarea className="writeL" id="txt12" value={this.state.board_texts.txt12.text} onChange={this.handleChange}/>
         </div>
       </div>
