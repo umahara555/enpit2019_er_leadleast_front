@@ -71,7 +71,7 @@ export class ElevatorPitch extends Component {
         <ShowGuide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/userstorymap"} />
         <BackButton urlName={"/product/" + this.props.match.params.productID + "/leancanvas"} />     
-        <AllMenu className="allmenu-user" Eflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>        
+        <AllMenu className="allmenu-user" Eflag={true} TurlName={"/product/" + this.props.match.params.productID} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>        
 			<div className="low">
 				<textarea id="txt1" value={this.state.board_texts.txt1.text} onChange={this.handleChange}/>
 				<p>したい</p>

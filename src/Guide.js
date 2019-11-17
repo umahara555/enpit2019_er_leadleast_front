@@ -214,43 +214,53 @@ export class AllMenu extends Component {
 	render() {
 		return(
 		<div className="allmenu">
+			{ this.props.Tflag ? 			
+　　　	<Link to={this.props.TurlName} className="menu-bar-true-top">
+            <p>トップ</p>
+      </Link>  					 
+      :
+　　　	<Link to={this.props.TurlName} className="menu-bar-top">
+            <p>トップ</p>
+      </Link>  			      	
+      }		
+		
 			{ this.props.Lflag ? 			
 　　　	<Link to={this.props.LurlName} className="menu-bar-true">
-            <p>LeanCanvas</p>
+            <p>リーンキャンバス</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.LurlName} className="menu-bar">
-            <p>LeanCanvas</p>
+            <p>リーンキャンバス</p>
       </Link>  			      	
       }
       
 			{ this.props.Eflag ? 
 　　　	<Link to={this.props.EurlName} className="menu-bar-true">
-            <p>ElevatorPitch</p>
+            <p>エレベーターピッチ</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.EurlName} className="menu-bar">
-            <p>ElevatorPitch</p>
+            <p>エレベーターピッチ</p>
       </Link>  			      	
       }
       
       { this.props.Uflag ? 
 　　　	<Link to={this.props.UurlName} className="menu-bar-true">
-            <p>UserStoryMap</p>
+            <p>ユーザーストーリーマップ</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.UurlName} className="menu-bar">
-            <p>UserStoryMap</p>
+            <p>ユーザーストーリーマップ</p>
       </Link>  			      	
       }
       
       { this.props.Pflag ? 
 　　　	<Link to={this.props.PurlName} className="menu-bar-true">
-            <p>ProductBacklog</p>
+            <p>プロダクトバックログ</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.PurlName} className="menu-bar">
-            <p>ProductBacklog</p>
+            <p>プロダクトバックログ</p>
       </Link>  			      	
       }            
 		</div>          

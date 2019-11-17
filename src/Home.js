@@ -63,7 +63,7 @@ export class Home extends Component {
       }
 		
 	  console.log(product_id)
-      this.props.history.push("/product/"+product_id+"/leancanvas");
+      this.props.history.push("/product/"+product_id);
 	}.bind(this)
 	CreateNewProduct()
   }
