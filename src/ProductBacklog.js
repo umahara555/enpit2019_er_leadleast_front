@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { GuideProductBacklog, ShowGuide, MoveHomeButton, BackButton, AllMenu } from './Guide.js';
+import { GuideProductBacklog, ShowGuide, BackButton, AllMenu } from './Guide.js';
 import './ProductBacklog.css';
 
 const API_URL = 'http://localhost:5000/api/v1';
