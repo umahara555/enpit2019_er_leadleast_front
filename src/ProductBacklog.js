@@ -4,6 +4,7 @@ import { GuideProductBacklog, ShowGuide, BackButton, AllMenu } from './Guide.js'
 import './ProductBacklog.css';
 
 const API_URL = 'http://localhost:5000/api/v1';
+const API_WS_URL = 'ws://localhost:5000/cable';
 
 export class ProductBacklog extends Component {
   constructor(props) {
@@ -21,10 +22,42 @@ export class ProductBacklog extends Component {
 				txt7: { text: '', } ,
 				txt8: { text: '', } ,
 			},
+			ws: null,
     };
 		this.handleChange = this.handleChange.bind(this);
 		this.getBoardTexts();
   }
+
+	componentDidMount() {
+		const ws = new WebSocket(API_WS_URL);
+		ws.onopen = () => {
+			ws.send(
+				JSON.stringify(
+					{"command": "subscribe",
+						"identifier":"{\"channel\":\"ProductBacklogChannel\"}"}
+				)
+			);
+		};
+		ws.onmessage = this.handleBoard.bind(this);
+		this.setState({ws: ws});
+	}
+
+	componentWillUnmount() {
+		this.state.ws.close();
+	}
+
+	handleBoard(event) {
+		const data = JSON.parse(event.data);
+		if ('message' in data) {
+			const messageData = JSON.parse(data.message);
+			if (typeof(messageData) == 'object' && 'board_texts' in messageData) {
+				this.setState({
+					board_texts: messageData.board_texts,
+				});
+				console.log(messageData.board_texts);
+			}
+		}
+	}
   
   guideFlagChange() {
       this.setState({guideFlag: !this.state.guideFlag});
