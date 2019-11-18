@@ -130,6 +130,7 @@ export class UserStoryMap extends Component {
                        id={key+'_'+txt}
                        value={this.state.board_texts[key][txt].text}
                        updateState={this.handleChange}
+                       color='red'
           />;
         } else if (key === 'group2') {
           return <Card1 key={key+'_'+txt}

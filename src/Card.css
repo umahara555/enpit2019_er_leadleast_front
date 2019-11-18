@@ -6,6 +6,15 @@
   background-color: #85C1E9;
 }
 
+.card-color-blue {
+  background-color: #85C1E9;
+}
+
+.card-color-red {
+  background-color: #FFC0CB;
+}
+
+
 .card1{
   position: relative;
   width: 200px;

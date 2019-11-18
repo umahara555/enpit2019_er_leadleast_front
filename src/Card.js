@@ -7,6 +7,7 @@ export class Card extends Component {
     this.state = {
       id: this.props.id,
       value: this.props.value,
+      color: this.props.color,
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -21,8 +22,7 @@ export class Card extends Component {
   render() {
     return(
       <div>
-        <div className="card">
-
+        <div className='card' >
           <textarea onChange={this.handleChange}
                     value={this.props.value}
                     placeholder="ここにアイディア"
