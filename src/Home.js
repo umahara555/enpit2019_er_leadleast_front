@@ -70,7 +70,7 @@ export class Home extends Component {
   render(){
     return(
       <div>
-        <Header className='header' title={'LeadLeast'} />
+        <Header className='header' title={''} />
         <div className='home'>
           <div className='target'>
        	    <h1>LeadLeast</h1>

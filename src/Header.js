@@ -7,7 +7,7 @@ export class Header extends Component {
     return(
       <div className="header">
         <Link to="/" className="header-home-btn">
-          <p>Home</p>
+          <p>LeadLeast</p>
         </Link>
         <p>{this.props.title}</p>
       </div>
