@@ -3,6 +3,11 @@ import {Link} from 'react-router-dom';
 import { Header } from './Header.js';
 import { GuideLeanCanvas, ShowGuide, MoveHomeButton, NextButton, BackButton, AllMenu } from './Guide.js';
 import './Tutorial.css';
+import bar from './images/tutorial/bar.png';
+import next from './images/tutorial/next.png';
+import guide from './images/tutorial/guide.png';
+
+
 
 export class Tutorial extends Component {
   
@@ -61,28 +66,29 @@ export class Tutorial extends Component {
           <p className="emphaB">
             1.サイトの上部にある緑色のバー↓</p>
             </p>
-                    <AllMenu/>
+            <img src={bar} className="img_bar"/>
           <p className="flow">                    
-          は現在取り組んでいる作業を確認することができます。リーンキャンバスに取り組んでいるときは、<br/>バーのリーンキャンバスの部分の色が変わります。現在はトップ画面なのでトップの色が他と異なっています。<br/>
-          またバーはクリックすることができ、移動したい場所を選択すれば即座にその場へ飛ぶことができます。
+          は現在取り組んでいる作業を確認することができます。リーンキャンバスに取り組んでいるときは、<br/>バーのリーンキャンバスの部分の色が変わります。<br/>現在はトップ画面なのでトップの色が他と異なっています。<br/>
+          またバーはクリックすることができ、<br/>移動したい場所を選択すれば即座にその場へ飛ぶことができます。
           <br/><br/>
           <p className="emphaB">          
           2.右上に設置されているBack,Nextボタン↓
           </p>
           <p className="obj">
-            <BackButton /><NextButton/>   
+          <img src={next} className="img_next"/>
+
            </p> <br/>
-           はクリックすることで現在の作業場所から、プロダクトデザインの流れに沿って、前後の作業場所に飛ぶことができます。<br/>
+           はクリックすることで現在の作業場所から、プロダクトデザインの流れに沿って、<br/>前後の作業場所に飛ぶことができます。<br/>
            例えばユーザーストーリーマップの画面であるならば,<br/>Backでエレベーターピッチ,Nextでプロダクトバックログに飛ぶことができます。<br/>
            このページにおいては、Nextを押せばリーンキャンバスへ移動できます。<br/><br/>
           <p className="emphaB">           
            3.右上に設置されているGUIDEボタン↓
            </p>
            <p className="obj2">
-        <ShowGuide  onClick={() => null} />
+          <img src={guide} className="img_guide"/>           
             </p><br/>
             はクリックすることで現在の作業の取り組み方についての説明が表示されます。<br/>
-            例えばリーンキャンパスの画面でクリックすれば、リーンキャンバスの取り組み方の説明が表示されます。<br/>                  
+            例えばリーンキャンパスの画面でクリックすれば、<br/>リーンキャンバスの取り組み方の説明が表示されます。<br/>                  
           </p>          
         </div>        
         </div>

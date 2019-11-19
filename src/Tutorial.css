@@ -13,12 +13,12 @@
 
 .beforecomB{
   display:inline-block;
-  width:100vw;
+  width:90vw;
   border: solid 3px #000000;
   font-size:24px;
   border-radius: 10px;/*角の丸み*/
   position:relative;
-  margin: 10px 0px 10px 0px;
+  margin: 10px 0px 10px 60px;
 }
 
 .returnurl{
@@ -48,13 +48,35 @@
 
 .obj{
   position:relative;
-  right:65vw;
+  right:52vw;
   top:-2.0vh;
 }
 
 .obj2{
   position:relative;
-  right:55vw;
+  right:45vw;
   top:-2.0vh;
 }
+
+.img_bar{
+  position:relative;
+  width:80vw;
+  left:3.5vw;
+}
+
+.img_next{
+  position:relative;
+  left:1000px;
+  width:280px;
+  top:20px;
+}
+.img_guide{
+  position:relative;
+  left:1000px;
+  width:100px;
+  top:20px;
+  }
+
+
+
 
