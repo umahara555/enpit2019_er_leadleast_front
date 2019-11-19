@@ -98,7 +98,7 @@ export class GuideLeanCanvas extends Component {
 				企画しているサービスを軸に、 
 				それぞれの要素の枠の中に内容を書き込んでください。<br/>  
 				取り組む順番は、要素名の左側に書いてある番号に沿ってください。<br/><br/>
-        要素に書き揉むべき内容がわからない場合は、要素名の右側に設置されている<div className="kadaiGuide">?</div>ボタンにカーソルを合わせる事でヒントを見ることができます。
+        要素に書き込むべき内容がわからない場合は、要素名の右側に設置されている<div className="kadaiGuide">?</div>ボタンにカーソルを合わせる事でヒントを見ることができます。
         <br/><br/>
 				<h1 className="alart">
 				このガイドは右上にあるGUIDEボタンで再度表示することができます。
