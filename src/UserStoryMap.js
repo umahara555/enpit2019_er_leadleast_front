@@ -110,10 +110,12 @@ export class UserStoryMap extends Component {
       if (this.state.isChange === false) {
         const messageData = JSON.parse(data.message);
         if (typeof(messageData) == 'object' && 'board_texts' in messageData) {
-          this.setState({
-            board_texts: messageData.board_texts,
-          });
-          console.log(messageData.board_texts);
+          if (messageData.product_id === this.state.productID) {
+            this.setState({
+              board_texts: messageData.board_texts,
+            });
+            console.log(messageData.board_texts);
+          }
         }
       }
       this.setState({isChange: false});
