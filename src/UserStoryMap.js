@@ -159,12 +159,31 @@ export class UserStoryMap extends Component {
         {/*TODO : ループでまわせそうなところはループでやる*/}
         <div className="board">
           <div className="split" />
+          			 <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                ユーザーストーリーの骨格を書きましょう
+              </div>    
+              </div>
           <div className="boardCard">
             {boardCards[0]}
           </div>
+          
+          			 <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                         ユーザーストーリーの流れを書きましょう<br/>
+              </div>    
+              </div>
           <div className="boardCard1">
             {boardCards[1]}
           </div>
+          			 <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                         ユーザーストーリーの詳細を書きましょう
+              </div>    
+              </div>
           <div className="boardCard2-0">
             <div className="boardCard2">
               {boardCards[2]}

@@ -72,6 +72,13 @@ export class ProductBacklog extends Component {
         <BackButton urlName={"/product/" + this.props.match.params.productID + "/userstorymap"} />     
         <AllMenu className="allmenu-user" Pflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>        
           <div className="backlog">
+          <br/>
+                    			 <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+								今後実装していく内容を挙げましょう。
+              </div>    
+              </div>
 		        <div className="plow">
 		        <p>●</p>
 		        	<textarea id="txt1" value={this.state.board_texts.txt1.text} onChange={this.handleChange} />

@@ -73,31 +73,78 @@ export class ElevatorPitch extends Component {
         <BackButton urlName={"/product/" + this.props.match.params.productID + "/leancanvas"} />     
         <AllMenu className="allmenu-user" Eflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>        
 			<div className="low">
+			 <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+     						エレベーターピッチで取り上げた課題を<br/>「~を解決したい」という形式の文で書きましょう。<br/><br/>
+              </div>    
+              </div>
+
 				<textarea id="txt1" value={this.state.board_texts.txt1.text} onChange={this.handleChange}/>
 				<p>したい</p>
 			</div>
 			<div className="low">
+			 <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                         上記の課題を抱えている顧客を書きましょう。<br/>
+              </div>    
+              </div>			
 				<textarea id="txt2" value={this.state.board_texts.txt2.text} onChange={this.handleChange}/>
 				<p>向けの、</p>
 			</div>
 			<div className="low">
+			 <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                       サービスの名前を書きましょう。<br/>
+              </div>    
+              </div>			
 				<textarea id="txt3" value={this.state.board_texts.txt3.text} onChange={this.handleChange}/>
 				<p>というプロダクトは、</p>
 			</div>			
+			
 			<div className="low">
+			 <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                         サービスのカテゴリーを書きましょう。<br/>
+              </div>    
+              </div>			
 				<textarea id="txt4" value={this.state.board_texts.txt4.text} onChange={this.handleChange}/>
 				<p>です。</p>
-			</div>					
+			</div>				<br />
+	
 			<div className="low">
+			 <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                         サービスの重要な利点を書きましょう。<br/>
+              </div>    
+              </div>			
 				<p>これは</p>
 				<textarea id="txt5" value={this.state.board_texts.txt5.text} onChange={this.handleChange}/>
 				<p>ができ、</p>
 			</div>					
+			
 			<div className="low">
+			 <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                         既存の代替手段となりうるサービスを書きましょう。<br/>
+              </div>    
+              </div>			
 				<textarea id="txt6" value={this.state.board_texts.txt6.text} onChange={this.handleChange}/>
 				<p>とは違って、</p>
 			</div>		
+			
 			<div className="low">
+			 <div className="kadaiGuide" title="aaa">
+            ?
+              <div className="hidekadaiGuide">
+                         代替手段とこのサービスの決定的な違いを書きましょう。<br/>
+              </div>    
+              </div>			
 				<textarea id="txt7" value={this.state.board_texts.txt7.text} onChange={this.handleChange}/>
 				<p>が備わっています。</p>
 			</div>				
