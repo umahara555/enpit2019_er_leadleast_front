@@ -4,6 +4,7 @@ import { GuideLeanCanvas, ShowGuide, NextButton, BackButton, AllMenu } from './G
 import './LeanCanvas.css';
 
 const API_URL = 'http://localhost:5000/api/v1';
+const API_WS_URL = 'ws://localhost:5000/cable';
 
 export class LeanCanvas extends Component {
   constructor(props) {
@@ -25,9 +26,41 @@ export class LeanCanvas extends Component {
         txt11: { text: '', } ,
         txt12: { text: '', } ,
       },
+      ws: null,
     };
     this.handleChange = this.handleChange.bind(this);
     this.getBoardTexts();
+  }
+
+  componentDidMount() {
+    const ws = new WebSocket(API_WS_URL);
+    ws.onopen = () => {
+      ws.send(
+        JSON.stringify(
+          {"command": "subscribe",
+            "identifier":"{\"channel\":\"LeanCanvasChannel\"}"}
+        )
+      );
+    };
+    ws.onmessage = this.handleBoard.bind(this);
+    this.setState({ws: ws});
+  }
+
+  componentWillUnmount() {
+    this.state.ws.close();
+  }
+
+  handleBoard(event) {
+    const data = JSON.parse(event.data);
+    if ('message' in data) {
+      const messageData = JSON.parse(data.message);
+      if (typeof(messageData) == 'object' && 'board_texts' in messageData) {
+        this.setState({
+          board_texts: messageData.board_texts,
+        });
+        console.log(messageData.board_texts);
+      }
+    }
   }
   
   guideFlagChange() {
@@ -60,8 +93,10 @@ export class LeanCanvas extends Component {
       'Content-Type': 'application/json'
     };
     fetch(API_URL+'/leancanvas/'+this.state.productID, {method, headers, body})
-      .then((res)=> console.log(res.json()))
-      .then(console.log)
+      .then((res)=> res.json())
+      .then((responseJson) => {
+        console.log(responseJson);
+      })
       .catch(console.error);
   }
 
