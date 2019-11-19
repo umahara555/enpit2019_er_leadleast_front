@@ -7,7 +7,7 @@ import ProductBacklog from './images/title/ProductBacklog.png';
 import UserStoryMap from './images/title/UserStoryMap.png';
 import './Home.css';
 
-const API_URL = 'http://localhost:5000/api/v1';
+const API_URL = 'https://quiet-sierra-21849.herokuapp.com/api/v1';
 
 export class Home extends Component {
   constructor(props){

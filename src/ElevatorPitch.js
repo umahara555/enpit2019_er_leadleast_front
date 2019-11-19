@@ -3,8 +3,8 @@ import { Header } from './Header.js';
 import { GuideElevatorPitch, ShowGuide, NextButton, BackButton, AllMenu } from './Guide.js';
 import './ElevatorPitch.css';
 
-const API_URL = 'http://localhost:5000/api/v1';
-const API_WS_URL = 'ws://localhost:5000/cable';
+const API_URL = 'https://quiet-sierra-21849.herokuapp.com/api/v1';
+const API_WS_URL = 'wss://quiet-sierra-21849.herokuapp.com/cable';
 
 export class ElevatorPitch extends Component {
 
