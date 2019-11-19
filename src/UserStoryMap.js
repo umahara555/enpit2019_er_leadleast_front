@@ -80,6 +80,7 @@ export class UserStoryMap extends Component {
         },
       },
       ws: null,
+      isChange: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.getBoardTexts();
@@ -106,13 +107,16 @@ export class UserStoryMap extends Component {
   handleBoard(event) {
     const data = JSON.parse(event.data);
     if ('message' in data) {
-      const messageData = JSON.parse(data.message);
-      if (typeof(messageData) == 'object' && 'board_texts' in messageData) {
-        this.setState({
-          board_texts: messageData.board_texts,
-        });
-        console.log(messageData.board_texts);
+      if (this.state.isChange === false) {
+        const messageData = JSON.parse(data.message);
+        if (typeof(messageData) == 'object' && 'board_texts' in messageData) {
+          this.setState({
+            board_texts: messageData.board_texts,
+          });
+          console.log(messageData.board_texts);
+        }
       }
+      this.setState({isChange: false});
     }
   }
 
@@ -133,7 +137,7 @@ export class UserStoryMap extends Component {
     const board_texts = this.state.board_texts;
     const key = state.id.split('_');
     board_texts[key[0]][key[1]].text = state.value;
-    this.setState({board_texts: board_texts});
+    this.setState({board_texts: board_texts, isChange: true});
 
     const obj = { board_texts: board_texts };
     const method = "PATCH";

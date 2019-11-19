@@ -27,6 +27,7 @@ export class LeanCanvas extends Component {
         txt12: { text: '', } ,
       },
       ws: null,
+      isChange: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.getBoardTexts();
@@ -53,13 +54,16 @@ export class LeanCanvas extends Component {
   handleBoard(event) {
     const data = JSON.parse(event.data);
     if ('message' in data) {
-      const messageData = JSON.parse(data.message);
-      if (typeof(messageData) == 'object' && 'board_texts' in messageData) {
-        this.setState({
-          board_texts: messageData.board_texts,
-        });
-        console.log(messageData.board_texts);
+      if (this.state.isChange === false) {
+        const messageData = JSON.parse(data.message);
+        if (typeof(messageData) == 'object' && 'board_texts' in messageData) {
+          this.setState({
+            board_texts: messageData.board_texts,
+          });
+          console.log(messageData.board_texts);
+        }
       }
+      this.setState({isChange: false});
     }
   }
   
@@ -83,7 +87,7 @@ export class LeanCanvas extends Component {
   handleChange(e){
     const board_texts = this.state.board_texts;
     board_texts[e.target.id].text = e.target.value;
-    this.setState({board_texts: board_texts});
+    this.setState({board_texts: board_texts, isChange: true});
 
     const obj = { board_texts: board_texts };
     const method = "PATCH";
@@ -106,9 +110,8 @@ export class LeanCanvas extends Component {
         { this.state.guideFlag && <GuideLeanCanvas onClick={() => this.guideFlagChange()} /> }
         <Header className='header' title='リーンキャンバス' />
         <ShowGuide  onClick={() => this.guideFlagChange()} />
-        <BackButton urlName={"/product/" + this.props.match.params.productID} />            
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} />  
-        <AllMenu className="allmenu-user" Lflag={true} TurlName={"/product/" + this.props.match.params.productID} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>
+        <AllMenu className="allmenu-user" Lflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>
         <div className='lean'>
           <div className="kadai">      
             <div className="element">
