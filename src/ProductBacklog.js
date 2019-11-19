@@ -70,7 +70,7 @@ export class ProductBacklog extends Component {
 		        <Header className="header" title={'プロダクトバックログ'}/>
         <ShowGuide  onClick={() => this.guideFlagChange()} />
         <BackButton urlName={"/product/" + this.props.match.params.productID + "/userstorymap"} />     
-        <AllMenu className="allmenu-user" Pflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>        
+        <AllMenu className="allmenu-user" Pflag={true} TurlName={"/product/" + this.props.match.params.productID} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>        
           <div className="backlog">
           <br/>
                     			 <div className="kadaiGuide" title="aaa">

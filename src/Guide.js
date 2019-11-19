@@ -69,11 +69,10 @@ export class GuideUserStoryMap extends Component {
 				  	黄の付箋にはユーザーストーリーの詳細<br/>  
 				  	を書き起こしましょう。<br/> <br/>
 				  					終了したら画面右上にあるNEXTボタンでプロダクトバックログに移動しましょう。<br/>
-				 <h1 className="alart">			
-				内容は保存されないので、スクリーンショット等で記録しておいてください。
-				</h1>
 				<br/><br/>
+				<h1 className="alart">
 				このガイドは右上にあるGUIDEボタンで再度表示することができます。				
+				</h1>
 				  </h1>					  
 				  </div>
 				  <button className="closeButton"
@@ -98,14 +97,12 @@ export class GuideLeanCanvas extends Component {
 				リーンキャンバスに取り組みましょう。<br/>  <br/>
 				企画しているサービスを軸に、 
 				それぞれの要素の枠の中に内容を書き込んでください。<br/>  
-				取り組む順番は、要素の左側に書いてある番号に沿ってください。<br/><br/>
-         <br /><br />
-				終了したら画面右上にあるNEXTボタンでエレベーターピッチに移動しましょう。
-				<h1 className="alart">			
-				内容は保存されないので、スクリーンショット等で記録しておいてください。
-				</h1>
-				<br/><br/>
+				取り組む順番は、要素名の左側に書いてある番号に沿ってください。<br/><br/>
+        要素に書き込むべき内容がわからない場合は、要素名の右側に設置されている<div className="kadaiGuide">?</div>ボタンにカーソルを合わせる事でヒントを見ることができます。
+        <br/><br/>
+				<h1 className="alart">
 				このガイドは右上にあるGUIDEボタンで再度表示することができます。
+				</h1>
 				</h1>
 				  </div>
 				  <button className="closeButton"
@@ -128,12 +125,9 @@ export class GuideElevatorPitch extends Component {
 				<h1>
 					<br/>  エレベーターピッチに取り組みましょう<br/>  <br/>  
 					枠内に対応の文を書き込んでください。<br/><br/>
-									終了したら画面右上にあるNEXTボタンでユーザーストーリーマップに移動しましょう。<br/>
-				<h1 className="alart">					
-				内容は保存されないので、スクリーンショット等で記録しておいてください。
-					</h1>
-				<br/><br/>
-				このガイドは右上にあるGUIDEボタンで再度表示することができます。					
+					<h1 className="alart">
+							このガイドは右上にあるGUIDEボタンで再度表示することができます。					
+							</h1>
 				</h1>	  
 				  </div>
 				  <button className="closeButton"
@@ -157,11 +151,10 @@ export class GuideProductBacklog extends Component {
 				<br/>  
 				プロダクトバックログに取り組みましょう。<br/>  <br/>  
 				枠内に対応の文を書き込んでください。  <br/><br/>
-				<h1 className="alart">			
-				内容は保存されないので、スクリーンショット等で記録しておいてください。
-				</h1>
 				<br/><br/>
+				<h1 className="alart">
 				このガイドは右上にあるGUIDEボタンで再度表示することができます。				
+				</h1>
 				</h1>
 				  </div>
 				  <button className="closeButton"
@@ -221,43 +214,53 @@ export class AllMenu extends Component {
 	render() {
 		return(
 		<div className="allmenu">
+			{ this.props.Tflag ? 			
+　　　	<Link to={this.props.TurlName} className="menu-bar-true-top">
+            <p>トップ</p>
+      </Link>  					 
+      :
+　　　	<Link to={this.props.TurlName} className="menu-bar-top">
+            <p>トップ</p>
+      </Link>  			      	
+      }		
+		
 			{ this.props.Lflag ? 			
 　　　	<Link to={this.props.LurlName} className="menu-bar-true">
-            <p>LeanCanvas</p>
+            <p>リーンキャンバス</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.LurlName} className="menu-bar">
-            <p>LeanCanvas</p>
+            <p>リーンキャンバス</p>
       </Link>  			      	
       }
       
 			{ this.props.Eflag ? 
 　　　	<Link to={this.props.EurlName} className="menu-bar-true">
-            <p>ElevatorPitch</p>
+            <p>エレベーターピッチ</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.EurlName} className="menu-bar">
-            <p>ElevatorPitch</p>
+            <p>エレベーターピッチ</p>
       </Link>  			      	
       }
       
       { this.props.Uflag ? 
 　　　	<Link to={this.props.UurlName} className="menu-bar-true">
-            <p>UserStoryMap</p>
+            <p>ユーザーストーリーマップ</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.UurlName} className="menu-bar">
-            <p>UserStoryMap</p>
+            <p>ユーザーストーリーマップ</p>
       </Link>  			      	
       }
       
       { this.props.Pflag ? 
 　　　	<Link to={this.props.PurlName} className="menu-bar-true">
-            <p>ProductBacklog</p>
+            <p>プロダクトバックログ</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.PurlName} className="menu-bar">
-            <p>ProductBacklog</p>
+            <p>プロダクトバックログ</p>
       </Link>  			      	
       }            
 		</div>          

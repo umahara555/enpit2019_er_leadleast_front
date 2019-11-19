@@ -1,0 +1,60 @@
+.tutorial{
+  overflow-x:hidden;
+}
+.beforecom{
+  display:inline-block;
+  width:90vw;
+  border: solid 3px #000000;
+  font-size:24px;
+  border-radius: 10px;/*角の丸み*/
+  position:relative;
+  margin: 10px 0px 10px 60px;
+}
+
+.beforecomB{
+  display:inline-block;
+  width:100vw;
+  border: solid 3px #000000;
+  font-size:24px;
+  border-radius: 10px;/*角の丸み*/
+  position:relative;
+  margin: 10px 0px 10px 0px;
+}
+
+.returnurl{
+  font-size:24px;
+   background-color: #d3d3d3;
+   display:inline-block
+}
+
+.emphaR{
+  font-size:24px;
+  color:red;
+  display:inline-block;
+  font-weight:bold;
+}
+
+.emphaB{
+  font-size:24px;
+  display:inline-block;
+  font-weight:bold;
+}
+
+.flow{
+  position:relative;
+  left:50px;
+  font-size:24px;
+}
+
+.obj{
+  position:relative;
+  right:65vw;
+  top:-2.0vh;
+}
+
+.obj2{
+  position:relative;
+  right:55vw;
+  top:-2.0vh;
+}
+

@@ -71,8 +71,9 @@ export class LeanCanvas extends Component {
         { this.state.guideFlag && <GuideLeanCanvas onClick={() => this.guideFlagChange()} /> }
         <Header className='header' title='リーンキャンバス' />
         <ShowGuide  onClick={() => this.guideFlagChange()} />
+        <BackButton urlName={"/product/" + this.props.match.params.productID} />            
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} />  
-        <AllMenu className="allmenu-user" Lflag={true} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>
+        <AllMenu className="allmenu-user" Lflag={true} TurlName={"/product/" + this.props.match.params.productID} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>
         <div className='lean'>
           <div className="kadai">      
             <div className="element">

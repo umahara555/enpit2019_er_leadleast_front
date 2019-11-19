@@ -6,6 +6,7 @@ import { ElevatorPitch } from './ElevatorPitch.js';
 import { UserStoryMap } from './UserStoryMap.js';
 import { ProductBacklog } from './ProductBacklog.js';
 import { Login } from './Login.js';
+import { Tutorial } from './Tutorial.js'
 import './App.css';
 
 import { NewHeader } from './NewHeader.js'
@@ -19,6 +20,7 @@ const App = () => (
   <Router>
     <Switch>
       <Route exact path='/' component={Home} />
+      <Route exact path='/product/:productID/' component={Tutorial} />
       <Route exact path='/product/:productID/leancanvas' component={LeanCanvas} />
       <Route exact path='/product/:productID/elevatorpitch' component={ElevatorPitch} />
       <Route exact path='/product/:productID/userstorymap' component={UserStoryMap} />
