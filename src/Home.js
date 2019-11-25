@@ -6,6 +6,7 @@ import ElevatorPitch from './images/title/ElevatorPitch.png';
 import ProductBacklog from './images/title/ProductBacklog.png';
 import UserStoryMap from './images/title/UserStoryMap.png';
 import './Home.css';
+import { Hooder } from './Hooder.js';
 
 const API_URL = 'http://localhost:5000/api/v1';
 
@@ -61,7 +62,7 @@ export class Home extends Component {
       } catch (error) {
         console.log(error)
       }
-		
+
 	  console.log(product_id)
       this.props.history.push("/product/"+product_id);
 	}.bind(this)
@@ -156,8 +157,8 @@ export class Home extends Component {
               </p>
             </div>
           </div>
-        </div>        
-
+        </div>
+        <Hooder className='hooder' title={''} />
       </div>
 
     )
