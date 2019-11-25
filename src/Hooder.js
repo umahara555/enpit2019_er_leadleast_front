@@ -7,14 +7,15 @@ export class Hooder extends Component {
     return(
       <div className="Hooder-container-wrapper">
         <div className='Hooder-container'>
-          <div className='box'>
+          <div className='title_box'>
             <div className="hooder">
-              <Link to="/" className="hooder-home-btn">
-                <p>LeadLeast</p>
-              </Link>
-              <p>{this.props.title}</p>
+              <h1>LeadLeast</h1>
+              <p>
+                LeadLeastはプロダクト支援ツールです <br/>
+                学びながら取り組むことができ <br/>
+                実際の付箋感覚で操作できる機能を備えています
+              </p>
             </div>
-            これはHooderです。
           </div>
         </div>
       </div>
