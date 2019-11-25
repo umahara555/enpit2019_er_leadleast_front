@@ -38,8 +38,10 @@ export class LeanCanvas extends Component {
     ws.onopen = () => {
       ws.send(
         JSON.stringify(
-          {"command": "subscribe",
-            "identifier":"{\"channel\":\"LeanCanvasChannel\"}"}
+          {
+            "command": "subscribe",
+            "identifier":`{\"channel\":\"LeanCanvasChannel\", \"product_id\": \"${this.props.match.params.productID}\"}`,
+          }
         )
       );
     };

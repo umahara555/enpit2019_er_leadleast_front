@@ -34,8 +34,10 @@ export class ElevatorPitch extends Component {
 		ws.onopen = () => {
 			ws.send(
 				JSON.stringify(
-					{"command": "subscribe",
-						"identifier":"{\"channel\":\"ElevatorPitchChannel\"}"}
+					{
+						"command": "subscribe",
+						"identifier":`{\"channel\":\"ElevatorPitchChannel\", \"product_id\": \"${this.props.match.params.productID}\"}`,
+					}
 				)
 			);
 		};
