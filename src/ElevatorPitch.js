@@ -106,7 +106,7 @@ export class ElevatorPitch extends Component {
 		<div>
       { this.state.guideFlag && <GuideElevatorPitch onClick={() => this.guideFlagChange()} /> }
       <div className="Ele">
-		        <Header className="header" title={'エレベーターピッチ'}/>
+		        <Header className="header" title={'Step2 : エレベーターピッチ'}/>
         <ShowGuide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/userstorymap"} />
         <BackButton urlName={"/product/" + this.props.match.params.productID + "/leancanvas"} />     

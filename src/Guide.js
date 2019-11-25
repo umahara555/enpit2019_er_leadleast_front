@@ -205,12 +205,11 @@ export class GuideLeanCanvas extends Component {
             </div>
 		
 				  }				  
-				  
-				  
 				  <button className="closeButton"
 			    		onClick={() => this.props.onClick()}>
 			  		           x
-			      </button>				
+			      </button>		
+			
 			</div>
 		);
 	}
@@ -328,41 +327,41 @@ export class AllMenu extends Component {
 		
 			{ this.props.Lflag ? 			
 　　　	<Link to={this.props.LurlName} className="menu-bar-true">
-            <p>リーンキャンバス</p>
+            <p>Step1 : リーンキャンバス</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.LurlName} className="menu-bar">
-            <p>リーンキャンバス</p>
+            <p>Step1 : リーンキャンバス</p>
       </Link>  			      	
       }
       
 			{ this.props.Eflag ? 
 　　　	<Link to={this.props.EurlName} className="menu-bar-true">
-            <p>エレベーターピッチ</p>
+            <p>Step2 : エレベーターピッチ</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.EurlName} className="menu-bar">
-            <p>エレベーターピッチ</p>
+            <p>Step2 : エレベーターピッチ</p>
       </Link>  			      	
       }
       
       { this.props.Uflag ? 
 　　　	<Link to={this.props.UurlName} className="menu-bar-true">
-            <p>ユーザーストーリーマップ</p>
+            <p>Step3 : ユーザーストーリーマップ</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.UurlName} className="menu-bar">
-            <p>ユーザーストーリーマップ</p>
+            <p>Step3 : ユーザーストーリーマップ</p>
       </Link>  			      	
       }
       
       { this.props.Pflag ? 
 　　　	<Link to={this.props.PurlName} className="menu-bar-true">
-            <p>プロダクトバックログ</p>
+            <p>Step4 : プロダクトバックログ</p>
       </Link>  					 
       :
 　　　	<Link to={this.props.PurlName} className="menu-bar">
-            <p>プロダクトバックログ</p>
+            <p>Step4 : プロダクトバックログ</p>
       </Link>  			      	
       }            
 		</div>          
