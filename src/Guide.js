@@ -6,6 +6,7 @@ import tehudahue from './images/userstorymap-guide/tehudahue.png';
 import tehudaex from './images/userstorymap-guide/tehudaex.png';
 import banidasu from './images/userstorymap-guide/banidasu.png';
 import {Link} from 'react-router-dom';
+import LeanCanvas from './images/leancanvas/leancanvas-example.png';
 
 
 export class GuideUserStoryMap extends Component {
@@ -17,51 +18,7 @@ export class GuideUserStoryMap extends Component {
 				      <div className="guide-header">
         <p>このページの使い方</p>
       </div>							
-	
-{/*
-                  <br /><br />
-				  <h1>
-				    	1.「付箋追加ボタンをクリックして、手札に付箋を増やそう。」<br />
-				  </h1>
-  				  <p>
-				    	↓付箋追加ボタン
-				  </p>
-				  <img src={husentuika} className="SImg" />
-				  <br /> 
-				  <p>↓付箋が4つ追加された手札</p>
-				  <img src={tehudahue} className="SImg" />
-				  <br /> <br /> <br />
-				  <h1>
-				    	2.「付箋をクリックして、付箋に欲しい機能を書き出そう。」<br />
-				  </h1>
-				  <p>	
-					↓付箋 <br />
-				  </p>					
-				  <img src={husen} className="SImg" />
-			      <p>
-			        	↓書き出し例
-			      </p>
-			      <img src={tehudaex} className="SImg" />
-				  <br /> <br />
-				  <h1>
-				    	3.「付箋をホワイトボードに貼り付けよう。」<br />
-				  </h1>
-				  <p>
-         				  付箋の左上の矢印ボタンをクリックすればホワイトボードに付箋を貼り付けることができます。  <br />
-				          ↓貼り付けた例
-				  </p>
-				  <img src={banidasu}  className="LImg"/>
-				  <h1>
-				    	4.「付箋を削除しよう」<br />
-				  </h1>
-				  <p>
-				  いらなくなった付箋は、付箋の右上に設置されている×ボタンをクリックすれば削除することができます。<br />
-				  </p>	
-				  <br /><br />			
-				  <h1>
-				    	ex.このガイドは画面右上のGUIDEボタンをクリックで再表示されます。<br />
-				  </h1>	
-				  */}
+
 				  <h1>
 				  <br /> ユーザーストーリーマップを書きましょう<br/>   <br/>  
 				  	青の付箋にはユーザーストーリーの骨格<br/>  
@@ -85,10 +42,113 @@ export class GuideUserStoryMap extends Component {
 }
 
 export class GuideLeanCanvas extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+				pageGuideFlag:true,
+				stepGuideFlag:false,
+				ruleGuideFlag:false,
+				exampleGuideFlage:false,
+      }
+    this.pageGuideFlagChange = this.pageGuideFlagChange.bind(this)     
+    this.stepGuideFlagChange = this.stepGuideFlagChange.bind(this)    
+    this.ruleGuideFlagChange = this.ruleGuideFlagChange.bind(this)                
+    this.exampleGuideFlagChange = this.exampleGuideFlagChange.bind(this)  
+              
+    }
+
+
+  pageGuideFlagChange() {
+    this.setState({pageGuideFlag: true});
+		this.setState({stepGuideFlag: false});
+		this.setState({ruleGuideFlag: false});    
+		this.setState({exampleGuideFlag: false});    
+  }  
+  
+  stepGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: true});   
+		this.setState({ruleGuideFlag: false}); 
+		this.setState({exampleGuideFlag: false});    		
+  }    
+
+  ruleGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: false});
+		this.setState({ruleGuideFlag: true});		    
+		this.setState({exampleGuideFlag: false});    		
+  }  
+
+  exampleGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: false});    
+		this.setState({ruleGuideFlag: false});
+		this.setState({exampleGuideFlag: true});    		
+  }    
+    
 	render() {
 		return(
 			<div className="guide-container">
-				<div className="guide-background" onClick={() => this.props.onClick()}></div>				<div className="guide">
+				<div className="guide-background" onClick={() => this.props.onClick()}></div>
+			{ this.state.pageGuideFlag ? 
+				<button className="page-button-select"
+			    		onClick={this.pageGuideFlagChange}>
+			  		           このページの使い方
+			      </button>		
+			      :
+							<button className="page-button"
+			    		onClick={this.pageGuideFlagChange}>
+			  		           このページの使い方
+			      </button>	}				
+			      
+			{ this.state.stepGuideFlag ? 			            	
+				<button className="step-button-select"
+			    		onClick={this.stepGuideFlagChange}>
+			  		           リーンキャンバスとは
+			      </button>	
+			       :
+						<button className="step-button"
+			    		onClick={this.stepGuideFlagChange}>
+			  		           リーンキャンバスとは
+			      </button>			}
+			      
+			{ this.state.ruleGuideFlag ? 			            	
+				<button className="rule-button-select"
+			    		onClick={this.ruleGuideFlagChange}>
+			  		           取り組み方と補足
+			      </button>	
+			       :
+						<button className="rule-button"
+			    		onClick={this.ruleGuideFlagChange}>
+			  		           取り組み方と補足
+			      </button>			}			      
+			      
+			     { this.state.exampleGuideFlag ? 
+				<button className="example-button-select"
+			    		onClick={this.exampleGuideFlagChange}>
+			  		           記述の具体例
+						 <div className="exampleGuide" >
+            	<p>?</p>
+              <div className="hidekadaiGuide">
+									この具体例は「LeadLeast」を開発する際に書き上げたリーンキャンバスです。<br />
+									「LeadLeast」は"アジャイル開発を学ぶ初学者が、プロダクトデザインをより円滑に行えるように"という考えから立ち上げられた企画です。
+              </div>    
+            </div>
+			      </button>					      			      			      
+			      :
+				<button className="example-button"
+			    		onClick={this.exampleGuideFlagChange}>
+			  		           記述の具体例
+						 <div className="exampleGuide" >
+            	<p>?</p>
+              <div className="hidekadaiGuide">
+									この具体例は「LeadLeast」を開発する際に書き上げたリーンキャンバスです。<br />
+									「LeadLeast」は"アジャイル開発を学ぶ初学者が、プロダクトデザインをより円滑に行えるように"という考えから立ち上げられた企画です。
+              </div>    
+            </div>		  		           
+			      </button>	}				      			      			      			      	
+			      { this.state.pageGuideFlag && 
+							<div className="guide">
       <div className="guide-header">
         <p>このページの使い方</p>
       </div>										  
@@ -105,6 +165,48 @@ export class GuideLeanCanvas extends Component {
 				</h1>
 				</h1>
 				  </div>
+				  }
+				  
+ { this.state.stepGuideFlag && 
+							<div className="guide">
+      <div className="guide-header">
+        <p>リーンキャンバスとは</p>
+      </div>										  
+				<h1>
+				<br/>
+	リーンキャンバスは、あなたが企画しているサービスの"ビジネスモデル"を簡潔にまとめる作業です。<br/>
+ビジネルモデルとは"サービスの対象となる顧客"、"サービスの提供する価値"、"サービスの収益構造"といった要素を指し、サービスが発展していく根拠、戦略を明確にしたものです。<br/><br/>
+
+リーンキャンバスを作成すると、あなたはビジョンの不安定な部分を把握することができ、またそれを人に見せることで企画に対する有用な提案をされやすくなります。<br/>
+それはリーンキャンバスが複数の視点で企画を具体化しており、なにより簡潔であるからです。
+				</h1>
+				  </div>
+				  }
+				  
+ { this.state.ruleGuideFlag && 
+							<div className="guide">
+      <div className="guide-header">
+        <p>取り組み方と補足</p>
+      </div>										  
+				<h1>
+				<br/>
+「取り組み方」<br/>
+あまり時間をかけずに、図を埋めてください。目安は15分以内です。埋める内容は簡潔なものにしてください。埋められない場所があれば、空欄でも構いません。<br/><br/>
+「補足」<br/>
+・空欄、または曖昧な記述となった欄は、あなたの企画にとって大きなリスクとなりうる要素です。企画を進める中で、検証していく必要があります。<br/>
+・リーンキャンバスはプロダクトデザインの最初に行うものですが、企画が進行している最中も繰り返し更新していくものです。
+				</h1>
+				  </div>
+				  }				  
+				  
+ { this.state.exampleGuideFlag && 
+            <div >
+              <img src={LeanCanvas} className="example-image"/>
+            </div>
+		
+				  }				  
+				  
+				  
 				  <button className="closeButton"
 			    		onClick={() => this.props.onClick()}>
 			  		           x

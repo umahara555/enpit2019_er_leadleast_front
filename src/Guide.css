@@ -29,12 +29,10 @@
 }
 .guide {
 	position: absolute;
-	top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-	width: 50%;
-	height: 70%;
+	top: 120px;
+  left: 300px;
+	width: 950px;
+	height: 550px;
 	background-color: white;
 	overflow-y:scroll;
 	overflow-x:hidden;
@@ -79,13 +77,16 @@
 
 .closeButton {
 	position: absolute;
+	/*
 	right: 24%;
 	top: 12%;
 	-webkit-transform: translate(50%,-50%);
-  transform: translate(50%,-50%);
+  transform: translate(50%,-50%);*/
+  right:150px;
+  top:70px;
 	width: 40px;
 	height: 40px;
-	border-radius: 50%;
+	border-radius: 50px;
 	font-size: 2rem;
 }
 
@@ -241,4 +242,143 @@ color: #ff0000;
 
 .leantitle{
 color: #2e8b57;	
+}
+
+.page-button{
+	position:absolute;
+	display:inline-block;
+	width:200px;
+	height:50px;
+	font-size:18px;
+	font-weight:bold;
+	left:50px;
+	top:130px;
+  background-color: #7DCEA0;
+	
+}
+
+.page-button-select{
+	position:absolute;
+	display:inline-block;
+	width:200px;
+	height:50px;
+	font-size:18px;
+	font-weight:bold;
+	left:50px;
+	top:130px;
+  background: #3cb371;
+
+	
+}
+
+.step-button{
+	position:absolute;
+	display:inline-block;
+	width:200px;
+	height:50px;
+	font-size:18px;
+	font-weight:bold;
+	left:50px;
+	top:190px;
+  background-color: #7DCEA0;
+	
+}
+
+.step-button-select{
+	position:absolute;
+	display:inline-block;
+	width:200px;
+	height:50px;
+	font-size:18px;
+	font-weight:bold;
+	left:50px;
+	top:190px;
+  background-color: #3cb371;
+	
+}
+
+
+.rule-button{
+	position:absolute;
+	display:inline-block;
+	width:200px;
+	height:50px;
+	font-size:18px;
+	font-weight:bold;
+	left:50px;
+	top:250px;
+  background-color: #7DCEA0;
+	
+}
+
+.rule-button-select{
+	position:absolute;
+	display:inline-block;
+	width:200px;
+	height:50px;
+	font-size:18px;
+	font-weight:bold;
+	left:50px;
+	top:250px;
+  background-color: #3cb371;
+	
+}
+
+.example-button{
+	position:absolute;
+	display:inline-block;
+	width:200px;
+	height:50px;
+	font-size:18px;
+	font-weight:bold;
+	left:50px;
+	top:310px;
+  background-color: #7DCEA0;
+	
+}
+
+.example-button-select{
+	position:absolute;
+	display:inline-block;
+	width:200px;
+	height:50px;
+	font-size:18px;
+	font-weight:bold;
+	left:50px;
+	top:310px;
+  background-color: #3cb371;
+	
+}
+
+.example-image{
+	position:absolute;
+	top: 120px;
+  left: 300px;
+	width: 950px;
+	height: 550px;
+	
+}
+
+.exampleGuide{
+  position:relative;
+  display: inline-block;
+  top:-10px;
+  left:10px;	
+  height: 16px;
+  width: 16px;
+  margin: auto 0;
+  margin-left: 2px;
+  text-align:center;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  background-color: black;
+  border: solid 2px black;
+  border-radius: 50%; 
+}
+
+.exampleGuide:hover .hidekadaiGuide{
+    display: inline-block;
+    z-index:30;
 }

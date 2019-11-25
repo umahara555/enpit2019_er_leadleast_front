@@ -3,6 +3,7 @@ import { Header } from './Header.js';
 import { GuideLeanCanvas, ShowGuide, NextButton, BackButton, AllMenu } from './Guide.js';
 import './LeanCanvas.css';
 
+
 const API_URL = 'http://localhost:5000/api/v1';
 const API_WS_URL = 'ws://localhost:5000/cable';
 
@@ -73,6 +74,7 @@ export class LeanCanvas extends Component {
     this.setState({guideFlag: !this.state.guideFlag});
   }
 
+
   getBoardTexts() {
     fetch(API_URL + '/leancanvas/' + this.props.match.params.productID)
       .then((response) => response.json())
@@ -123,9 +125,9 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide">
             <p>?</p>
               <div className="hidekadaiGuide">
-                         サービスの対象のユーザーが抱えている課題、<br/>
+                         サービスの対象の顧客が抱えている課題、<br/>
          または解決すべき課題を1~3個あげてください。<br/><br/>
-          <p1 className="example">あなたが企画したサービスは、<br/>ユーザーの何を解決するために提案しましたか？<br/>
+          <p1 className="example">あなたが企画したサービスは、<br/>顧客の何を解決するために提案しましたか？<br/>
             </p1>
           
               </div>    
@@ -142,11 +144,13 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide" >
             <p>?</p>
               <div className="hidekadaiGuide">
-                [1]で挙げた課題を解決するためにユーザーが現在<br/>
+                [1]で挙げた課題を解決するために顧客が現在<br/>
                 行なっている具体的な対処をあげてください。<br/><br/>
                 <p1 className="example">
-                  ユーザーが課題解決のために使用していると考えられる<br/>既存のアプリは何ですか？<br/>
-                  また課題解決のために起こしている行動は何かありますか？
+                  顧客が課題解決のために使用していると考えられる<br/>
+                  既存のアプリは何ですか？<br/><br />
+                  課題ではあるが、顧客が解決する必要はない、   <br />
+                  と考えている場合は「何もしない」が代替品となっても良い。
                   
             </p1>                
               </div>    
@@ -166,7 +170,9 @@ export class LeanCanvas extends Component {
                 [1]であげた課題を解決するための方法を<br/>
                 説明してください。<br/><br/>
            <p1 className="example">
-            あなたが企画したサービスが提供できる機能は何ですか？
+            あなたが企画したサービスが提供できる機能は何ですか？<br /><br />
+            [独自の価値提案]と内容が多少被ってもかまいません。<br />
+            またそれぞれのソリューションの詳細に書き込む必要もありません。
             </p1> 
               </div>    
             </div>
@@ -200,11 +206,17 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide" >
             <p>?</p>
               <div className="hidekadaiGuide">
-                企画しているサービスがユーザーにとって<br/>
-                興味を引くに値する要素、固有の利点を<br/>
+                企画しているサービスが顧客にとって<br/>
+                興味を引くに値する固有の利点を<br/>
                 挙げてください。<br/><br/>
               <p1 className="example">
-              サービスを利用したユーザーは、<br/>どのようなメリットを得ることができますか？
+              サービスがもたらす顧客の成功体験は<br />
+              どんなものになりますか？<br /><br />
+              固有の利点(他サービスとの差別化)は、[既存の代替品]<br />
+              と比較して求めてみましょう。
+
+              
+              
             </p1> 
                                
               </div>    
@@ -221,9 +233,9 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide" >
             <p>?</p>
               <div className="hidekadaiGuide">
-                企画しているサービスを、ユーザーに簡潔にサービスの<br/>概要を伝えるフレーズを挙げてください。<br/><br/>
+                企画しているサービスを、顧客に簡潔にサービスの<br/>概要を伝えるフレーズを挙げてください。<br/><br/>
               <p1 className="example">
-              [5]の価値提案を簡潔にユーザーに伝えるフレーズは何ですか？
+              [5]の価値提案を簡潔に顧客に伝えるフレーズは何ですか？
             </p1> 
               </div>    
             </div>
@@ -241,7 +253,10 @@ export class LeanCanvas extends Component {
               <div className="RhidekadaiGuide">
                 他者が簡単に真似できない技術、ノウハウ、サービスなどを挙げてください。<br/><br/>
               <p1 className="example">
-              これから習得,確保する予定でも良いので、「特殊な技術」や、「特定の人脈」「特定のビックデータ」など他者が真似しにくい要素を挙げてください。
+             「特殊な技術」や、「特定の人脈」「特定のビックデータ」など他者が真似しにくい要素を挙げてください。<br />
+              思いつくのが難しい箇所であるため、最初は空欄でも構いません。<br />
+              企画を進める中で考えましょう。
+  
             </p1> 
               </div>    
             </div>
@@ -259,7 +274,7 @@ export class LeanCanvas extends Component {
               <div className="RhidekadaiGuide">
                 企画したサービスを顧客に知ってもらう経路を挙げてください。<br/><br/>
               <p1 className="example">
-              テレビやネットの広告、SNSの口コミなど、企画しているサービスを周知させるために最適な経路は何でしょうか。
+              テレビやネットの広告、SNSの口コミなど、企画しているサービスを周知させるために最適な経路は何ですか？
             </p1> 
               </div>    
             </div>
@@ -275,9 +290,9 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide" >
             <p>?</p>
               <div className="RhidekadaiGuide">
-                ターゲットユーザーを挙げてください。<br/><br/>
+                ターゲットとなる顧客を挙げてください。<br/><br/>
               <p1 className="example">
-              あなたが企画したサービスを主に使用すると考えられるユーザーはどんな人ですか？性別は、年齢は、趣味は、考え方は？
+              あなたが企画したサービスを主に使用すると考えられる顧客はどんな人ですか？性別は、年齢は、趣味は、考え方は？
             </p1> 
               </div>    
             </div>
@@ -293,9 +308,9 @@ export class LeanCanvas extends Component {
             <div className="kadaiGuide" >
             <p>?</p>
               <div className="RhidekadaiGuide">
-                このサービスを最も早く利用するであろうユーザーの特徴を挙げてください。<br/><br/>
+                このサービスを最も早く利用するであろう顧客の特徴を挙げてください。<br/><br/>
               <p1 className="example">
-              あなたが企画したサービスのリリースの情報を、いち早く知り得て、尚且つ興味を持って利用すると考えられるユーザーは誰ですか？
+              あなたが企画したサービスのリリースの情報を、いち早く知り得て、尚且つ興味を持って利用すると考えられる顧客は誰ですか？
             </p1> 
               </div>    
             </div>
