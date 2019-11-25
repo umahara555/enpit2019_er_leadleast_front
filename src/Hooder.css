@@ -4,3 +4,51 @@
   display: flex;
   background-color: #228b22;
 }
+
+.Hooder-container {
+  width: 100%;
+  margin-left: 40px;
+  display: flex;
+  overflow: hidden;
+  /* background-color: grey; */
+}
+
+.box {
+  position: relative;
+  width: 40%;
+  /* background-color: red; */
+}
+
+
+.hooder {
+  width:100%;
+  padding: 32px;
+  text-align:center;
+}
+
+.hooder p {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.hooder-home-btn {
+  margin-right: 20px;
+  color: Black;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.hooder-home-btn p {
+  position:relative;
+  bottom:15px;
+  font-size: 4rem;
+}
+
+.hooder-home-btn:visited {
+  color: Black;
+}
+
+.hooder-home-btn:hover {
+  background-color: rgba(255,255,255,0.32);
+}

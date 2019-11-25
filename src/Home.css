@@ -38,10 +38,10 @@
 }
 
 .Explanation-container-wrapper {
-  padding: 40px 0;
+  padding: 0px 0px 40px 0px;
   height: 800px;
   display: flex;
-  /*background-color: pink;*/
+  background-color: #fffafa;
 }
 
 .Explanation-container {
@@ -87,10 +87,10 @@
 
 
 .Explanation-container-wrapper2 {
-  padding: 40px 0;
+  padding: 0px 0px 40px 0px;
   height: 800px;
   display: flex;
-  /* background-color: pink; */
+  /* background-color: #fffafa; */
 }
 
 .Explanation-container2 {
