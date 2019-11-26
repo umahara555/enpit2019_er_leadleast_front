@@ -2,7 +2,7 @@
   padding: 80px 0;
   height: 400px;
   display: flex;
-  background-color: #228b22;
+  background-color: #7DCEA0;
 }
 
 .Hooder-container {
@@ -32,7 +32,7 @@
 }
 
 .hooder p {
-  margin: 32px 0px;
+  margin: 64px 0px;
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 180%;
