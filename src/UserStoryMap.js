@@ -192,7 +192,7 @@ export class UserStoryMap extends Component {
     return(
       <div className="App">
         { this.state.guideFlag && <GuideUserStoryMap onClick={() => this.guideFlagChange()} /> }      
-        <Header className="header" title={'ユーザーストーリーマップ'}/>
+        <Header className="header" title={'Step3 : ユーザーストーリーマップ'}/>
         <ShowGuide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/productbacklog"} />
         <BackButton urlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} />         
