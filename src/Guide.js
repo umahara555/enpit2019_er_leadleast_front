@@ -115,12 +115,12 @@ export class GuideLeanCanvas extends Component {
 			{ this.state.ruleGuideFlag ? 			            	
 				<button className="rule-button-select"
 			    		onClick={this.ruleGuideFlagChange}>
-			  		           取り組み方と補足
+			  		           取り組み方
 			      </button>	
 			       :
 						<button className="rule-button"
 			    		onClick={this.ruleGuideFlagChange}>
-			  		           取り組み方と補足
+			  		           取り組み方
 			      </button>			}			      
 			      
 			     { this.state.exampleGuideFlag ? 
@@ -186,15 +186,13 @@ export class GuideLeanCanvas extends Component {
  { this.state.ruleGuideFlag && 
 							<div className="guide">
       <div className="guide-header">
-        <p>取り組み方と補足</p>
+        <p>取り組み方</p>
       </div>										  
 				<h1>
 				<br/>
-「取り組み方」<br/>
 あまり時間をかけずに、図を埋めてください。目安は15分以内です。埋める内容は簡潔なものにしてください。埋められない場所があれば、空欄でも構いません。<br/><br/>
-「補足」<br/>
-・空欄、または曖昧な記述となった欄は、あなたの企画にとって大きなリスクとなりうる要素です。企画を進める中で、検証していく必要があります。<br/>
-・リーンキャンバスはプロダクトデザインの最初に行うものですが、企画が進行している最中も繰り返し更新していくものです。
+空欄、または曖昧な記述となった欄は、あなたの企画にとって大きなリスクとなりうる要素です。企画を進める中で、検証していく必要があります。<br/>
+リーンキャンバスはプロダクトデザインの最初に行うものですが、企画が進行している最中も繰り返し更新していくものです。
 				</h1>
 				  </div>
 				  }				  
