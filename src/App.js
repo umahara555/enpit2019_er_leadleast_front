@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { withCookies, Cookies } from 'react-cookie';
+import { instanceOf } from 'prop-types';
 import { Home } from './Home.js';
 import { LeanCanvas } from './LeanCanvas.js';
 import { ElevatorPitch } from './ElevatorPitch.js';
@@ -18,11 +20,20 @@ const page404 = () => {
 };
 
 class App extends Component{
+    // 多分ここ要らない
+    //static propTypes = {
+    //    cookies: instanceOf(Cookies).isRequired
+    //};
+
+    constructor(props) {
+        super(props);
+    }
+
     render() {
       return (
           <Router>
               <Switch>
-                  <Route exact path='/' component={Home}/>
+                  <Route exact path='/' render={() => (<Home cookies={this.props.cookies}/>)}/>
                   <Route exact path='/product/:productID/' component={Tutorial}/>
                   <Route exact path='/product/:productID/leancanvas' component={LeanCanvas}/>
                   <Route exact path='/product/:productID/elevatorpitch' component={ElevatorPitch}/>
@@ -36,4 +47,4 @@ class App extends Component{
       )
   };
 }
-export default App;
+export default withCookies(App);

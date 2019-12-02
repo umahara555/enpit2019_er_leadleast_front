@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withCookies, Cookies ,useCookies} from 'react-cookie';
+//import { PropTypes } from 'prop-types';	// 解説１
 import { instanceOf } from 'prop-types';
 import { Header } from './Header.js';
 import LeanCanvas from './images/title/LeanCanvas.png';
@@ -11,17 +12,21 @@ import './Home.css';
 
 const API_URL = 'http://localhost:5000/api/v1';
 
+
+
 export class Home extends Component {
-  constructor(props){
-      super(props);
-      this.state = {
-	  	product_id: "",
-	  };
-      this.handleClick = this.handleClick.bind(this);
-  }
+  //static propTypes = {
+  //  cookies: instanceOf(Cookies).isRequired
+  //};
+
+  //constructor(props) {
+  //  super(props);
+  //}
 
   componentWillMount() {
-
+    const { cookies } = this.props;
+    const book = cookies.get("userId");
+    console.log(book)
   }
 
   handleClick() {
@@ -162,7 +167,7 @@ export class Home extends Component {
               </p>
             </div>
           </div>
-        </div>        
+        </div>
 
       </div>
 

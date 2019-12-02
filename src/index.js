@@ -9,7 +9,7 @@ import { CookiesProvider } from 'react-cookie'	// ←react-cookeもモジュー�
 // デフォルトのappのタグに対してCookiesProviderをくくる
 ReactDOM.render(
     <CookiesProvider>
-            <App />
+        <App />
     </CookiesProvider>,
     document.getElementById('root')
 );
