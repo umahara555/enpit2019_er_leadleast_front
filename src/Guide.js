@@ -7,39 +7,180 @@ import tehudaex from './images/userstorymap-guide/tehudaex.png';
 import banidasu from './images/userstorymap-guide/banidasu.png';
 import {Link} from 'react-router-dom';
 import LeanCanvas from './images/leancanvas/leancanvas-example.png';
+import ElevatorPitch from './images/elevatorpitch/example-elevatorpitch.png';
+
 
 
 export class GuideUserStoryMap extends Component {
+constructor(props) {
+    super(props);
+    this.state = {
+				pageGuideFlag:true,
+				stepGuideFlag:false,
+				ruleGuideFlag:false,
+				exampleGuideFlage:false,
+      }
+    this.pageGuideFlagChange = this.pageGuideFlagChange.bind(this)     
+    this.stepGuideFlagChange = this.stepGuideFlagChange.bind(this)    
+    this.ruleGuideFlagChange = this.ruleGuideFlagChange.bind(this)                
+    this.exampleGuideFlagChange = this.exampleGuideFlagChange.bind(this)  
+              
+    }
+
+
+  pageGuideFlagChange() {
+    this.setState({pageGuideFlag: true});
+		this.setState({stepGuideFlag: false});
+		this.setState({ruleGuideFlag: false});    
+		this.setState({exampleGuideFlag: false});    
+  }  
+  
+  stepGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: true});   
+		this.setState({ruleGuideFlag: false}); 
+		this.setState({exampleGuideFlag: false});    		
+  }    
+
+  ruleGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: false});
+		this.setState({ruleGuideFlag: true});		    
+		this.setState({exampleGuideFlag: false});    		
+  }  
+
+  exampleGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: false});    
+		this.setState({ruleGuideFlag: false});
+		this.setState({exampleGuideFlag: true});    		
+  }    
+    
 	render() {
 		return(
 			<div className="guide-container">
 				<div className="guide-background" onClick={() => this.props.onClick()}></div>
-					<div className="guide">
-				      <div className="guide-header">
+			{ this.state.pageGuideFlag ? 
+				<button className="page-button-select"
+			    		onClick={this.pageGuideFlagChange}>
+			  		           このページの使い方
+			      </button>		
+			      :
+							<button className="page-button"
+			    		onClick={this.pageGuideFlagChange}>
+			  		           このページの使い方
+			      </button>	}				
+			      
+			{ this.state.stepGuideFlag ? 			            	
+				<button className="step-button-select"
+			    		onClick={this.stepGuideFlagChange}>
+			  		           ユーザーストーリーマップとは
+			      </button>	
+			       :
+						<button className="step-button"
+			    		onClick={this.stepGuideFlagChange}>
+			  		           ユーザーストーリーマップとは
+			      </button>			}
+			      
+			{ this.state.ruleGuideFlag ? 			            	
+				<button className="rule-button-select"
+			    		onClick={this.ruleGuideFlagChange}>
+			  		           取り組み方
+			      </button>	
+			       :
+						<button className="rule-button"
+			    		onClick={this.ruleGuideFlagChange}>
+			  		           取り組み方
+			      </button>			}			      
+			      
+			     { this.state.exampleGuideFlag ? 
+				<button className="example-button-select"
+			    		onClick={this.exampleGuideFlagChange}>
+			  		           記述の具体例
+						 <div className="exampleGuide" >
+            	<p>?</p>
+              <div className="hidekadaiGuide">
+									この具体例は「LeadLeast」を開発する際に書き上げたリーンキャンバスです。<br />
+									「LeadLeast」は"アジャイル開発を学ぶ初学者が、プロダクトデザインをより円滑に行えるように"という考えから立ち上げられた企画です。
+              </div>    
+            </div>
+			      </button>					      			      			      
+			      :
+				<button className="example-button"
+			    		onClick={this.exampleGuideFlagChange}>
+			  		           記述の具体例
+						 <div className="exampleGuide" >
+            	<p>?</p>
+              <div className="hidekadaiGuide">
+									この具体例は「LeadLeast」を開発する際に書き上げたリーンキャンバスです。<br />
+									「LeadLeast」は"アジャイル開発を学ぶ初学者が、プロダクトデザインをより円滑に行えるように"という考えから立ち上げられた企画です。
+              </div>    
+            </div>		  		           
+			      </button>	}				      			      			      			      	
+			      { this.state.pageGuideFlag && 
+							<div className="guide">
+      <div className="guide-header">
         <p>このページの使い方</p>
-      </div>							
-
-				  <h1>
-				  <br /> ユーザーストーリーマップを書きましょう<br/>   <br/>  
-				  	青の付箋にはユーザーストーリーの骨格<br/>  
-				  	ピンクの付箋にはユーザーストーリーの流れ<br/>  
-				  	黄の付箋にはユーザーストーリーの詳細<br/>  
-				  	を書き起こしましょう。<br/> <br/>
-				  					終了したら画面右上にあるNEXTボタンでプロダクトバックログに移動しましょう。<br/>
-				<br/><br/>
+      </div>										  
+				<h1>
+				<br/>  
+				ユーザーストーリーマップに取り組みましょう。<br/>  <br/> 
+				3色の付箋に内容を書き込んでください。<br/>  
+				色ごとに書き込むべきな用は異なります<br/>
+				書き込むべき内容がわからない場合は<div className="kadaiGuide"> ? </div>を参照してください。
+        <br/><br/>
 				<h1 className="alart">
-				このガイドは右上にあるGUIDEボタンで再度表示することができます。				
+				このガイドは右上にあるGUIDEボタンで再度表示することができます。
 				</h1>
-				  </h1>					  
+				</h1>
 				  </div>
+				  }
+				  
+ { this.state.stepGuideFlag && 
+							<div className="guide">
+      <div className="guide-header">
+        <p>ユーザーストーリーマップとは</p>
+      </div>										  
+				<h1>
+				<br/>
+				ユーザーストーリーマップは、ユーザーの一連のストーリーを基に、サービスに実装しなけれないけない機能を挙げます。<br />
+				ユーザーストーリーマップを埋めていくと、チーム内でのサービスに対する共通認識が固まる共に、想定していなかった必要となる機能を見つけることができます。<br />
+				これはユーザーストーリーマップが「ユーザーの行動」から「実装すべき機能」を査定していく作業という特性上、サービスの全体像が把握しやすいためです。<br />
+				</h1>
+				  </div>
+				  }
+				  
+ { this.state.ruleGuideFlag && 
+							<div className="guide">
+      <div className="guide-header">
+        <p>取り組み方</p>
+      </div>										  
+				<h1>
+				<br/>
+「取り組み方」<br/>
+まずは"青色の付箋"を埋める作業に取り組みましょう。<br />
+付箋には、ユーザーの一連の行動、ストーリーを書いていきます。<br />
+
+				</h1>
+				  </div>
+				  }				  
+				  
+ { this.state.exampleGuideFlag && 
+            <div >
+              <img src={LeanCanvas} className="example-image"/>
+            </div>
+		
+				  }				  
 				  <button className="closeButton"
 			    		onClick={() => this.props.onClick()}>
 			  		           x
-			      </button>				
+			      </button>		
+			
 			</div>
 		);
 	}
 }
+
 
 export class GuideLeanCanvas extends Component {
   constructor(props) {
@@ -191,10 +332,9 @@ export class GuideLeanCanvas extends Component {
 				<h1>
 				<br/>
 「取り組み方」<br/>
-あまり時間をかけずに、図を埋めてください。目安は15分以内です。埋める内容は簡潔なものにしてください。埋められない場所があれば、空欄でも構いません。<br/><br/>
-「補足」<br/>
-・空欄、または曖昧な記述となった欄は、あなたの企画にとって大きなリスクとなりうる要素です。企画を進める中で、検証していく必要があります。<br/>
-・リーンキャンバスはプロダクトデザインの最初に行うものですが、企画が進行している最中も繰り返し更新していくものです。
+あまり時間をかけずに、図を埋めてください。目安は15分以内です。埋める内容は簡潔なものにしてください。埋められない場所があれば、空欄でも構いません。<br/>
+空欄、または曖昧な記述となった欄は、あなたの企画にとって大きなリスクとなりうる要素です。企画を進める中で、検証していく必要があります。<br/>
+リーンキャンバスはプロダクトデザインの最初に行うものですが、企画が進行している最中も繰り返し更新していくものです。
 				</h1>
 				  </div>
 				  }				  
@@ -216,55 +356,343 @@ export class GuideLeanCanvas extends Component {
 }
 
 export class GuideElevatorPitch extends Component {
+constructor(props) {
+    super(props);
+    this.state = {
+				pageGuideFlag:true,
+				stepGuideFlag:false,
+				ruleGuideFlag:false,
+				exampleGuideFlage:false,
+      }
+    this.pageGuideFlagChange = this.pageGuideFlagChange.bind(this)     
+    this.stepGuideFlagChange = this.stepGuideFlagChange.bind(this)    
+    this.ruleGuideFlagChange = this.ruleGuideFlagChange.bind(this)                
+    this.exampleGuideFlagChange = this.exampleGuideFlagChange.bind(this)  
+              
+    }
+
+
+  pageGuideFlagChange() {
+    this.setState({pageGuideFlag: true});
+		this.setState({stepGuideFlag: false});
+		this.setState({ruleGuideFlag: false});    
+		this.setState({exampleGuideFlag: false});    
+  }  
+  
+  stepGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: true});   
+		this.setState({ruleGuideFlag: false}); 
+		this.setState({exampleGuideFlag: false});    		
+  }    
+
+  ruleGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: false});
+		this.setState({ruleGuideFlag: true});		    
+		this.setState({exampleGuideFlag: false});    		
+  }  
+
+  exampleGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: false});    
+		this.setState({ruleGuideFlag: false});
+		this.setState({exampleGuideFlag: true});    		
+  }    
+    
 	render() {
 		return(
 			<div className="guide-container">
-				<div className="guide-background" onClick={() => this.props.onClick()}></div>				<div className="guide">
-				      <div className="guide-header">
+				<div className="guide-background" onClick={() => this.props.onClick()}></div>
+			{ this.state.pageGuideFlag ? 
+				<button className="page-button-select"
+			    		onClick={this.pageGuideFlagChange}>
+			  		           このページの使い方
+			      </button>		
+			      :
+							<button className="page-button"
+			    		onClick={this.pageGuideFlagChange}>
+			  		           このページの使い方
+			      </button>	}				
+			      
+			{ this.state.stepGuideFlag ? 			            	
+				<button className="step-button-select"
+			    		onClick={this.stepGuideFlagChange}>
+			  		           エレベーターピッチとは
+			      </button>	
+			       :
+						<button className="step-button"
+			    		onClick={this.stepGuideFlagChange}>
+			  		           エレベーターピッチとは
+			      </button>			}
+			      
+			{ this.state.ruleGuideFlag ? 			            	
+				<button className="rule-button-select"
+			    		onClick={this.ruleGuideFlagChange}>
+			  		           取り組み方
+			      </button>	
+			       :
+						<button className="rule-button"
+			    		onClick={this.ruleGuideFlagChange}>
+			  		           取り組み方
+			      </button>			}			      
+			      
+			     { this.state.exampleGuideFlag ? 
+				<button className="example-button-select"
+			    		onClick={this.exampleGuideFlagChange}>
+			  		           記述の具体例
+						 <div className="exampleGuide" >
+            	<p>?</p>
+              <div className="hidekadaiGuide">
+									この具体例は「LeadLeast」を開発する際に書き上げたエレベーターピッチです。<br />
+									「LeadLeast」は"アジャイル開発を学ぶ初学者が、プロダクトデザインをより円滑に行えるように"という考えから立ち上げられた企画です。
+              </div>    
+            </div>
+			      </button>					      			      			      
+			      :
+				<button className="example-button"
+			    		onClick={this.exampleGuideFlagChange}>
+			  		           記述の具体例
+						 <div className="exampleGuide" >
+            	<p>?</p>
+              <div className="hidekadaiGuide">
+									この具体例は「LeadLeast」を開発する際に書き上げたエレベーターピッチです。<br />
+									「LeadLeast」は"アジャイル開発を学ぶ初学者が、プロダクトデザインをより円滑に行えるように"という考えから立ち上げられた企画です。
+              </div>    
+            </div>		  		           
+			      </button>	}				      			      			      			      	
+			      { this.state.pageGuideFlag && 
+							<div className="guide">
+      <div className="guide-header">
         <p>このページの使い方</p>
-      </div>									
+      </div>										  
 				<h1>
-					<br/>  エレベーターピッチに取り組みましょう<br/>  <br/>  
-					枠内に対応の文を書き込んでください。<br/><br/>
-					<h1 className="alart">
-							このガイドは右上にあるGUIDEボタンで再度表示することができます。					
-							</h1>
-				</h1>	  
+				<br/>  
+				エレベーターピッチに取り組みましょう。<br />
+				<div className="kadaiGuide"> ? </div>を参照すれば、書き込むべき内容を確認することができます。<br />
+        <br/><br/>
+				<h1 className="alart">
+				このガイドは右上にあるGUIDEボタンで再度表示することができます。
+				</h1>
+				</h1>
 				  </div>
+				  }
+				  
+ { this.state.stepGuideFlag && 
+							<div className="guide">
+      <div className="guide-header">
+        <p>エレベーターピッチとは</p>
+      </div>										  
+				<h1>
+				<br/>
+				エレベーターピッチとは企画しているサービスの概要を、<br />
+				簡潔に伝えることを目的とした文章のフォーマットです。<br /><br />
+				エレベーターピッチを作る目的は、サービスに興味を持って欲しい相手に、<br />
+				短時間(30秒以内)でサービスを理解させ、その魅力を伝えるためです。<br /><br />
+
+				</h1>
+				  </div>
+				  }
+				  
+ { this.state.ruleGuideFlag && 
+							<div className="guide">
+      <div className="guide-header">
+        <p>取り組み方</p>
+      </div>										  
+				<h1>
+				<br/>
+				行ごとに設置されている枠に、対応する文章を埋めてください。<br />
+				リーンキャンンバスに書いた内容が、エレベーターピッチの内容に対応するので<br />
+				リーンキャンバスを参照しながら取り組んでください。<br />
+
+				フォーマットであるので、文末の文章を変更することはできません。<br /><br />
+
+				「30秒以内に相手に理解させ魅力を伝える」ことを意識して書き込んでください。<br />
+				</h1>
+				  </div>
+				  }				  
+				  
+ { this.state.exampleGuideFlag && 
+            <div >
+              <img src={ElevatorPitch} className="example-image"/>
+            </div>
+		
+				  }				  
 				  <button className="closeButton"
 			    		onClick={() => this.props.onClick()}>
 			  		           x
-			      </button>				
+			      </button>		
+			
 			</div>
 		);
 	}
+		
 }
 
 export class GuideProductBacklog extends Component {
+constructor(props) {
+    super(props);
+    this.state = {
+				pageGuideFlag:true,
+				stepGuideFlag:false,
+				ruleGuideFlag:false,
+				exampleGuideFlage:false,
+      }
+    this.pageGuideFlagChange = this.pageGuideFlagChange.bind(this)     
+    this.stepGuideFlagChange = this.stepGuideFlagChange.bind(this)    
+    this.ruleGuideFlagChange = this.ruleGuideFlagChange.bind(this)                
+    this.exampleGuideFlagChange = this.exampleGuideFlagChange.bind(this)  
+              
+    }
+
+
+  pageGuideFlagChange() {
+    this.setState({pageGuideFlag: true});
+		this.setState({stepGuideFlag: false});
+		this.setState({ruleGuideFlag: false});    
+		this.setState({exampleGuideFlag: false});    
+  }  
+  
+  stepGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: true});   
+		this.setState({ruleGuideFlag: false}); 
+		this.setState({exampleGuideFlag: false});    		
+  }    
+
+  ruleGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: false});
+		this.setState({ruleGuideFlag: true});		    
+		this.setState({exampleGuideFlag: false});    		
+  }  
+
+  exampleGuideFlagChange() {
+    this.setState({pageGuideFlag: false});
+		this.setState({stepGuideFlag: false});    
+		this.setState({ruleGuideFlag: false});
+		this.setState({exampleGuideFlag: true});    		
+  }    
+    
 	render() {
 		return(
 			<div className="guide-container">
-				<div className="guide-background" onClick={() => this.props.onClick()}></div>				<div className="guide">
-				      <div className="guide-header">
+				<div className="guide-background" onClick={() => this.props.onClick()}></div>
+			{ this.state.pageGuideFlag ? 
+				<button className="page-button-select"
+			    		onClick={this.pageGuideFlagChange}>
+			  		           このページの使い方
+			      </button>		
+			      :
+							<button className="page-button"
+			    		onClick={this.pageGuideFlagChange}>
+			  		           このページの使い方
+			      </button>	}				
+			      
+			{ this.state.stepGuideFlag ? 			            	
+				<button className="step-button-select"
+			    		onClick={this.stepGuideFlagChange}>
+			  		           プロダクトバックログとは
+			      </button>	
+			       :
+						<button className="step-button"
+			    		onClick={this.stepGuideFlagChange}>
+			  		           プロダクトバックログとは
+			      </button>			}
+			      
+			{ this.state.ruleGuideFlag ? 			            	
+				<button className="rule-button-select"
+			    		onClick={this.ruleGuideFlagChange}>
+			  		           取り組み方
+			      </button>	
+			       :
+						<button className="rule-button"
+			    		onClick={this.ruleGuideFlagChange}>
+			  		           取り組み方
+			      </button>			}			      
+			      
+			     { this.state.exampleGuideFlag ? 
+				<button className="example-button-select"
+			    		onClick={this.exampleGuideFlagChange}>
+			  		           記述の具体例
+						 <div className="exampleGuide" >
+            	<p>?</p>
+              <div className="hidekadaiGuide">
+									この具体例は「LeadLeast」を開発する際に書き上げたプロダクトバックログです。<br />
+									「LeadLeast」は"アジャイル開発を学ぶ初学者が、プロダクトデザインをより円滑に行えるように"という考えから立ち上げられた企画です。
+              </div>    
+            </div>
+			      </button>					      			      			      
+			      :
+				<button className="example-button"
+			    		onClick={this.exampleGuideFlagChange}>
+			  		           記述の具体例
+						 <div className="exampleGuide" >
+            	<p>?</p>
+              <div className="hidekadaiGuide">
+									この具体例は「LeadLeast」を開発する際に書き上げたプロダクトバックログです。<br />
+									「LeadLeast」は"アジャイル開発を学ぶ初学者が、プロダクトデザインをより円滑に行えるように"という考えから立ち上げられた企画です。
+              </div>    
+            </div>		  		           
+			      </button>	}				      			      			      			      	
+			      { this.state.pageGuideFlag && 
+							<div className="guide">
+      <div className="guide-header">
         <p>このページの使い方</p>
-      </div>										
+      </div>										  
 				<h1>
 				<br/>  
-				プロダクトバックログに取り組みましょう。<br/>  <br/>  
-				枠内に対応の文を書き込んでください。  <br/><br/>
-				<br/><br/>
-				<h1 className="alart">
-				このガイドは右上にあるGUIDEボタンで再度表示することができます。				
+				プロダクトバックログに取り組みましょう。<br />
+				枠に対応するものを書き込んでください。<br /><br />
+
+								<h1 className="alart">
+				このガイドは右上にあるGUIDEボタンで再度表示することができます。
 				</h1>
 				</h1>
 				  </div>
+				  }
+				  
+ { this.state.stepGuideFlag && 
+							<div className="guide">
+      <div className="guide-header">
+        <p>プロダクトバックログとは</p>
+      </div>										  
+				<h1>
+				<br/>
+				サービスに欲しい,追加したい機能を挙げたものを、プロダクトバックログと呼びます。<br />
+				プロダクトバックログは実際の開発における作業項目となります。<br />
+				これを完成させることで、プロダクトデザインの行程は終了となります。<br />
+				</h1>
+				  </div>
+				  }
+				  
+ { this.state.ruleGuideFlag && 
+							<div className="guide">
+      <div className="guide-header">
+        <p>取り組み方</p>
+      </div>										  
+				<h1>
+				プロダクトバックログはユーザーストーリーマップで挙げた実装する機能を、実装する順番に並び替える作業が主となります。<br />
+				ファーストリリースや設計計画を立てながら、実装の優先順位をつけてください。
+				</h1>
+				  </div>
+				  }				  
+				  
+ { this.state.exampleGuideFlag && 
+            <div >
+              <img src={LeanCanvas} className="example-image"/>
+            </div>
+		
+				  }				  
 				  <button className="closeButton"
 			    		onClick={() => this.props.onClick()}>
 			  		           x
-			      </button>				
+			      </button>		
+			
 			</div>
 		);
 	}
+
 }
 
 

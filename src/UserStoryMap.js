@@ -199,7 +199,7 @@ export class UserStoryMap extends Component {
         <div className="board">
           <div className="split" />
           			 <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                 ユーザーストーリーの骨格を書きましょう
               </div>    
@@ -209,7 +209,7 @@ export class UserStoryMap extends Component {
           </div>
           
           			 <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                          ユーザーストーリーの流れを書きましょう<br/>
               </div>    
@@ -218,7 +218,7 @@ export class UserStoryMap extends Component {
             {boardCards[1]}
           </div>
           			 <div className="kadaiGuide" title="aaa">
-            ?
+            <p>?</p>
               <div className="hidekadaiGuide">
                          ユーザーストーリーの詳細を書きましょう
               </div>    
