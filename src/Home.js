@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { withCookies, Cookies ,useCookies} from 'react-cookie';
 //import { PropTypes } from 'prop-types';	// 解説１
-import { instanceOf } from 'prop-types';
+//import { instanceOf } from 'prop-types';
 import { Header } from './Header.js';
 import LeanCanvas from './images/title/LeanCanvas.png';
 import ElevatorPitch from './images/title/ElevatorPitch.png';
