@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { withCookies, Cookies ,useCookies} from 'react-cookie';
+import { instanceOf } from 'prop-types';
 import { Header } from './Header.js';
 import LeanCanvas from './images/title/LeanCanvas.png';
 import ElevatorPitch from './images/title/ElevatorPitch.png';
@@ -12,10 +14,14 @@ const API_URL = 'http://localhost:5000/api/v1';
 export class Home extends Component {
   constructor(props){
       super(props);
-	  this.state = {
+      this.state = {
 	  	product_id: "",
 	  };
-   this.handleClick = this.handleClick.bind(this)
+      this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentWillMount() {
+
   }
 
   handleClick() {
@@ -163,3 +169,5 @@ export class Home extends Component {
     )
   }
 }
+
+export default withCookies(Home);
