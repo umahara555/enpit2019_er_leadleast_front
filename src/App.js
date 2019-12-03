@@ -9,6 +9,8 @@ import { Login } from './Login.js';
 import { Tutorial } from './Tutorial.js'
 import './App.css';
 
+import { WhiteBoard } from './WhiteBoard.js';
+
 import { NewHeader } from './NewHeader.js'
 const NH = () => (<NewHeader isLoggedin={true}/>);
 
@@ -27,6 +29,7 @@ const App = () => (
       <Route exact path='/product/:productID/productbacklog' component={ProductBacklog} />
       <Route exact path='/login' component={Login} />
       <Route exact path='/nh' component={NH} />
+      <Route exact path='/wb' component={WhiteBoard} />
       <Route exact component={page404} />
     </Switch>
   </Router>
