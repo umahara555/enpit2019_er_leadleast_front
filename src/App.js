@@ -8,7 +8,8 @@ import { ElevatorPitch } from './ElevatorPitch.js';
 import { UserStoryMap } from './UserStoryMap.js';
 import { ProductBacklog } from './ProductBacklog.js';
 import { Login } from './Login.js';
-import { Tutorial } from './Tutorial.js'
+import { Tutorial } from './Tutorial.js';
+import { History } from "./History.js";
 import './App.css';
 
 import { NewHeader } from './NewHeader.js'
@@ -34,6 +35,7 @@ class App extends Component{
           <Router>
               <Switch>
                   <Route exact path='/' render={() => (<Home cookies={this.props.cookies}/>)}/>
+                  <Route exact path='/history' render={() => (<History cookies={this.props.cookies}/>)}/>
                   <Route exact path='/product/:productID/' component={Tutorial}/>
                   <Route exact path='/product/:productID/leancanvas' component={LeanCanvas}/>
                   <Route exact path='/product/:productID/elevatorpitch' component={ElevatorPitch}/>
