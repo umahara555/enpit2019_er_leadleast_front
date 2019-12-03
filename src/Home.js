@@ -48,7 +48,7 @@ export class Home extends Component {
         let postResponseJson = await postResponse.json()
 		    product_id = postResponseJson.product_id
 
-        cookies.set(product_id);
+        cookies.set("userId", product_id);
 
         method = "POST";
         postResponse = await fetch(API_URL+'/leancanvas/'+product_id, {method})
@@ -88,10 +88,12 @@ export class Home extends Component {
 	CreateNewProduct()
   }
   render(){
+    const { cookies } = this.props;
+    let book = cookies.get("userId");
     return(
       <div>
         <Header className='header' title={''} />
-       <NextButton urlName={"/History"} />
+        <NextButton urlName={"/product/" + book + "/leancanvas"} />
         <div className='home'>
           <div className='target'>
        	    <h1>LeadLeast</h1>
