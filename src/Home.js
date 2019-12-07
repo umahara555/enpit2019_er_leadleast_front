@@ -1,42 +1,33 @@
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { withCookies, Cookies ,useCookies} from 'react-cookie';
-//import { PropTypes } from 'prop-types';	// 解説１
-//import { instanceOf } from 'prop-types';
+import { instanceOf } from 'prop-types';
 import { Header } from './Header.js';
-import { History } from './History.js';
 import LeanCanvas from './images/title/LeanCanvas.png';
 import ElevatorPitch from './images/title/ElevatorPitch.png';
 import ProductBacklog from './images/title/ProductBacklog.png';
 import UserStoryMap from './images/title/UserStoryMap.png';
 import './Home.css';
-import {NextButton} from "./Guide";
-
 
 const API_URL = 'http://localhost:5000/api/v1';
 
-let product = [];
-
 export class Home extends Component {
-  //static propTypes = {
-  //  cookies: instanceOf(Cookies).isRequired
-  //};
-
-  //constructor(props) {
-  //  super(props);
-  //}
-
-  componentWillMount() {
-    const { cookies } = this.props;
-    product.concat([]);
-    console.log(product);
+  constructor(props){
+      super(props);
+      this.state = {
+	  	product_id: "",
+	  };
+      this.handleClick = this.handleClick.bind(this);
   }
 
-
+  componentWillMount() {
+    console.log(this.props);
+    const { cookies } = this.props;
+    cookies.set("userId","hoge");
+    console.log(cookies.get("userId"));
+  }
 
   handleClick() {
-    const { cookies } = this.props;
-
     const CreateNewProduct = async function(){
 	  let product_id = ""
       try {
@@ -47,8 +38,6 @@ export class Home extends Component {
         }
         let postResponseJson = await postResponse.json()
 		    product_id = postResponseJson.product_id
-
-        cookies.set("userId", product_id);
 
         method = "POST";
         postResponse = await fetch(API_URL+'/leancanvas/'+product_id, {method})
@@ -82,18 +71,15 @@ export class Home extends Component {
         console.log(error)
       }
 		
-	  console.log(product_id);
+	  console.log(product_id)
       this.props.history.push("/product/"+product_id);
 	}.bind(this)
 	CreateNewProduct()
   }
   render(){
-    const { cookies } = this.props;
-    let book = cookies.get("userId");
     return(
       <div>
         <Header className='header' title={''} />
-        <NextButton urlName={"/product/" + book + "/leancanvas"} />
         <div className='home'>
           <div className='target'>
        	    <h1>LeadLeast</h1>
@@ -179,7 +165,7 @@ export class Home extends Component {
               </p>
             </div>
           </div>
-        </div>
+        </div>        
 
       </div>
 
@@ -187,4 +173,4 @@ export class Home extends Component {
   }
 }
 
-export default withCookies(Home);
+export default Home;
