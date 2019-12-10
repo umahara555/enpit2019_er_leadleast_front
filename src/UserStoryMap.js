@@ -21,6 +21,12 @@ export class UserStoryMap extends Component {
           txt4: { text: '', } ,
           txt5: { text: '', } ,
           txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,          
         },
         group2: {
           txt1: { text: '', } ,
@@ -29,6 +35,12 @@ export class UserStoryMap extends Component {
           txt4: { text: '', } ,
           txt5: { text: '', } ,
           txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
         },
         group3: {
           txt1: { text: '', } ,
@@ -37,6 +49,12 @@ export class UserStoryMap extends Component {
           txt4: { text: '', } ,
           txt5: { text: '', } ,
           txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
         },
         group4: {
           txt1: { text: '', } ,
@@ -45,6 +63,12 @@ export class UserStoryMap extends Component {
           txt4: { text: '', } ,
           txt5: { text: '', } ,
           txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
         },
         group5: {
           txt1: { text: '', } ,
@@ -53,6 +77,12 @@ export class UserStoryMap extends Component {
           txt4: { text: '', } ,
           txt5: { text: '', } ,
           txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
         },
         group6: {
           txt1: { text: '', } ,
@@ -61,6 +91,12 @@ export class UserStoryMap extends Component {
           txt4: { text: '', } ,
           txt5: { text: '', } ,
           txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
         },
         group7: {
           txt1: { text: '', } ,
@@ -69,6 +105,12 @@ export class UserStoryMap extends Component {
           txt4: { text: '', } ,
           txt5: { text: '', } ,
           txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
         },
         group8: {
           txt1: { text: '', } ,
@@ -77,7 +119,98 @@ export class UserStoryMap extends Component {
           txt4: { text: '', } ,
           txt5: { text: '', } ,
           txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
         },
+        group9: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
+        },
+        group10: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
+        },
+        group11: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
+        },
+        group12: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
+        },
+        group13: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
+        },
+        group14: {
+          txt1: { text: '', } ,
+          txt2: { text: '', } ,
+          txt3: { text: '', } ,
+          txt4: { text: '', } ,
+          txt5: { text: '', } ,
+          txt6: { text: '', } ,
+          txt7: { text: '', } ,
+          txt8: { text: '', } ,
+          txt9: { text: '', } ,
+          txt10: { text: '', } ,
+          txt11: { text: '', } ,
+          txt12: { text: '', } ,           
+        },
+     
       },
       ws: null,
       isChange: false,
@@ -242,6 +375,24 @@ export class UserStoryMap extends Component {
             <div className="boardCard2-1">
               {boardCards[7]}
             </div>
+            <div className="boardCard2-1">
+              {boardCards[8]}
+            </div>            
+            <div className="boardCard2-1">
+              {boardCards[9]}
+            </div>           
+            <div className="boardCard2-1">
+              {boardCards[10]}
+            </div>          
+            <div className="boardCard2-1">
+              {boardCards[11]}
+            </div>          
+            <div className="boardCard2-1">
+              {boardCards[12]}
+            </div>    
+            <div className="boardCard2-1">
+              {boardCards[13]}
+            </div>                           
           </div>
         </div>
       </div>

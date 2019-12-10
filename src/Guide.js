@@ -8,8 +8,8 @@ import banidasu from './images/userstorymap-guide/banidasu.png';
 import {Link} from 'react-router-dom';
 import LeanCanvas from './images/leancanvas/leancanvas-example.png';
 import ElevatorPitch from './images/elevatorpitch/example-elevatorpitch.png';
-
-
+import UserStoryMap from './images/userstorymap-guide/example.png';
+import ProductBackLog from './images/example.png';
 
 export class GuideUserStoryMap extends Component {
 constructor(props) {
@@ -112,7 +112,7 @@ constructor(props) {
 						 <div className="exampleGuide" >
             	<p>?</p>
               <div className="hidekadaiGuide">
-									この具体例は「LeadLeast」を開発する際に書き上げたリーンキャンバスです。<br />
+									この具体例は「LeadLeast」を開発する際に書き上げたユーザーストーリーマップです。<br />
 									「LeadLeast」は"アジャイル開発を学ぶ初学者が、プロダクトデザインをより円滑に行えるように"という考えから立ち上げられた企画です。
               </div>    
             </div>		  		           
@@ -174,7 +174,7 @@ constructor(props) {
 				  
  { this.state.exampleGuideFlag && 
             <div >
-              <img src={LeanCanvas} className="example-image"/>
+              <img src={UserStoryMap} className="example-image"/>
             </div>
 		
 				  }				  
@@ -687,7 +687,7 @@ constructor(props) {
 				  
  { this.state.exampleGuideFlag && 
             <div >
-              <img src={LeanCanvas} className="example-image"/>
+              <img src={ProductBackLog} className="example-image"/>
             </div>
 		
 				  }				  
