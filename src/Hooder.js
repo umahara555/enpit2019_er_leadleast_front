@@ -17,6 +17,15 @@ export class Hooder extends Component {
               </p>
             </div>
           </div>
+          <div className='url_box'>
+            <a href="https://github.com/umahara555/enpit2019_er_leadleast_front">
+                GitHub
+            </a>
+            <br/>
+            <a href="https://trello.com/b/1swjgY9r/leadleast">
+            Trello
+            </a>
+          </div>
         </div>
       </div>
     )
