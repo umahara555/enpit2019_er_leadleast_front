@@ -79,7 +79,7 @@ export class Home extends Component {
               <button
               className='Button'
                onClick={this.handleClick}>
-               CLICK TO START
+               はじめる
                </button>
           </div>
         </div>
