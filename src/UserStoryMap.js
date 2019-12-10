@@ -224,8 +224,10 @@ export class UserStoryMap extends Component {
     ws.onopen = () => {
       ws.send(
         JSON.stringify(
-          {"command": "subscribe",
-            "identifier":"{\"channel\":\"UserStoryMapChannel\"}"}
+          {
+            "command": "subscribe",
+            "identifier":`{\"channel\":\"UserStoryMapChannel\", \"product_id\": \"${this.props.match.params.productID}\"}`,
+          }
         )
       );
     };

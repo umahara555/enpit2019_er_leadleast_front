@@ -44,8 +44,10 @@ export class ProductBacklog extends Component {
 		ws.onopen = () => {
 			ws.send(
 				JSON.stringify(
-					{"command": "subscribe",
-						"identifier":"{\"channel\":\"ProductBacklogChannel\"}"}
+					{
+						"command": "subscribe",
+						"identifier":`{\"channel\":\"ProductBacklogChannel\", \"product_id\": \"${this.props.match.params.productID}\"}`,
+					}
 				)
 			);
 		};

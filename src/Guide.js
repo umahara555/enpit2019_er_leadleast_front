@@ -263,12 +263,12 @@ export class GuideLeanCanvas extends Component {
 			{ this.state.ruleGuideFlag ? 			            	
 				<button className="rule-button-select"
 			    		onClick={this.ruleGuideFlagChange}>
-			  		           取り組み方と補足
+			  		           取り組み方
 			      </button>	
 			       :
 						<button className="rule-button"
 			    		onClick={this.ruleGuideFlagChange}>
-			  		           取り組み方と補足
+			  		           取り組み方
 			      </button>			}			      
 			      
 			     { this.state.exampleGuideFlag ? 
@@ -334,7 +334,7 @@ export class GuideLeanCanvas extends Component {
  { this.state.ruleGuideFlag && 
 							<div className="guide">
       <div className="guide-header">
-        <p>取り組み方と補足</p>
+        <p>取り組み方</p>
       </div>										  
 				<h1>
 				<br/>
