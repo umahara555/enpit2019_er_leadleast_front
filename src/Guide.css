@@ -15,6 +15,12 @@
 	height: 100vh;
 	z-index: 2;
 }
+.guide-image {
+	/*position: fixed;*/
+	width: 100%;
+	height: auto;
+	z-index: 2;
+}
 
 
 .guide-background {
