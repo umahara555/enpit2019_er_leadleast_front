@@ -8,7 +8,7 @@ import ElevatorPitch from './images/title/ElevatorPitch.png';
 import ProductBacklog from './images/title/ProductBacklog.png';
 import UserStoryMap from './images/title/UserStoryMap.png';
 import './Home.css';
-import {PreviewButton} from "./Guide";
+import {PreviewButton, Preview, GuideLeanCanvas} from "./Guide";
 
 const API_URL = 'http://localhost:5000/api/v1';
 
@@ -17,7 +17,8 @@ export class Home extends Component {
       super(props);
       this.state = {
 	  	product_id: "",
-	  };
+        guideFlag: false,
+      };
       this.handleClick = this.handleClick.bind(this);
   }
 
@@ -77,11 +78,16 @@ export class Home extends Component {
 	}.bind(this)
 	CreateNewProduct()
   }
+  guideFlagChange() {
+    this.setState({guideFlag: !this.state.guideFlag});
+  }
   render(){
     return(
       <div>
+        { this.state.guideFlag && <Preview onClick={() => this.guideFlagChange()} urlname={this.state.product_id} /> }
         <Header className='header' title={''} />
-        <PreviewButton urlName={"/product/" + this.state.product_id} />
+
+        <PreviewButton onClick={() => this.guideFlagChange()} />
         <div className='home'>
           <div className='target'>
        	    <h1>LeadLeast</h1>

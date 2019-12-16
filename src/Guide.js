@@ -15,6 +15,25 @@ import ElevatorPitch from './images/elevatorpitch/example-elevatorpitch.png';
 import UserStoryMap from './images/userstorymap-guide/example.png';
 import ProductBackLog from './images/example.png';
 
+
+
+export class Preview extends Component {
+	render() {
+		return(
+			<div className="guide-container">
+				<div className="guide-background" onClick={() => this.props.onClick()}></div>
+					<div className="guide">
+						<div className="guide-header">
+					<p>前回のプロジェクト</p>
+					</div>
+						<Link to={"product/"+this.props.urlname} >
+							<p>壱</p>
+						</Link>
+					</div>
+				</div>
+				)
+	}
+}
 export class GuideTutorial extends Component {
   constructor(props) {
     super(props);
@@ -910,9 +929,11 @@ export class BackButton extends Component {
 export class PreviewButton extends Component {
 	render() {
 		return(
-			<Link to={this.props.urlName} className="nextButton">
+			<button className="nextButton"
+					onClick={() => this.props.onClick()}>
 				<p>前回のプロジェクト</p>
-			</Link>
+			</button>
+
 		);
 	}
 }
