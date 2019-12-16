@@ -8,6 +8,7 @@ import ElevatorPitch from './images/title/ElevatorPitch.png';
 import ProductBacklog from './images/title/ProductBacklog.png';
 import UserStoryMap from './images/title/UserStoryMap.png';
 import './Home.css';
+import {PreviewButton} from "./Guide";
 
 const API_URL = 'http://localhost:5000/api/v1';
 
@@ -21,13 +22,12 @@ export class Home extends Component {
   }
 
   componentWillMount() {
-    console.log(this.props);
     const { cookies } = this.props;
-    cookies.set("userId","hoge");
-    console.log(cookies.get("userId"));
+    this.setState({product_id: cookies.get("userId")});
   }
 
   handleClick() {
+    const { cookies } = this.props;
     const CreateNewProduct = async function(){
 	  let product_id = ""
       try {
@@ -72,6 +72,7 @@ export class Home extends Component {
       }
 		
 	  console.log(product_id)
+      cookies.set("userId",product_id);
       this.props.history.push("/product/"+product_id);
 	}.bind(this)
 	CreateNewProduct()
@@ -80,6 +81,7 @@ export class Home extends Component {
     return(
       <div>
         <Header className='header' title={''} />
+        <PreviewButton urlName={"/product/" + this.state.product_id} />
         <div className='home'>
           <div className='target'>
        	    <h1>LeadLeast</h1>

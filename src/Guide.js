@@ -907,6 +907,16 @@ export class BackButton extends Component {
 	}
 }
 
+export class PreviewButton extends Component {
+	render() {
+		return(
+			<Link to={this.props.urlName} className="nextButton">
+				<p>前回のプロジェクト</p>
+			</Link>
+		);
+	}
+}
+
 export class AllMenu extends Component {
 	render() {
 		return(
