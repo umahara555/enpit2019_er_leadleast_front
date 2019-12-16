@@ -77,7 +77,6 @@ display:block;
   width: 16px;
   margin: auto 0;
   margin-left: 2px;
-  text-align:center;
   text-decoration: none;
   color: white;
   font-size: 14px;
@@ -85,6 +84,10 @@ display:block;
   background-color: black;
   border: solid 2px black;
   border-radius: 50%; 
+}
+
+.kadaiGuide p{
+  text-align:center;
 }
 
 .hidekadaiGuide{
@@ -96,7 +99,7 @@ display:block;
     color: #fff;
     border-radius: 5px;
     background: #000;
-    width: 60vh;  
+    width: 50vh;  
 }
 
 .RhidekadaiGuide{

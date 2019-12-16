@@ -117,7 +117,7 @@ export class ElevatorPitch extends Component {
 			 <div className="kadaiGuide" title="aaa">
             ?
               <div className="hidekadaiGuide">
-     						エレベーターピッチで取り上げた課題を<br/>「~を解決したい」という形式の文で書きましょう。<br/><br/>
+     						リーンキャンバスで取り上げた課題を<br/>「~を解決したい」という形式の文で書きましょう。<br/><br/>
               </div>    
               </div>
 

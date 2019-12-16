@@ -26,44 +26,4 @@
   margin:2% 2% 0 0.5%;
 }
 
-.kadaiGuide{
-  position:relative;
-  display: inline-block;
-  height: 16px;
-  width: 16px;
-  margin: auto 0;
-  margin-left: 2px;
-  text-align:center;
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
-  font-weight: 800;
-  background-color: black;
-  border: solid 2px black;
-  border-radius: 50%; 
-}
 
-.hidekadaiGuide{
-    display: none;
-    position: absolute;
-    padding: 10px;
-    font-size: 18px;
-    line-height: 1.6em;
-    color: #fff;
-    border-radius: 5px;
-    background: #000;
-    width: 60vh;  
-}
-
-.RhidekadaiGuide{
-    display: none;
-    position: absolute;
-    right:1vh;
-    padding: 10px;
-    font-size: 18px;
-    line-height: 1.6em;
-    color: #fff;
-    border-radius: 5px;
-    background: #000;
-    width: 60vh;  
-}
