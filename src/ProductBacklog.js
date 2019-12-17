@@ -30,7 +30,43 @@ export class ProductBacklog extends Component {
 				txt15: { text: '', } ,
 				txt16: { text: '', } ,
 				txt17: { text: '', } ,
-				txt18: { text: '', } ,							
+				txt18: { text: '', } ,	
+				txt19: { text: '', } ,
+				txt20: { text: '', } ,
+				txt21: { text: '', } ,
+				txt22: { text: '', } ,
+				txt23: { text: '', } ,
+				txt24: { text: '', } ,
+				txt25: { text: '', } ,
+				txt26: { text: '', } ,
+				txt27: { text: '', } ,				
+				txt28: { text: '', } ,
+				txt29: { text: '', } ,
+				txt30: { text: '', } ,
+				txt31: { text: '', } ,
+				txt32: { text: '', } ,
+				txt33: { text: '', } ,
+				txt34: { text: '', } ,
+				txt35: { text: '', } ,
+				txt36: { text: '', } ,		
+				txt37: { text: '', } ,
+				txt38: { text: '', } ,
+				txt39: { text: '', } ,
+				txt40: { text: '', } ,
+				txt41: { text: '', } ,
+				txt42: { text: '', } ,
+				txt43: { text: '', } ,
+				txt44: { text: '', } ,
+				txt45: { text: '', } ,				
+				txt46: { text: '', } ,
+				txt47: { text: '', } ,
+				txt48: { text: '', } ,
+				txt49: { text: '', } ,
+				txt50: { text: '', } ,
+				txt51: { text: '', } ,
+				txt52: { text: '', } ,
+				txt53: { text: '', } ,
+				txt54: { text: '', } ,															
 			},
 			ws: null,
 			isChange: false,
@@ -201,7 +237,151 @@ export class ProductBacklog extends Component {
 		        <div className="plow">
 		        <p>18</p>
 		        	<textarea id="txt18" value={this.state.board_texts.txt18.text} onChange={this.handleChange} />
-		        </div>					        				        
+		        </div>	
+		        <div className="plow">
+		        <p>19</p>
+		        	<textarea id="txt19" value={this.state.board_texts.txt19.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>20</p>
+		        	<textarea id="txt20" value={this.state.board_texts.txt20.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>21</p>
+		        	<textarea id="txt21" value={this.state.board_texts.txt21.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>22</p>
+		        	<textarea id="txt22" value={this.state.board_texts.txt22.text} onChange={this.handleChange} />
+		        </div>			        		        		        
+		        <div className="plow">
+		        <p>23</p>
+		        	<textarea id="txt23" value={this.state.board_texts.txt23.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>24</p>
+		        	<textarea id="txt24" value={this.state.board_texts.txt24.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>25</p>
+		        	<textarea id="txt25" value={this.state.board_texts.txt25.text} onChange={this.handleChange} />
+		        </div>
+		        <div className="plow">
+		        <p>26</p>
+		        	<textarea id="txt26" value={this.state.board_texts.txt26.text} onChange={this.handleChange} />
+		        </div>		 
+		        <div className="plow">
+		        <p>27</p>
+		        	<textarea id="txt27" value={this.state.board_texts.txt27.text} onChange={this.handleChange} />
+		        </div>
+		        <div className="plow">
+		        <p>28</p>
+		        	<textarea id="txt28" value={this.state.board_texts.txt28.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>29</p>
+		        	<textarea id="txt29" value={this.state.board_texts.txt29.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>30</p>
+		        	<textarea id="txt30" value={this.state.board_texts.txt30.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>31</p>
+		        	<textarea id="txt31" value={this.state.board_texts.txt31.text} onChange={this.handleChange} />
+		        </div>			        		        		        
+		        <div className="plow">
+		        <p>32</p>
+		        	<textarea id="txt32" value={this.state.board_texts.txt32.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>33</p>
+		        	<textarea id="txt33" value={this.state.board_texts.txt33.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>34</p>
+		        	<textarea id="txt34" value={this.state.board_texts.txt34.text} onChange={this.handleChange} />
+		        </div>
+		        <div className="plow">
+		        <p>35</p>
+		        	<textarea id="txt35" value={this.state.board_texts.txt35.text} onChange={this.handleChange} />
+		        </div>		 
+		        <div className="plow">
+		        <p>36</p>
+		        	<textarea id="txt36" value={this.state.board_texts.txt36.text} onChange={this.handleChange} />
+		        </div>		
+		        <div className="plow">
+		        <p>37</p>
+		        	<textarea id="txt37" value={this.state.board_texts.txt37.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>38</p>
+		        	<textarea id="txt38" value={this.state.board_texts.txt38.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>39</p>
+		        	<textarea id="txt39" value={this.state.board_texts.txt39.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>40</p>
+		        	<textarea id="txt40" value={this.state.board_texts.txt40.text} onChange={this.handleChange} />
+		        </div>			        		        		        
+		        <div className="plow">
+		        <p>41</p>
+		        	<textarea id="txt41" value={this.state.board_texts.txt41.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>42</p>
+		        	<textarea id="txt42" value={this.state.board_texts.txt42.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>43</p>
+		        	<textarea id="txt43" value={this.state.board_texts.txt43.text} onChange={this.handleChange} />
+		        </div>
+		        <div className="plow">
+		        <p>44</p>
+		        	<textarea id="txt44" value={this.state.board_texts.txt44.text} onChange={this.handleChange} />
+		        </div>		 
+		        <div className="plow">
+		        <p>45</p>
+		        	<textarea id="txt45" value={this.state.board_texts.txt45.text} onChange={this.handleChange} />
+		        </div>
+		        <div className="plow">
+		        <p>46</p>
+		        	<textarea id="txt46" value={this.state.board_texts.txt46.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>47</p>
+		        	<textarea id="txt47" value={this.state.board_texts.txt47.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>48</p>
+		        	<textarea id="txt48" value={this.state.board_texts.txt48.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>49</p>
+		        	<textarea id="txt49" value={this.state.board_texts.txt49.text} onChange={this.handleChange} />
+		        </div>			        		        		        
+		        <div className="plow">
+		        <p>50</p>
+		        	<textarea id="txt50" value={this.state.board_texts.txt50.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>51</p>
+		        	<textarea id="txt51" value={this.state.board_texts.txt51.text} onChange={this.handleChange} />
+		        </div>	
+		        <div className="plow">
+		        <p>52</p>
+		        	<textarea id="txt52" value={this.state.board_texts.txt52.text} onChange={this.handleChange} />
+		        </div>
+		        <div className="plow">
+		        <p>53</p>
+		        	<textarea id="txt53" value={this.state.board_texts.txt53.text} onChange={this.handleChange} />
+		        </div>		 
+		        <div className="plow">
+		        <p>54</p>
+		        	<textarea id="txt54" value={this.state.board_texts.txt54.text} onChange={this.handleChange} />
+		        </div>				        		        				        				        
 		    </div>    
 		</div>
 		)
