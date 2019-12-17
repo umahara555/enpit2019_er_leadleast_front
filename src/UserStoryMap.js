@@ -332,7 +332,9 @@ export class UserStoryMap extends Component {
         <AllMenu className="allmenu-user" Uflag={true}  TurlName={"/product/" + this.props.match.params.productID} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>        
         {/*TODO : ループでまわせそうなところはループでやる*/}
         <div className="board">
-          <div className="split" />
+          <div className="split">
+          <p></p>
+          </div>
           			 <div className="kadaiGuide" title="aaa">
             <p>?</p>
               <div className="hidekadaiGuide">
