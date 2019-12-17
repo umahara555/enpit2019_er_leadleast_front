@@ -18,7 +18,21 @@ import ProductBackLog from './images/example.png';
 
 
 export class Preview extends Component {
+
+	before_product(){
+	    const a = this.props.urlname;
+	    console.log(this.props.urlname);
+		return a.map((prob,index)=>
+				<Link to={"product/"+prob} >
+					<p>{prob}</p>
+				</Link>
+				)
+	}
+
 	render() {
+
+	    console.log(this.props.urlname);
+
 		return(
 			<div className="guide-container">
 				<div className="guide-background" onClick={() => this.props.onClick()}></div>
@@ -26,9 +40,7 @@ export class Preview extends Component {
 						<div className="guide-header">
 					<p>前回のプロジェクト</p>
 					</div>
-						<Link to={"product/"+this.props.urlname} >
-							<p>壱</p>
-						</Link>
+						{this.before_product()}
 					</div>
 				</div>
 				)

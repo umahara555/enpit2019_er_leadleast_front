@@ -16,7 +16,7 @@ export class Home extends Component {
   constructor(props){
       super(props);
       this.state = {
-	  	product_id: "",
+	  	product_id: [],
         guideFlag: false,
       };
       this.handleClick = this.handleClick.bind(this);
@@ -24,13 +24,14 @@ export class Home extends Component {
 
   componentWillMount() {
     const { cookies } = this.props;
-    this.setState({product_id: cookies.get("userId")});
+    console.log(cookies.get("product"));
+    this.setState({product_id: cookies.get("product")});
   }
 
   handleClick() {
     const { cookies } = this.props;
     const CreateNewProduct = async function(){
-	  let product_id = ""
+	  let product_id = "";
       try {
         let method = "POST";
         let postResponse = await fetch(API_URL+'/products', {method})
@@ -71,11 +72,21 @@ export class Home extends Component {
       } catch (error) {
         console.log(error)
       }
-		
-	  console.log(product_id)
-      cookies.set("userId",product_id);
+
+      if(cookies.get("product")==undefined) {
+        cookies.set("product", [product_id]);
+      }
+      else{
+        let before_cookie = cookies.get("product");
+        before_cookie = before_cookie.concat([product_id]);
+        cookies.set("product", before_cookie);
+      }
+
+      this.setState({product_id: cookies.get("product_id")});
+
+      console.log(cookies.get("product"));
       this.props.history.push("/product/"+product_id);
-	}.bind(this)
+	}.bind(this);
 	CreateNewProduct()
   }
   guideFlagChange() {
