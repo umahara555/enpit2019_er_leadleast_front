@@ -20,9 +20,7 @@ import ProductBackLog from './images/example.png';
 export class Preview extends Component {
 
 	before_product(){
-	    const a = this.props.urlname;
-	    console.log(this.props.urlname);
-		return a.map((prob,index)=>
+		return this.props.urlname.map((prob,index)=>
 				<Link to={"product/"+prob} >
 					<p>{prob}</p>
 				</Link>
