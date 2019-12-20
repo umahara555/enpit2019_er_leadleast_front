@@ -26,6 +26,11 @@ export class Home extends Component {
     const { cookies } = this.props;
     console.log(cookies.get("product"));
     this.setState({product_id: cookies.get("product")});
+
+    if(cookies.get("guide")==undefined) {
+      cookies.set("guide", [0,0,0,0,0]);
+    }
+
   }
 
   handleClick() {

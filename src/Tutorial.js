@@ -13,11 +13,35 @@ export class Tutorial extends Component {
       productID: this.props.match.params.productID, 
       guideFlag: true,
       weig: window.location.href,
-			};
+    };
+    const {cookies} = this.props;
     }
+
 
   guideFlagChange() {
     this.setState({guideFlag: !this.state.guideFlag});
+  }
+
+  checkCookiesFlag(){
+    const {cookies} = this.props;
+    console.log(cookies.get("guide"));
+    let guideFlag = cookies.get("guide");
+    if (guideFlag[0]==1) {
+      this.setState({guideFlag: false});
+    }
+  }
+
+  componentWillMount() {
+    this.checkCookiesFlag()
+  }
+
+  componentWillUnmount(){
+    const {cookies} = this.props;
+    let guideFlag = cookies.get("guide");
+    if (guideFlag[0]==0) {
+      guideFlag[0] = 1;
+      cookies.set("guide", guideFlag);
+    }
   }
 
   render(){

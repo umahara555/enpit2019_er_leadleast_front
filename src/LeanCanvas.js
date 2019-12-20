@@ -50,9 +50,13 @@ export class LeanCanvas extends Component {
     this.setState({ws: ws});
   }
 
-  componentWillUnmount() {
+  componentWillMount() {
+  }
+
+  componentWillUnmount(){
     this.state.ws.close();
   }
+
 
   handleBoard(event) {
     const data = JSON.parse(event.data);

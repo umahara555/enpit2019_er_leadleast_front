@@ -35,8 +35,8 @@ class App extends Component{
           <Router>
               <Switch>
                   <Route exact path='/' component={withCookies(Home)}/>
-                  <Route exact path='/product/:productID/' component={Tutorial}/>
-                  <Route exact path='/product/:productID/leancanvas' component={LeanCanvas}/>
+                  <Route exact path='/product/:productID/' component={withCookies(Tutorial)}/>
+                  <Route exact path='/product/:productID/leancanvas' component={withCookies(LeanCanvas)}/>
                   <Route exact path='/product/:productID/elevatorpitch' component={ElevatorPitch}/>
                   <Route exact path='/product/:productID/userstorymap' component={UserStoryMap}/>
                   <Route exact path='/product/:productID/productbacklog' component={ProductBacklog}/>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
+import { withCookies, useCookies } from 'react-cookie';
 import { GuideElevatorPitch, ShowGuide, NextButton, BackButton, AllMenu } from './Guide.js';
 import './ElevatorPitch.css';
 
@@ -30,22 +31,25 @@ export class ElevatorPitch extends Component {
   }
 
 	componentDidMount() {
-		const ws = new WebSocket(API_WS_URL);
-		ws.onopen = () => {
-			ws.send(
-				JSON.stringify(
-					{
-						"command": "subscribe",
-						"identifier":`{\"channel\":\"ElevatorPitchChannel\", \"product_id\": \"${this.props.match.params.productID}\"}`,
-					}
+  	  console.log();
+  	  const ws = new WebSocket(API_WS_URL);
+  	  ws.onopen = () => {
+  	  	ws.send(
+  	  		JSON.stringify(
+  	  			{
+					"command": "subscribe",
+					"identifier":`{\"channel\":\"ElevatorPitchChannel\", \"product_id\": \"${this.props.match.params.productID}\"}`,
+				}
 				)
-			);
-		};
-		ws.onmessage = this.handleBoard.bind(this);
-		this.setState({ws: ws});
+		);
+  	  };
+  	  ws.onmessage = this.handleBoard.bind(this);
+  	  this.setState({ws: ws});
+  	  const [cookies, setCookie] = useCookies(['name']);
+  	  console.log(cookies.get("guide"));
 	}
 
-	componentWillUnmount() {
+	componentWillUnmount(){
 		this.state.ws.close();
 	}
 
@@ -194,3 +198,5 @@ export class ElevatorPitch extends Component {
 		);
 	}
 }
+
+export default withCookies(ElevatorPitch);
