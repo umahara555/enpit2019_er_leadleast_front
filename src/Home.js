@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { withCookies, Cookies ,useCookies} from 'react-cookie';
 import { instanceOf } from 'prop-types';
 import { Header } from './Header.js';
 import LeanCanvas from './images/title/LeanCanvas.png';
@@ -9,6 +8,7 @@ import ProductBacklog from './images/title/ProductBacklog.png';
 import UserStoryMap from './images/title/UserStoryMap.png';
 import './Home.css';
 import {PreviewButton, Preview, GuideLeanCanvas} from "./Guide";
+import { Hooder } from './Hooder.js';
 
 const API_URL = 'http://localhost:5000/api/v1';
 
@@ -89,7 +89,6 @@ export class Home extends Component {
 
       this.setState({product_id: cookies.get("product_id")});
 
-      console.log(cookies.get("product"));
       this.props.history.push("/product/"+product_id);
 	}.bind(this);
 	CreateNewProduct()
@@ -112,7 +111,7 @@ export class Home extends Component {
               <button
               className='Button'
                onClick={this.handleClick}>
-               CLICK TO START
+               はじめる
                </button>
           </div>
         </div>
@@ -189,8 +188,8 @@ export class Home extends Component {
               </p>
             </div>
           </div>
-        </div>        
-
+        </div>
+        <Hooder className='hooder' title={''} />
       </div>
 
     )
