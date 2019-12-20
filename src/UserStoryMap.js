@@ -220,6 +220,7 @@ export class UserStoryMap extends Component {
   }
 
   componentDidMount() {
+    {/*
     const ws = new WebSocket(API_WS_URL);
     ws.onopen = () => {
       ws.send(
@@ -233,10 +234,26 @@ export class UserStoryMap extends Component {
     };
     ws.onmessage = this.handleBoard.bind(this);
     this.setState({ws: ws});
+    */}
   }
 
-  componentWillUnmount() {
-    this.state.ws.close();
+  componentWillMount() {
+    const {cookies} = this.props;
+    console.log(cookies.get("guide"));
+    let guideFlag = cookies.get("guide");
+    if (guideFlag[3]==1) {
+      this.setState({guideFlag: false});
+    }
+  }
+
+  componentWillUnmount(){
+    const {cookies} = this.props;
+    let guideFlag = cookies.get("guide");
+    if (guideFlag[3]==0) {
+      guideFlag[3] = 1;
+      cookies.set("guide", guideFlag);
+    }
+    {/*this.state.ws.close();*/}
   }
 
   handleBoard(event) {

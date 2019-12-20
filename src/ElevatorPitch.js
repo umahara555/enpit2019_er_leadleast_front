@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Header } from './Header.js';
-import { withCookies, useCookies } from 'react-cookie';
 import { GuideElevatorPitch, ShowGuide, NextButton, BackButton, AllMenu } from './Guide.js';
 import './ElevatorPitch.css';
 
@@ -32,6 +31,7 @@ export class ElevatorPitch extends Component {
 
 	componentDidMount() {
   	  console.log();
+  	  {/*
   	  const ws = new WebSocket(API_WS_URL);
   	  ws.onopen = () => {
   	  	ws.send(
@@ -45,12 +45,25 @@ export class ElevatorPitch extends Component {
   	  };
   	  ws.onmessage = this.handleBoard.bind(this);
   	  this.setState({ws: ws});
-  	  const [cookies, setCookie] = useCookies(['name']);
-  	  console.log(cookies.get("guide"));
+  	  */}
+	}
+	componentWillMount() {
+		const {cookies} = this.props;
+		console.log(cookies.get("guide"));
+		let guideFlag = cookies.get("guide");
+		if (guideFlag[2]==1) {
+			this.setState({guideFlag: false});
+		}
 	}
 
 	componentWillUnmount(){
-		this.state.ws.close();
+		const {cookies} = this.props;
+		let guideFlag = cookies.get("guide");
+		if (guideFlag[2]==0) {
+			guideFlag[2] = 1;
+			cookies.set("guide", guideFlag);
+		}
+		{/*this.state.ws.close();*/}
 	}
 
 	handleBoard(event) {
@@ -198,5 +211,3 @@ export class ElevatorPitch extends Component {
 		);
 	}
 }
-
-export default withCookies(ElevatorPitch);
