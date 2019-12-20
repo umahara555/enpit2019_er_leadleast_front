@@ -1,0 +1,52 @@
+.Hooder-container-wrapper {
+  padding: 80px 0;
+  height: 400px;
+  display: flex;
+  background-color: #7DCEA0;
+}
+
+.Hooder-container {
+  width: 100%;
+  margin-left: 40px;
+  display: flex;
+  overflow: hidden;
+  /* background-color: grey; */
+}
+
+.title_box {
+  position: relative;
+  margin-left: 100px;
+  width: 40%;
+  /* background-color: red; */
+}
+
+
+.hooder p {
+  width:100%;
+  padding: 8px;
+}
+
+.hooder h1 {
+  font-size: 4.8rem;
+  font-weight: 800;
+}
+
+.hooder p {
+  margin: 64px 0px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 180%;
+}
+
+.url_box {
+  position: relative;
+  font-size: 1.8rem;
+  margin: 0px 100px;
+  width: 60%;
+  /* background-color: blue; */
+}
+
+.url_box a {
+  text-decoration: none;
+  font-size: 1.8rem;
+}

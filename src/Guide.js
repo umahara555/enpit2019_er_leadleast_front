@@ -20,6 +20,7 @@ import ProductBackLog from './images/example.png';
 export class Preview extends Component {
 
 	before_product(){
+
 		return this.props.urlname.map((prob,index)=>
 				<Link to={"product/"+prob} >
 					<p>{prob}</p>
@@ -895,6 +896,8 @@ constructor(props) {
 
 
 export class ShowGuide extends Component {
+
+
 	render() {
 		return(
 			<button className="openButton"
