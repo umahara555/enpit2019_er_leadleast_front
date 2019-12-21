@@ -35,23 +35,19 @@ export class Tutorial extends Component {
     this.checkCookiesFlag()
   }
 
-  componentWillUnmount(){
-    const {cookies} = this.props;
-    let guideFlag = cookies.get("guide");
-    if (guideFlag[0]==0) {
-      guideFlag[0] = 1;
-      cookies.set("guide", guideFlag);
-    }
-  }
+  NewcomponentWillUnmount(){
+        const {cookies} = this.props;
+      cookies.set("guide", [1,1,1,1,1]);    
+  }  
 
   render(){
     return(
       <div>
-        { this.state.guideFlag && <GuideTutorial onClick={() => this.guideFlagChange()} /> }
+        { this.state.guideFlag && <GuideTutorial onClick={() => this.guideFlagChange()} onGuideSelectClick={() => this.NewcomponentWillUnmount()}  /> }
         <Header className='header' title='トップ' />
         <ShowGuide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/leancanvas"} />  
-        <AllMenu className="allmenu-user" Tflag={true} TurlName={"/product/" + this.props.match.params.productID} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"}/>      
+        <AllMenu className="allmenu-user" Tflag={true} TurlName={"/product/" + this.props.match.params.productID} LurlName={"/product/" + this.props.match.params.productID + "/leancanvas"} EurlName={"/product/" + this.props.match.params.productID + "/elevatorpitch"} UurlName={"/product/" + this.props.match.params.productID + "/userstorymap"} PurlName={"/product/" + this.props.match.params.productID + "/productbacklog"} />      
         <div className="tutorial">
           <div className="beforecom">
           <p className="emphaB">

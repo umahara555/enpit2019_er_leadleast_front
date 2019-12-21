@@ -277,6 +277,19 @@ color: #2e8b57;
 	
 }
 
+.guideSlectButton{
+	position:absolute;
+	display:inline-block;
+	width:200px;
+	height:50px;
+	font-size:13px;
+	font-weight:bold;
+	left:50px;
+	top:50px;
+  background-color: #7DCEA0;
+	
+}
+
 .step-button{
 	position:absolute;
 	display:inline-block;

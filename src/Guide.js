@@ -101,6 +101,10 @@ export class GuideTutorial extends Component {
 		return(
 			<div className="guide-container">
 				<div className="guide-background" onClick={() => this.props.onClick()}></div>
+				<button className="guideSlectButton"
+					onClick={() => this.props.onGuideSelectClick()}>
+				今後このガイドを自動表示しない
+			</button>
 			{ this.state.pageGuideFlag ?
 				<button className="page-button-select"
 			    		onClick={this.pageGuideFlagChange}>
@@ -957,6 +961,8 @@ export class PreviewButton extends Component {
 		);
 	}
 }
+
+
 
 export class AllMenu extends Component {
 	render() {
