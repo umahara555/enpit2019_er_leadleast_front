@@ -249,16 +249,6 @@ export class UserStoryMap extends Component {
     }
   }
 
-  componentWillUnmount(){
-    const {cookies} = this.props;
-    let guideFlag = cookies.get("guide");
-    if (guideFlag[3]==0) {
-      guideFlag[3] = 1;
-      cookies.set("guide", guideFlag);
-    }
-    {/*this.state.ws.close();*/}
-  }
-
   handleBoard(event) {
     const data = JSON.parse(event.data);
     if ('message' in data) {

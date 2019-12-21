@@ -35,15 +35,15 @@ export class Tutorial extends Component {
     this.checkCookiesFlag()
   }
 
-  NewcomponentWillUnmount(){
-        const {cookies} = this.props;
-      cookies.set("guide", [1,1,1,1,1]);    
+  newComponentWillUnmount(){
+    const {cookies} = this.props;
+    cookies.set("guide", [1,1,1,1,1]);
   }  
 
   render(){
     return(
       <div>
-        { this.state.guideFlag && <GuideTutorial onClick={() => this.guideFlagChange()} onGuideSelectClick={() => this.NewcomponentWillUnmount()}  /> }
+        { this.state.guideFlag && <GuideTutorial onClick={() => this.guideFlagChange()} onGuideSelectClick={() => this.newComponentWillUnmount()}  /> }
         <Header className='header' title='トップ' />
         <ShowGuide  onClick={() => this.guideFlagChange()} />
         <NextButton urlName={"/product/" + this.props.match.params.productID + "/leancanvas"} />  

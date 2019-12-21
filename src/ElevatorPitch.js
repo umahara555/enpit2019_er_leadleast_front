@@ -60,16 +60,6 @@ export class ElevatorPitch extends Component {
 
 	}
 
-	componentWillUnmount(){
-		const {cookies} = this.props;
-		let guideFlag = cookies.get("guide");
-		if (guideFlag[2]==0) {
-			guideFlag[2] = 1;
-			cookies.set("guide", guideFlag);
-		}
-		{/*this.state.ws.close();*/}
-	}
-
 	handleBoard(event) {
 		const data = JSON.parse(event.data);
 		if ('message' in data) {

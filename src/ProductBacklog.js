@@ -102,19 +102,6 @@ export class ProductBacklog extends Component {
 		}
 	}
 
-	componentWillUnmount(){
-		const {cookies} = this.props;
-		let guideFlag = cookies.get("guide");
-		if(guideFlag==undefined) {
-			cookies.set("guide", [0,0,0,0,0]);
-		}
-		if (guideFlag[4]==0) {
-			guideFlag[4] = 1;
-			cookies.set("guide", guideFlag);
-		}
-		{/*this.state.ws.close();*/}
-	}
-
 	handleBoard(event) {
 		const data = JSON.parse(event.data);
 		if ('message' in data) {

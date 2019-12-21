@@ -59,23 +59,12 @@ export class LeanCanvas extends Component {
     if(guideFlag==undefined) {
       cookies.set("guide", [0,0,0,0,0]);
     }
-    if (guideFlag[2]==1) {
+    else if (guideFlag[2]==1) {
       this.setState({guideFlag: false});
     }
 
 
   }
-
-  componentWillUnmount(){
-    const {cookies} = this.props;
-    let guideFlag = cookies.get("guide");
-    if (guideFlag[2]==0) {
-      guideFlag[2] = 1;
-      cookies.set("guide", guideFlag);
-    }
-    {/*this.state.ws.close();*/}
-  }
-
 
   handleBoard(event) {
     const data = JSON.parse(event.data);
