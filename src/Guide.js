@@ -44,7 +44,7 @@ export class Preview extends Component {
 				<div className="guide-background" onClick={() => this.props.onClick()}></div>
 					<div className="guide">
 						<div className="guide-header">
-					<p>前回のプロジェクト</p>
+					<p>作成したプロジェクト</p>
 					</div>
 						{this.before_product()}
 					</div>
@@ -951,7 +951,7 @@ export class PreviewButton extends Component {
 		return(
 			<button className="nextButton"
 					onClick={() => this.props.onClick()}>
-				<p>前回のプロジェクト</p>
+				<p>作成したプロジェクト</p>
 			</button>
 
 		);
