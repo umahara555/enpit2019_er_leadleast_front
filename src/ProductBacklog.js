@@ -97,7 +97,10 @@ export class ProductBacklog extends Component {
 		const {cookies} = this.props;
 		console.log(cookies.get("guide"));
 		let guideFlag = cookies.get("guide");
-		if (guideFlag[4]==1) {
+		if(guideFlag==undefined) {
+			cookies.set("guide", [0,0,0,0,0]);
+		}
+		else if (guideFlag[4]==1) {
 			this.setState({guideFlag: false});
 		}
 	}

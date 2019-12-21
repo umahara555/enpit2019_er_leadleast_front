@@ -54,7 +54,7 @@ export class ElevatorPitch extends Component {
 		if(guideFlag==undefined) {
 			cookies.set("guide", [0,0,0,0,0]);
 		}
-		if (guideFlag[2]==1) {
+		else if (guideFlag[2]==1) {
 			this.setState({guideFlag: false});
 		}
 

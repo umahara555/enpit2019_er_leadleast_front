@@ -244,7 +244,7 @@ export class UserStoryMap extends Component {
     if(guideFlag==undefined) {
       cookies.set("guide", [0,0,0,0,0]);
     }
-    if (guideFlag[3]==1) {
+    else if (guideFlag[3]==1) {
       this.setState({guideFlag: false});
     }
   }
