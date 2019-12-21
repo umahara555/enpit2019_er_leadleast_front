@@ -241,6 +241,9 @@ export class UserStoryMap extends Component {
     const {cookies} = this.props;
     console.log(cookies.get("guide"));
     let guideFlag = cookies.get("guide");
+    if(guideFlag==undefined) {
+      cookies.set("guide", [0,0,0,0,0]);
+    }
     if (guideFlag[3]==1) {
       this.setState({guideFlag: false});
     }
