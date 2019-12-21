@@ -21,6 +21,13 @@ export class Preview extends Component {
 
 	before_product(){
 
+		if (this.props.urlname==undefined){
+			return (
+				<div>
+				</div>
+			)
+		}
+
 		return this.props.urlname.map((prob,index)=>
 				<Link to={"product/"+prob} >
 					<p>{prob}</p>
